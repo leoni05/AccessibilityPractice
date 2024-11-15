@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88B47E96D5235360ED97AFF8 /* Pods_AccessibilityPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */; };
 		D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C32CE4C2F000582B94 /* AppDelegate.swift */; };
 		D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C52CE4C2F000582B94 /* SceneDelegate.swift */; };
 		D00DA7C82CE4C2F000582B94 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C72CE4C2F000582B94 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		736D05ECADBCFC2308E38A66 /* Pods-AccessibilityPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.release.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.release.xcconfig"; sourceTree = "<group>"; };
+		B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccessibilityPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8D0B52F4210E9032F657AE9 /* Pods-AccessibilityPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.debug.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.debug.xcconfig"; sourceTree = "<group>"; };
 		D00DA7C02CE4C2F000582B94 /* AccessibilityPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessibilityPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D00DA7C32CE4C2F000582B94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D00DA7C52CE4C2F000582B94 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B47E96D5235360ED97AFF8 /* Pods_AccessibilityPractice.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49B12AEBCDD6660257401262 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C8D0B52F4210E9032F657AE9 /* Pods-AccessibilityPractice.debug.xcconfig */,
+				736D05ECADBCFC2308E38A66 /* Pods-AccessibilityPractice.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		730A0039DF6C415C3D6660A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D00DA7B72CE4C2F000582B94 = {
 			isa = PBXGroup;
 			children = (
 				D00DA7C22CE4C2F000582B94 /* AccessibilityPractice */,
 				D00DA7C12CE4C2F000582B94 /* Products */,
+				49B12AEBCDD6660257401262 /* Pods */,
+				730A0039DF6C415C3D6660A2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D00DA7D42CE4C2F100582B94 /* Build configuration list for PBXNativeTarget "AccessibilityPractice" */;
 			buildPhases = (
+				4E757DE0BBE7C10E3155FC34 /* [CP] Check Pods Manifest.lock */,
 				D00DA7BC2CE4C2F000582B94 /* Sources */,
 				D00DA7BD2CE4C2F000582B94 /* Frameworks */,
 				D00DA7BE2CE4C2F000582B94 /* Resources */,
+				D23D9EF96CAAF5AF92634828 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E757DE0BBE7C10E3155FC34 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AccessibilityPractice-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23D9EF96CAAF5AF92634828 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D00DA7BC2CE4C2F000582B94 /* Sources */ = {
@@ -203,7 +271,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,7 +333,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -287,6 +353,7 @@
 		};
 		D00DA7D52CE4C2F100582B94 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8D0B52F4210E9032F657AE9 /* Pods-AccessibilityPractice.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +382,7 @@
 		};
 		D00DA7D62CE4C2F100582B94 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 736D05ECADBCFC2308E38A66 /* Pods-AccessibilityPractice.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
