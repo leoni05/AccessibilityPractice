@@ -14,6 +14,9 @@ class MainViewController: UIViewController {
     private var btnContainerView = UIView()
     private var sideButtons = Array<SideButtonView>()
     
+    private var selectedPart: Int = 0
+    private var currentPage: Int = 0
+    
     init() {
         super.init(nibName: nil, bundle: nil)
         
@@ -35,7 +38,8 @@ class MainViewController: UIViewController {
         self.view.addSubview(btnContainerView)
         
         for idx in presentationParts.indices {
-            let button = SideButtonView(image: presentationParts[idx].tabIconImage)
+            let button = SideButtonView(image: presentationParts[idx].tabIconImage, tag: idx)
+            button.addTarget(self, action: #selector(sideButtonPressed(_:)), for: .touchUpInside)
             btnContainerView.addSubview(button)
             sideButtons.append(button)
         }
@@ -50,6 +54,16 @@ class MainViewController: UIViewController {
             else { sideButtons[idx].pin.below(of: sideButtons[idx-1], aligned: .center).size(60) }
         }
         btnContainerView.pin.left(self.view.pin.safeArea).vCenter().wrapContent()
+    }
+    
+    @objc func sideButtonPressed(_ sender: SideButtonView) {
+        if selectedPart == sender.tag {
+            return
+        }
+        sideButtons[selectedPart].setBottomBorderAlpha(value: 0.0)
+        selectedPart = sender.tag
+        currentPage = 0
+        sender.setBottomBorderAlpha(value: 1.0)
     }
     
 }

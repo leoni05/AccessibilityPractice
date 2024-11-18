@@ -12,9 +12,10 @@ import PinLayout
 class SideButtonView: UIButton {
     private let bottomBorderView = UIView()
     
-    init(image: UIImage?) {
+    init(image: UIImage?, tag: Int) {
         super.init(frame: .zero)
         setImage(image, for: .normal)
+        self.tag = tag
         tintColor = .white
         
         bottomBorderView.backgroundColor = UIColor(named: "NetflixRed")
