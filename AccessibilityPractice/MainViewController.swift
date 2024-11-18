@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     
     private var presentationParts = Array<PresentationPart>()
     private var btnContainerView = UIView()
-    private var sideButtons = Array<UIButton>()
+    private var sideButtons = Array<SideButtonView>()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -35,12 +35,11 @@ class MainViewController: UIViewController {
         self.view.addSubview(btnContainerView)
         
         for idx in presentationParts.indices {
-            let button = UIButton()
-            button.setImage(presentationParts[idx].tabIconImage, for: .normal)
-            button.tintColor = .white
+            let button = SideButtonView(image: presentationParts[idx].tabIconImage)
             btnContainerView.addSubview(button)
             sideButtons.append(button)
         }
+        sideButtons[0].setBottomBorderAlpha(value: 1.0)
     }
     
     override func viewDidLayoutSubviews() {
