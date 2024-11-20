@@ -72,3 +72,8 @@ class MainViewController: UIViewController {
     
 }
 
+extension MainViewController: PresentationViewControllerDelegate {
+    func changePage(diff: Int) {
+        
+    }
+}
