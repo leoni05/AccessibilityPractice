@@ -10,6 +10,10 @@ import PinLayout
 
 class MainViewController: UIViewController {
     
+    struct PresentationPart {
+        var tabIconImage: UIImage?
+        var pages: [PresentationViewController]
+    }
     private var presentationParts = Array<PresentationPart>()
     private var btnContainerView = UIView()
     private var sideButtons = Array<SideButtonView>()
