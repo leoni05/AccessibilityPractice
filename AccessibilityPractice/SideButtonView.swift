@@ -10,7 +10,12 @@ import UIKit
 import PinLayout
 
 class SideButtonView: UIButton {
+    
+    // MARK: - Properties
+    
     private let bottomBorderView = UIView()
+    
+    // MARK: - Life Cycle
     
     init(image: UIImage?, tag: Int) {
         super.init(frame: .zero)
@@ -31,7 +36,11 @@ class SideButtonView: UIButton {
         super.layoutSubviews()
         bottomBorderView.pin.bottom(10).width(20).height(3).hCenter()
     }
-    
+}
+
+// MARK: - Extensions
+
+extension SideButtonView {
     func setBottomBorderAlpha(value: CGFloat) {
         bottomBorderView.alpha = value
     }

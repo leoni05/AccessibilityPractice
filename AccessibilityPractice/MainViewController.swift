@@ -10,6 +10,8 @@ import PinLayout
 
 class MainViewController: UIViewController {
     
+    // MARK: - Properties
+    
     struct PresentationPart {
         var tabIconImage: UIImage?
         var pages: [PresentationViewController]
@@ -30,6 +32,8 @@ class MainViewController: UIViewController {
             return nil
         }
     }
+    
+    // MARK: - Life Cycle
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -86,7 +90,11 @@ class MainViewController: UIViewController {
             vc.view.pin.after(of:btnContainerView).top().right(self.view.pin.safeArea).bottom()
         }
     }
-    
+}
+
+// MARK: - Private Extensions
+
+private extension MainViewController {
     @objc func sideButtonPressed(_ sender: SideButtonView) {
         if selectedPart == sender.tag {
             return
@@ -105,6 +113,8 @@ class MainViewController: UIViewController {
         }
     }
 }
+
+// MARK: - PresentationViewControllerDelegate
 
 extension MainViewController: PresentationViewControllerDelegate {
     func changePage(diff: Int) {

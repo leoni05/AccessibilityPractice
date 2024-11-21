@@ -14,7 +14,11 @@ protocol PresentationViewControllerDelegate: AnyObject {
 
 class PresentationViewController: UIViewController {
     
+    // MARK: - Properties
+    
     weak var delegate: PresentationViewControllerDelegate?
+    
+    // MARK: - Life Cycle
     
     init(delegate: PresentationViewControllerDelegate?) {
         super.init(nibName: nil, bundle: nil)
@@ -36,7 +40,11 @@ class PresentationViewController: UIViewController {
         leftSwipeRecognizer.direction = .left
         self.view.addGestureRecognizer(leftSwipeRecognizer)
     }
-    
+}
+
+// MARK: - Private Extensions
+
+private extension PresentationViewController {
     @objc func swipeHandler(_ gestureRecognizer : UISwipeGestureRecognizer) {
         if gestureRecognizer.state == .ended {
             if gestureRecognizer.direction == .right {
@@ -48,11 +56,7 @@ class PresentationViewController: UIViewController {
         }
     }
     
-    func rightSwiped() {
-        
-    }
+    func rightSwiped() { }
     
-    func leftSwiped() {
-        
-    }
+    func leftSwiped() { }
 }
