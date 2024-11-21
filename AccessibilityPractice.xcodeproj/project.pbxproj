@@ -84,8 +84,8 @@
 			children = (
 				D00DA7C32CE4C2F000582B94 /* AppDelegate.swift */,
 				D00DA7C52CE4C2F000582B94 /* SceneDelegate.swift */,
-				D0DA3A462CEB8441006118DB /* SideButtonView.swift */,
 				D00DA7C72CE4C2F000582B94 /* MainViewController.swift */,
+				D0DA3A462CEB8441006118DB /* SideButtonView.swift */,
 				D0F78AF82CEE1949009534F5 /* Presentation */,
 				D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */,
 				D00DA7CE2CE4C2F100582B94 /* LaunchScreen.storyboard */,
