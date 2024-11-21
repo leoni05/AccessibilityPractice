@@ -48,11 +48,11 @@ class PresentationViewController: UIViewController {
         }
     }
     
-    func leftSwiped() {
+    func rightSwiped() {
         
     }
     
-    func rightSwiped() {
+    func leftSwiped() {
         
     }
 }
