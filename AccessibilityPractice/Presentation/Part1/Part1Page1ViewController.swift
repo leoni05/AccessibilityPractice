@@ -158,7 +158,7 @@ class Part1Page1ViewController: PresentationViewController {
         lowerScrollView.contentSize = CGSize(width: lowerViews[lowerViews.count-1].frame.maxX,
                                              height: lowerScrollView.bounds.height)
         
-        backgroundImageView.pin.above(of: lowerScrollView, aligned: .left).horizontally().top()
+        backgroundImageView.pin.above(of: lowerScrollView, aligned: .left).right().top()
         backgroundGradientLayerH.pin.all()
         backgroundGradientLayerV.pin.all()
     }
