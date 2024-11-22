@@ -70,7 +70,7 @@ class Part1Page1ViewController: PresentationViewController {
         mainContentView.addSubview(titleLabel)
         
         presenterIcon.image = UIImage(systemName: "person.fill")
-        presenterIcon.tintColor = .red
+        presenterIcon.tintColor = UIColor(named: "NetflixRed")
         mainContentView.addSubview(presenterIcon)
         
         presenterLabel.text = "OO Team yongjun18976"
