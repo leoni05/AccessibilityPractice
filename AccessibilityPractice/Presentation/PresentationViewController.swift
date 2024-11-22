@@ -56,7 +56,11 @@ private extension PresentationViewController {
         }
     }
     
-    func rightSwiped() { }
+    func rightSwiped() { 
+        delegate?.changePage(diff: -1)
+    }
     
-    func leftSwiped() { }
+    func leftSwiped() {
+        delegate?.changePage(diff: 1)
+    }
 }

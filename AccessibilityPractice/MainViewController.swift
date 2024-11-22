@@ -39,7 +39,8 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person"), pages: [
-            Part1Page1ViewController(delegate: self)
+            Part1Page1ViewController(delegate: self),
+            Part1Page2ViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility"), pages: [
             Part2Page1ViewController(delegate: self)
@@ -119,6 +120,15 @@ private extension MainViewController {
 
 extension MainViewController: PresentationViewControllerDelegate {
     func changePage(diff: Int) {
-        
+        if 0 <= currentPage + diff &&
+            currentPage + diff < presentationParts[selectedPart].pages.count {
+            if let vc = currentViewController {
+                vc.view.removeFromSuperview()
+            }
+            currentPage += diff
+            if let vc = currentViewController {
+                self.view.addSubview(vc.view)
+            }
+        }
     }
 }
