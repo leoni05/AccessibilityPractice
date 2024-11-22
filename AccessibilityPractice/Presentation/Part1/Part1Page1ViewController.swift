@@ -19,6 +19,7 @@ class Part1Page1ViewController: PresentationViewController {
     
     private var presenterIcon = UIImageView()
     private var presenterLabel = UILabel()
+    private var descLabel = UILabel()
     
     // MARK: - Life Cycle
     
@@ -44,6 +45,18 @@ class Part1Page1ViewController: PresentationViewController {
         presenterLabel.font = .systemFont(ofSize: 16, weight: .medium)
         presenterLabel.textColor = .white
         mainContentView.addSubview(presenterLabel)
+        
+        let descText = "접근성이란 디자인, 건축, 시스템 공학 등의 분야에서 쓰이는 용어로, 사용자의 제한 사항을 고려하여 가능한 한 많은 사용자가 불편 없이 이용할 수 있도록 제품, 서비스를 만들어 제공하고 이를 평가 할 때 쓰이는 말이다."
+        let attrString = NSMutableAttributedString(string: descText)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        descLabel.attributedText = attrString
+        descLabel.font = .systemFont(ofSize: 12)
+        descLabel.textColor = .white
+        descLabel.numberOfLines = 3
+        mainContentView.addSubview(descLabel)
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,6 +68,7 @@ class Part1Page1ViewController: PresentationViewController {
         titleLabel.pin.below(of: subtitleLabel).horizontally().sizeToFit(.width)
         presenterIcon.pin.below(of: titleLabel).left().size(16).marginTop(10)
         presenterLabel.pin.after(of: presenterIcon, aligned: .center).right().marginLeft(5).sizeToFit(.width)
+        descLabel.pin.below(of: [presenterIcon, presenterLabel]).horizontally().marginTop(5).sizeToFit(.width)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
     }
