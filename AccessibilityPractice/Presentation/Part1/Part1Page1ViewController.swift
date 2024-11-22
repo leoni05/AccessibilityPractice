@@ -21,6 +21,9 @@ class Part1Page1ViewController: PresentationViewController {
     private var presenterLabel = UILabel()
     private var descLabel = UILabel()
     
+    private var githubButton = UIButton()
+    private var moreInfoButton = UIButton()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -57,6 +60,23 @@ class Part1Page1ViewController: PresentationViewController {
         descLabel.numberOfLines = 3
         mainContentView.addSubview(descLabel)
         
+        githubButton.setImage(UIImage(systemName: "link"), for: .normal)
+        githubButton.tintColor = .black
+        githubButton.backgroundColor = .white
+        githubButton.setTitle(" github", for: .normal)
+        githubButton.setTitleColor(.black, for: .normal)
+        githubButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        githubButton.layer.masksToBounds = true
+        githubButton.layer.cornerRadius = 3
+        mainContentView.addSubview(githubButton)
+        
+        moreInfoButton.backgroundColor = .darkGray
+        moreInfoButton.setTitle("More info", for: .normal)
+        moreInfoButton.setTitleColor(.white, for: .normal)
+        moreInfoButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        moreInfoButton.layer.masksToBounds = true
+        moreInfoButton.layer.cornerRadius = 3
+        mainContentView.addSubview(moreInfoButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -69,6 +89,8 @@ class Part1Page1ViewController: PresentationViewController {
         presenterIcon.pin.below(of: titleLabel).left().size(16).marginTop(10)
         presenterLabel.pin.after(of: presenterIcon, aligned: .center).right().marginLeft(5).sizeToFit(.width)
         descLabel.pin.below(of: [presenterIcon, presenterLabel]).horizontally().marginTop(5).sizeToFit(.width)
+        githubButton.pin.below(of: descLabel).left().width(85).height(30).marginTop(15)
+        moreInfoButton.pin.after(of:githubButton, aligned: .center).width(90).height(30).marginLeft(10)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
     }
