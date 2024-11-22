@@ -17,6 +17,9 @@ class Part1Page1ViewController: PresentationViewController {
     private var subtitleLabel = UILabel()
     private var titleLabel = UILabel()
     
+    private var presenterIcon = UIImageView()
+    private var presenterLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -32,13 +35,27 @@ class Part1Page1ViewController: PresentationViewController {
         titleLabel.font = .systemFont(ofSize: 40, weight: .heavy)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
+        
+        presenterIcon.image = UIImage(systemName: "person.fill")
+        presenterIcon.tintColor = .red
+        mainContentView.addSubview(presenterIcon)
+        
+        presenterLabel.text = "OO Team yongjun18976"
+        presenterLabel.font = .systemFont(ofSize: 16, weight: .medium)
+        presenterLabel.textColor = .white
+        mainContentView.addSubview(presenterLabel)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        subtitleLabel.pin.top().horizontally().sizeToFit()
-        titleLabel.pin.below(of: subtitleLabel).horizontally().sizeToFit()
+        mainContentView.pin.width(400)
+        
+        subtitleLabel.pin.top().horizontally().sizeToFit(.width)
+        titleLabel.pin.below(of: subtitleLabel).horizontally().sizeToFit(.width)
+        presenterIcon.pin.below(of: titleLabel).left().size(16).marginTop(10)
+        presenterLabel.pin.after(of: presenterIcon, aligned: .center).right().marginLeft(5).sizeToFit(.width)
+        
         mainContentView.pin.wrapContent().left(20).vCenter()
     }
 }
