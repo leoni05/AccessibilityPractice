@@ -88,7 +88,7 @@ class MainViewController: UIViewController {
         btnContainerView.pin.left(self.view.pin.safeArea).vCenter().wrapContent()
         
         if let vc = currentViewController {
-            vc.view.pin.after(of:btnContainerView).top().right(self.view.pin.safeArea).bottom()
+            vc.view.pin.after(of:btnContainerView).top().right().bottom()
         }
     }
 }
