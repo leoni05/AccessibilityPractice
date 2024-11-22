@@ -38,19 +38,19 @@ class MainViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "square.and.arrow.up"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person"), pages: [
             Part1Page1ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "square.and.arrow.down"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility"), pages: [
             Part2Page1ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "square.and.arrow.up.on.square"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"), pages: [
             Part3Page1ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "square.and.arrow.down.on.square"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "voiceover"), pages: [
             Part4Page1ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "rectangle.portrait.and.arrow.right"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
             Part5Page1ViewController(delegate: self)
         ]))
     }
@@ -80,9 +80,10 @@ class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        let btnSize = 50.0
         for idx in sideButtons.indices {
-            if idx == 0 { sideButtons[idx].pin.top().left().size(60) }
-            else { sideButtons[idx].pin.below(of: sideButtons[idx-1], aligned: .center).size(60) }
+            if idx == 0 { sideButtons[idx].pin.top().left().size(btnSize) }
+            else { sideButtons[idx].pin.below(of: sideButtons[idx-1], aligned: .center).size(btnSize) }
         }
         btnContainerView.pin.left(self.view.pin.safeArea).vCenter().wrapContent()
         
