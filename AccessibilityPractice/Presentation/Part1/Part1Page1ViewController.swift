@@ -24,6 +24,11 @@ class Part1Page1ViewController: PresentationViewController {
     private var githubButton = UIButton()
     private var moreInfoButton = UIButton()
     
+    private var lowerContainerView = UIView()
+    private var lowerLabel = UILabel()
+    private var lowerScrollView = UIScrollView()
+    private var lowerViews = Array<UIView>()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -77,6 +82,23 @@ class Part1Page1ViewController: PresentationViewController {
         moreInfoButton.layer.masksToBounds = true
         moreInfoButton.layer.cornerRadius = 3
         mainContentView.addSubview(moreInfoButton)
+        
+        self.view.addSubview(lowerContainerView)
+        
+        lowerLabel.text = "Trending Now"
+        lowerLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        lowerLabel.textColor = .white
+        lowerContainerView.addSubview(lowerLabel)
+        
+        lowerScrollView.showsHorizontalScrollIndicator = false
+        lowerContainerView.addSubview(lowerScrollView)
+
+        for _ in 0..<10 {
+            let lowerView = UIView()
+            lowerView.backgroundColor = .lightGray
+            lowerViews.append(lowerView)
+            lowerScrollView.addSubview(lowerView)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -93,5 +115,23 @@ class Part1Page1ViewController: PresentationViewController {
         moreInfoButton.pin.after(of:githubButton, aligned: .center).width(90).height(30).marginLeft(10)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
+        
+        lowerContainerView.pin.below(of: mainContentView, aligned: .left).right().bottom().marginTop(25)
+        lowerLabel.pin.top().horizontally().sizeToFit()
+        lowerScrollView.pin.below(of: lowerLabel).horizontally().bottom().marginTop(10)
+        
+        let lowerViewWidth = 120.0
+        let lowerViewHeight = 200.0
+        for i in lowerViews.indices {
+            if i == 0 {
+                lowerViews[i].pin.left().top().width(lowerViewWidth).height(lowerViewHeight)
+            }
+            else {
+                lowerViews[i].pin.after(of: lowerViews[i-1], aligned: .top)
+                    .width(lowerViewWidth).height(lowerViewHeight).marginLeft(5)
+            }
+        }
+        lowerScrollView.contentSize = CGSize(width: lowerViews[lowerViews.count-1].frame.maxX,
+                                             height: lowerScrollView.bounds.height)
     }
 }
