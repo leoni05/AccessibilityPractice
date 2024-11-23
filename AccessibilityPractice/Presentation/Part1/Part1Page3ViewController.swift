@@ -1,15 +1,15 @@
 //
-//  Part1Page2ViewController.swift
+//  Part1Page3ViewController.swift
 //  AccessibilityPractice
 //
-//  Created by yongjun18 on 11/22/24.
+//  Created by yongjun18 on 11/24/24.
 //
 
 import Foundation
 import UIKit
 import PinLayout
 
-class Part1Page2ViewController: PresentationViewController {
+class Part1Page3ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -25,12 +25,12 @@ class Part1Page2ViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "Contents"
+        titleLabel.text = "Apple의 접근성"
         titleLabel.font = .systemFont(ofSize: 25, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "발표 순서"
+        subtitleLabel.text = "Apple이 지원하는 접근성 기능"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
