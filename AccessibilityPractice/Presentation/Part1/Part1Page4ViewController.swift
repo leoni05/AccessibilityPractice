@@ -40,7 +40,7 @@ class Part1Page4ViewController: PresentationViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        mainContentView.pin.left(20).right().vertically()
+        mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(5).sizeToFit(.width)
     }
