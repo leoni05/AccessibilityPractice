@@ -81,7 +81,7 @@ class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let btnSize = 50.0
+        let btnSize = 60.0
         for idx in sideButtons.indices {
             if idx == 0 { sideButtons[idx].pin.top().left().size(btnSize) }
             else { sideButtons[idx].pin.below(of: sideButtons[idx-1], aligned: .center).size(btnSize) }

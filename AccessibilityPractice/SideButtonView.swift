@@ -34,7 +34,7 @@ class SideButtonView: UIButton {
      
     override func layoutSubviews() {
         super.layoutSubviews()
-        bottomBorderView.pin.bottom(7).width(20).height(3).hCenter()
+        bottomBorderView.pin.bottom(12).width(20).height(3).hCenter()
     }
 }
 
