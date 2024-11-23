@@ -105,6 +105,7 @@ class Part1Page1ViewController: PresentationViewController {
         moreInfoButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
         moreInfoButton.layer.masksToBounds = true
         moreInfoButton.layer.cornerRadius = 3
+        moreInfoButton.addTarget(self, action: #selector(moreInfoButtonPressed(_:)), for: .touchUpInside)
         mainContentView.addSubview(moreInfoButton)
         
         self.view.addSubview(lowerContainerView)
@@ -163,5 +164,15 @@ class Part1Page1ViewController: PresentationViewController {
         backgroundImageView.pin.above(of: lowerScrollView, aligned: .left).right().top()
         backgroundGradientLayerH.pin.all()
         backgroundGradientLayerV.pin.all()
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part1Page1ViewController {
+    @objc func moreInfoButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "목표", message: "Apple 접근성을 훑어보면서\n접근성을 머리보단 마음으로 이해해 보는 시간 가지기", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
 }
