@@ -27,7 +27,7 @@ class Part1Page1ViewController: PresentationViewController {
     private var lowerContainerView = UIView()
     private var lowerLabel = UILabel()
     private var lowerScrollView = UIScrollView()
-    private var lowerViews = Array<UIView>()
+    private var lowerViews = Array<UIImageView>()
     
     private var backgroundImageView = UIImageView()
     private var backgroundGradientLayerH = CAGradientLayer()
@@ -110,16 +110,18 @@ class Part1Page1ViewController: PresentationViewController {
         self.view.addSubview(lowerContainerView)
         
         lowerLabel.text = "Trending Now"
-        lowerLabel.font = .systemFont(ofSize: 14, weight: .semibold)
+        lowerLabel.font = .systemFont(ofSize: 15, weight: .semibold)
         lowerLabel.textColor = .white
         lowerContainerView.addSubview(lowerLabel)
         
         lowerScrollView.showsHorizontalScrollIndicator = false
         lowerContainerView.addSubview(lowerScrollView)
 
-        for _ in 0..<10 {
-            let lowerView = UIView()
-            lowerView.backgroundColor = .lightGray
+        for i in 0..<10 {
+            let lowerView = UIImageView()
+            lowerView.image = UIImage(named: "AppleNews\(i)")
+            lowerView.contentMode = .scaleAspectFill
+            lowerView.layer.masksToBounds = true
             lowerViews.append(lowerView)
             lowerScrollView.addSubview(lowerView)
         }
