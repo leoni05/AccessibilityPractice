@@ -45,7 +45,7 @@ class Part1Page1ViewController: PresentationViewController {
         
         let colors: [CGColor] = [
            .init(red: 0, green: 0, blue: 0, alpha: 1),
-           .init(red: 0, green: 0, blue: 0, alpha: 0.1),
+           .init(red: 0, green: 0, blue: 0, alpha: 0.01),
         ]
         backgroundGradientLayerH.colors = colors
         backgroundGradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
