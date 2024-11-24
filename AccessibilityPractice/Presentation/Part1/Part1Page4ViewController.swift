@@ -60,9 +60,16 @@ elements.append(groupedElement)
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        
+        editorLabel.textColor = .white
+        let keywords: Array<String> = ["var", "let", "self", "true"]
+        for i in keywords.indices {
+            let range = (codeString as NSString).range(of: keywords[i])
+            attrString.addAttribute(.foregroundColor, value: UIColor(named: "XcodeKeywordPink") as Any, range: range)
+        }
+        
         editorLabel.attributedText = attrString
         editorLabel.numberOfLines = 0
-        editorLabel.textColor = .white
         editorLabelContainer.addSubview(editorLabel)
     }
     
