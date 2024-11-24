@@ -20,6 +20,7 @@ class ContentItemButton: UIButton {
     
     init(text: String) {
         super.init(frame: .zero)
+        self.alpha = 0.3
         
         self.layer.cornerRadius = 5.0
         self.layer.borderWidth = 1.0
@@ -57,7 +58,10 @@ class ContentItemButton: UIButton {
 
 private extension ContentItemButton {
     @objc func buttonPressed() {
-        checked.toggle()
-        checkView.isHidden = !checked
+        if checked == false {
+            checked = true
+            checkView.isHidden = false
+            self.alpha = 1.0
+        }
     }
 }
