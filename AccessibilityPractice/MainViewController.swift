@@ -76,6 +76,7 @@ class MainViewController: UIViewController {
         }
         sideButtons[0].setBottomBorderAlpha(value: 1.0)
         if let vc = currentViewController {
+            self.addChild(vc)
             self.view.addSubview(vc.view)
         }
     }
@@ -105,6 +106,7 @@ private extension MainViewController {
         }
         
         if let vc = currentViewController {
+            vc.removeFromParent()
             vc.view.removeFromSuperview()
         }
         sideButtons[selectedPart].setBottomBorderAlpha(value: 0.0)
@@ -113,6 +115,7 @@ private extension MainViewController {
         sender.setBottomBorderAlpha(value: 1.0)
         
         if let vc = currentViewController {
+            self.addChild(vc)
             self.view.addSubview(vc.view)
         }
     }
@@ -125,10 +128,12 @@ extension MainViewController: PresentationViewControllerDelegate {
         if 0 <= currentPage + diff &&
             currentPage + diff < presentationParts[selectedPart].pages.count {
             if let vc = currentViewController {
+                vc.removeFromParent()
                 vc.view.removeFromSuperview()
             }
             currentPage += diff
             if let vc = currentViewController {
+                self.addChild(vc)
                 self.view.addSubview(vc.view)
             }
         }
