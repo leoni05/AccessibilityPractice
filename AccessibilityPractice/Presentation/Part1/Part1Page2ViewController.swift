@@ -23,7 +23,7 @@ class Part1Page2ViewController: PresentationViewController {
         "3. iOS 접근성 구현 방법(Voice Over)",
         "4. 발표를 마치며"
     ]
-    private var contentItemLabels = Array<UILabel>()
+    private var contentItemButtons = Array<ContentItemButton>()
     private var contentItemContainerView = UIView()
  
     // MARK: - Life Cycle
@@ -44,12 +44,9 @@ class Part1Page2ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         for i in contentItems.indices {
-            let contentItemLabel = UILabel()
-            contentItemLabel.text = contentItems[i]
-            contentItemLabel.font = .systemFont(ofSize: 20)
-            contentItemLabel.textColor = .white
-            contentItemLabels.append(contentItemLabel)
-            contentItemContainerView.addSubview(contentItemLabel)
+            let contentItemButton = ContentItemButton(text: contentItems[i])
+            contentItemButtons.append(contentItemButton)
+            contentItemContainerView.addSubview(contentItemButton)
         }
         mainContentView.addSubview(contentItemContainerView)
     }
@@ -62,15 +59,15 @@ class Part1Page2ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(5).sizeToFit(.width)
         
         contentItemContainerView.pin.horizontally()
-        for i in contentItemLabels.indices {
+        for i in contentItemButtons.indices {
             if i == 0 {
-                contentItemLabels[i].pin.top().horizontally().sizeToFit(.width)
+                contentItemButtons[i].pin.top().horizontally().height(40).maxWidth(500)
             }
             else {
-                contentItemLabels[i].pin.below(of: contentItemLabels[i-1], aligned: .left)
-                    .right().marginTop(15).sizeToFit(.width)
+                contentItemButtons[i].pin.below(of: contentItemButtons[i-1], aligned: .left)
+                    .right().height(40).maxWidth(500).marginTop(10)
             }
         }
-        contentItemContainerView.pin.wrapContent().left().vCenter()
+        contentItemContainerView.pin.wrapContent().center()
     }
 }
