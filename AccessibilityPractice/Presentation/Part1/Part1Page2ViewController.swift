@@ -61,11 +61,11 @@ class Part1Page2ViewController: PresentationViewController {
         contentItemContainerView.pin.horizontally()
         for i in contentItemButtons.indices {
             if i == 0 {
-                contentItemButtons[i].pin.top().horizontally().height(40).maxWidth(500)
+                contentItemButtons[i].pin.top().horizontally().height(40).maxWidth(550)
             }
             else {
                 contentItemButtons[i].pin.below(of: contentItemButtons[i-1], aligned: .left)
-                    .right().height(40).maxWidth(500).marginTop(10)
+                    .right().height(40).maxWidth(550).marginTop(10)
             }
         }
         contentItemContainerView.pin.wrapContent().center()
