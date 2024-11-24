@@ -25,6 +25,7 @@ class Part1Page2ViewController: PresentationViewController {
     ]
     private var contentItemButtons = Array<ContentItemButton>()
     private var contentItemContainerView = UIView()
+    private var contentItemsArea = UIView()
  
     // MARK: - Life Cycle
     
@@ -48,7 +49,8 @@ class Part1Page2ViewController: PresentationViewController {
             contentItemButtons.append(contentItemButton)
             contentItemContainerView.addSubview(contentItemButton)
         }
-        mainContentView.addSubview(contentItemContainerView)
+        contentItemsArea.addSubview(contentItemContainerView)
+        mainContentView.addSubview(contentItemsArea)
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,6 +59,8 @@ class Part1Page2ViewController: PresentationViewController {
         mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(5).sizeToFit(.width)
+        contentItemsArea.pin.below(of: subtitleLabel, aligned: .left)
+            .right(self.view.pin.safeArea).bottom(self.view.pin.safeArea).marginBottom(25)
         
         contentItemContainerView.pin.horizontally()
         for i in contentItemButtons.indices {
