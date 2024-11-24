@@ -60,7 +60,7 @@ class Part1Page2ViewController: PresentationViewController {
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(5).sizeToFit(.width)
         contentItemsArea.pin.below(of: subtitleLabel, aligned: .left)
-            .right(self.view.pin.safeArea).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         contentItemContainerView.pin.horizontally()
         for i in contentItemButtons.indices {
