@@ -9,17 +9,31 @@ import Foundation
 import UIKit
 import PinLayout
 
+class RedSquareView: UIView {
+    override func draw(_ rect: CGRect) {
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0, y: 0))
+        path.addLine(to: CGPoint(x: rect.width, y: 0))
+        path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+        path.addLine(to: CGPoint(x: 10, y: rect.height))
+        path.close()
+        UIColor(named: "NetflixRed")?.set()
+        path.fill()
+    }
+}
+
 class ContentItemButton: UIButton {
     
     // MARK: - Properties
     
     private var checked = false
-    private var checkView = UIImageView()
+    private var redSquareView = RedSquareView()
     
     // MARK: - Life Cycle
     
     init(text: String) {
         super.init(frame: .zero)
+        self.clipsToBounds = true
         self.alpha = 0.3
         
         self.layer.cornerRadius = 5.0
@@ -36,10 +50,8 @@ class ContentItemButton: UIButton {
         self.setTitleColor(.white, for: .highlighted)
         self.setTitleColor(.white, for: .selected)
         
-        checkView.image = UIImage(systemName: "checkmark")
-        checkView.tintColor = .white
-        checkView.isHidden = true
-        addSubview(checkView)
+        redSquareView.isHidden = true
+        addSubview(redSquareView)
         
         self.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
@@ -50,7 +62,7 @@ class ContentItemButton: UIButton {
      
     override func layoutSubviews() {
         super.layoutSubviews()
-        checkView.pin.right().vCenter().size(17).marginRight(12)
+        redSquareView.pin.right().top().bottom().width(30)
     }
 }
 
@@ -60,7 +72,7 @@ private extension ContentItemButton {
     @objc func buttonPressed() {
         if checked == false {
             checked = true
-            checkView.isHidden = false
+            redSquareView.isHidden = false
             self.alpha = 1.0
         }
     }
