@@ -14,6 +14,7 @@
 		D00DA7CD2CE4C2F100582B94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */; };
 		D00DA7D02CE4C2F100582B94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CF2CE4C2F100582B94 /* Base */; };
 		D075DA0E2D4783EF000F8F0D /* Part2Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0D2D4783EF000F8F0D /* Part2Page2ViewController.swift */; };
+		D075DA102D47D8A2000F8F0D /* Part2Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0F2D47D8A2000F8F0D /* Part2Page3ViewController.swift */; };
 		D0AD55F42CF06945007491E5 /* Part1Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD55F32CF06945007491E5 /* Part1Page2ViewController.swift */; };
 		D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA3A462CEB8441006118DB /* SideButtonView.swift */; };
 		D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */; };
@@ -37,6 +38,7 @@
 		D00DA7CF2CE4C2F100582B94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D00DA7D12CE4C2F100582B94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D075DA0D2D4783EF000F8F0D /* Part2Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page2ViewController.swift; sourceTree = "<group>"; };
+		D075DA0F2D47D8A2000F8F0D /* Part2Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page3ViewController.swift; sourceTree = "<group>"; };
 		D0AD55F32CF06945007491E5 /* Part1Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page2ViewController.swift; sourceTree = "<group>"; };
 		D0DA3A462CEB8441006118DB /* SideButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideButtonView.swift; sourceTree = "<group>"; };
 		D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemButton.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				D0E950C72CEF50B5006E4C1E /* Part2Page1ViewController.swift */,
 				D075DA0D2D4783EF000F8F0D /* Part2Page2ViewController.swift */,
+				D075DA0F2D47D8A2000F8F0D /* Part2Page3ViewController.swift */,
 			);
 			path = Part2;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				D0E950CA2CEF50BE006E4C1E /* Part3Page1ViewController.swift in Sources */,
 				D0E950C82CEF50B5006E4C1E /* Part2Page1ViewController.swift in Sources */,
 				D0E950C62CEF50AB006E4C1E /* Part1Page1ViewController.swift in Sources */,
+				D075DA102D47D8A2000F8F0D /* Part2Page3ViewController.swift in Sources */,
 				D00DA7C82CE4C2F000582B94 /* MainViewController.swift in Sources */,
 				D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */,
 				D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */,
