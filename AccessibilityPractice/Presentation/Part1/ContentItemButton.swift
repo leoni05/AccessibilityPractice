@@ -75,5 +75,10 @@ private extension ContentItemButton {
             redSquareView.isHidden = false
             self.alpha = 1.0
         }
+        else {
+            checked = false
+            redSquareView.isHidden = true
+            self.alpha = 0.3
+        }
     }
 }
