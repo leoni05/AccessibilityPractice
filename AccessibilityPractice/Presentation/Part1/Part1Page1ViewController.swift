@@ -13,6 +13,8 @@ class Part1Page1ViewController: PresentationViewController {
     
     // MARK: - Properties
     
+    private let appleNewsCount = 9
+    
     private var mainContentView = UIView()
     private var subtitleLabel = UILabel()
     private var titleLabel = UILabel()
@@ -118,7 +120,7 @@ class Part1Page1ViewController: PresentationViewController {
         lowerScrollView.showsHorizontalScrollIndicator = false
         lowerContainerView.addSubview(lowerScrollView)
 
-        for i in 0..<10 {
+        for i in 0..<appleNewsCount {
             let lowerView = UIImageView()
             lowerView.image = UIImage(named: "AppleNews\(i)")
             lowerView.contentMode = .scaleAspectFill
