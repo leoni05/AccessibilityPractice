@@ -55,7 +55,7 @@ class Part2Page1ViewController: PresentationViewController {
         partLabel.sizeToFit()
         mainContentView.addSubview(partLabel)
         
-        titleLabel.text = "1. 접근성이란 무엇인가"
+        titleLabel.text = "접근성이란 무엇인가"
         titleLabel.font = .systemFont(ofSize: 25, weight: .heavy)
         titleLabel.textColor = .white
         titleLabel.sizeToFit()
