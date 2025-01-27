@@ -22,6 +22,8 @@ class Part2Page2ViewController: PresentationViewController {
     private var definitionView = UIView()
     private var definitionLabel = UILabel()
     private var sourceLabel = UILabel()
+    private var quoteLeftView = UIImageView()
+    private var quoteRightView = UIImageView()
     
     // MARK: - Life Cycle
     
@@ -59,10 +61,22 @@ class Part2Page2ViewController: PresentationViewController {
         definitionView.addSubview(definitionLabel)
         
         sourceLabel.text = "출처 : 위키백과"
-        sourceLabel.font = .systemFont(ofSize: 14)
+        sourceLabel.font = .systemFont(ofSize: 13)
         sourceLabel.textColor = .white
-        sourceLabel.textAlignment = .right
+        sourceLabel.textAlignment = .center
         definitionView.addSubview(sourceLabel)
+        
+        quoteLeftView.image = UIImage(systemName: "quote.opening")
+        quoteLeftView.tintColor = .white
+        quoteLeftView.contentMode = .scaleAspectFit
+        quoteLeftView.alpha = 0.5
+        innerContentView.addSubview(quoteLeftView)
+        
+        quoteRightView.image = UIImage(systemName: "quote.closing")
+        quoteRightView.tintColor = .white
+        quoteRightView.contentMode = .scaleAspectFit
+        quoteRightView.alpha = 0.5
+        innerContentView.addSubview(quoteRightView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,5 +93,8 @@ class Part2Page2ViewController: PresentationViewController {
         definitionLabel.pin.top().horizontally().sizeToFit(.width)
         sourceLabel.pin.below(of: definitionLabel, aligned: .left).right().sizeToFit(.width).marginTop(10)
         definitionView.pin.wrapContent().center()
+        
+        quoteLeftView.pin.above(of: definitionView, aligned: .center).size(20).marginBottom(10)
+        quoteRightView.pin.below(of: definitionView, aligned: .center).size(20).marginTop(10)
     }
 }
