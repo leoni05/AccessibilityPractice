@@ -58,7 +58,7 @@ class Part1Page2ViewController: PresentationViewController {
         
         mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
-        subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(5).sizeToFit(.width)
+        subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         contentItemsArea.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
