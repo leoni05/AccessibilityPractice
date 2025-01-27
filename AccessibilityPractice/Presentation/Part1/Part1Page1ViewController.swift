@@ -149,8 +149,8 @@ class Part1Page1ViewController: PresentationViewController {
         lowerLabel.pin.top().horizontally().sizeToFit()
         lowerScrollView.pin.below(of: lowerLabel).horizontally().bottom().marginTop(10)
         
-        let lowerViewWidth = 120.0
-        let lowerViewHeight = 200.0
+        let lowerViewWidth = 100.0
+        let lowerViewHeight = 130.0
         for i in lowerViews.indices {
             if i == 0 {
                 lowerViews[i].pin.left().top().width(lowerViewWidth).height(lowerViewHeight)
