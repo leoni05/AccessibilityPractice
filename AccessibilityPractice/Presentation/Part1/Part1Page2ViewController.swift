@@ -35,7 +35,7 @@ class Part1Page2ViewController: PresentationViewController {
         self.view.addSubview(mainContentView)
         
         titleLabel.text = "Contents"
-        titleLabel.font = .systemFont(ofSize: 25, weight: .semibold)
+        titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
