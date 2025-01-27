@@ -77,7 +77,7 @@ class Part2Page1ViewController: PresentationViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        backgroundImageView.pin.left(30%).bottom(20%).top().right()
+        backgroundImageView.pin.left().bottom(20%).top().right()
         backgroundGradientLayerH.pin.all()
         backgroundGradientLayerV.pin.all()
         
