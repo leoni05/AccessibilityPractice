@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part2Page2ViewController: PresentationViewController {
+class Part1Page2ViewController: PresentationViewController {
     
     // MARK: - Properties
     
