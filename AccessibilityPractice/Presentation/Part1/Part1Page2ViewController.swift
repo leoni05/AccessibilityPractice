@@ -87,7 +87,7 @@ class Part1Page2ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right().bottom(self.view.pin.safeArea).marginBottom(25)
+            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
         
         definitionView.pin.horizontally(60)
         definitionLabel.pin.top().horizontally().sizeToFit(.width)

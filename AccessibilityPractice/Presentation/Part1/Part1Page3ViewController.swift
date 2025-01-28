@@ -90,9 +90,9 @@ class Part1Page3ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right().bottom(self.view.pin.safeArea).marginBottom(25)
+            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
         
-        lawContainerView.pin.left().right(20)
+        lawContainerView.pin.horizontally()
         
         lawTitleLabel1.pin.top().horizontally().sizeToFit(.width)
         lawDetailLabel1.pin.below(of: lawTitleLabel1, aligned: .left).right().sizeToFit(.width).marginTop(5)
@@ -103,6 +103,6 @@ class Part1Page3ViewController: PresentationViewController {
         lawTitleLabel3.pin.below(of: lawDetailLabel2, aligned: .left).right().sizeToFit(.width).marginTop(20)
         lawDetailLabel3.pin.below(of: lawTitleLabel3, aligned: .left).right().sizeToFit(.width).marginTop(5)
         
-        lawContainerView.pin.wrapContent().left().vCenter()
+        lawContainerView.pin.wrapContent().center()
     }
 }
