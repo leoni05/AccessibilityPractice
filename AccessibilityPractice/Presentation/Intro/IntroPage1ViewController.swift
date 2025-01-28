@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part1Page1ViewController: PresentationViewController {
+class IntroPage1ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -171,7 +171,7 @@ class Part1Page1ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part1Page1ViewController {
+private extension IntroPage1ViewController {
     @objc func moreInfoButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "목표", message: "Apple 접근성을 훑어보면서\n접근성을 머리보단 마음으로\n이해해 보는 시간 가지기", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
