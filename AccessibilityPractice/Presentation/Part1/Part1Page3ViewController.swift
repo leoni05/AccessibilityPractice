@@ -52,31 +52,37 @@ class Part1Page3ViewController: PresentationViewController {
         innerContentView.addSubview(lawContainerView)
         
         lawTitleLabel1.text = "장애인차별금지법 제21조 2항"
+        lawTitleLabel1.numberOfLines = 0
         lawTitleLabel1.font = .systemFont(ofSize: 17)
         lawTitleLabel1.textColor = .white
         lawContainerView.addSubview(lawTitleLabel1)
         
         lawDetailLabel1.text = "정보통신·의사소통 등에서의 정당한 편의제공의무 <신설 2021. 7. 27.>"
+        lawDetailLabel1.numberOfLines = 0
         lawDetailLabel1.font = .systemFont(ofSize: 13)
         lawDetailLabel1.textColor = .white
         lawContainerView.addSubview(lawDetailLabel1)
         
         lawTitleLabel2.text = "장애인차별금지법 시행령 제14조 5항"
+        lawTitleLabel2.numberOfLines = 0
         lawTitleLabel2.font = .systemFont(ofSize: 17)
         lawTitleLabel2.textColor = .white
         lawContainerView.addSubview(lawTitleLabel2)
         
         lawDetailLabel2.text = "법 제21조제2항에 따라 행위자 등이 제공해야 하는 정당한 편의의 구체적인 내용 명시 <신설 2023. 3. 30.>"
+        lawDetailLabel2.numberOfLines = 0
         lawDetailLabel2.font = .systemFont(ofSize: 13)
         lawDetailLabel2.textColor = .white
         lawContainerView.addSubview(lawDetailLabel2)
         
         lawTitleLabel3.text = "신규 웹 접근성 인증 심사지침 공개"
+        lawTitleLabel3.numberOfLines = 0
         lawTitleLabel3.font = .systemFont(ofSize: 17)
         lawTitleLabel3.textColor = .white
         lawContainerView.addSubview(lawTitleLabel3)
         
         lawDetailLabel3.text = "웹 접근성 인증 심사 지침 변경(기존 24개 -> 33개) <2025. 1. 1. 시행>"
+        lawDetailLabel3.numberOfLines = 0
         lawDetailLabel3.font = .systemFont(ofSize: 13)
         lawDetailLabel3.textColor = .white
         lawContainerView.addSubview(lawDetailLabel3)
