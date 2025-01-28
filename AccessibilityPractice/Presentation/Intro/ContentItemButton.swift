@@ -50,6 +50,7 @@ class ContentItemButton: UIButton {
         self.setTitleColor(.white, for: .highlighted)
         self.setTitleColor(.white, for: .selected)
         
+        redSquareView.isUserInteractionEnabled = false
         redSquareView.isHidden = true
         addSubview(redSquareView)
         
