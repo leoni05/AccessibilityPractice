@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class Part5Page1ViewController: PresentationViewController {
+class Part4Page1ViewController: PresentationViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
