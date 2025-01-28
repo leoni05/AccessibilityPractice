@@ -48,7 +48,8 @@ class MainViewController: UIViewController {
             Part2Page3ViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"), pages: [
-            Part3Page1ViewController(delegate: self)
+            Part3Page1ViewController(delegate: self),
+            Part3Page2ViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "voiceover"), pages: [
             Part4Page1ViewController(delegate: self)
