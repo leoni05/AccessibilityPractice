@@ -18,6 +18,7 @@
 		D075DA0E2D4783EF000F8F0D /* Part1Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0D2D4783EF000F8F0D /* Part1Page2ViewController.swift */; };
 		D075DA102D47D8A2000F8F0D /* Part1Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0F2D47D8A2000F8F0D /* Part1Page3ViewController.swift */; };
 		D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */; };
+		D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */; };
 		D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA3A462CEB8441006118DB /* SideButtonView.swift */; };
 		D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */; };
 		D0E950C62CEF50AB006E4C1E /* IntroPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C52CEF50AB006E4C1E /* IntroPage1ViewController.swift */; };
@@ -44,6 +45,7 @@
 		D075DA0D2D4783EF000F8F0D /* Part1Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page2ViewController.swift; sourceTree = "<group>"; };
 		D075DA0F2D47D8A2000F8F0D /* Part1Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page3ViewController.swift; sourceTree = "<group>"; };
 		D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage2ViewController.swift; sourceTree = "<group>"; };
+		D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page4ViewController.swift; sourceTree = "<group>"; };
 		D0DA3A462CEB8441006118DB /* SideButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideButtonView.swift; sourceTree = "<group>"; };
 		D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemButton.swift; sourceTree = "<group>"; };
 		D0E950C52CEF50AB006E4C1E /* IntroPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage1ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D0E950C92CEF50BE006E4C1E /* Part2Page1ViewController.swift */,
 				D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */,
 				D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */,
+				D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */,
 			);
 			path = Part2;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */,
 				D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */,
 				D0E950CF2CEF51A0006E4C1E /* Part4Page1ViewController.swift in Sources */,
+				D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */,
 				D0E950CC2CEF50C8006E4C1E /* Part3Page1ViewController.swift in Sources */,
 				D0E950CA2CEF50BE006E4C1E /* Part2Page1ViewController.swift in Sources */,
 				D0E950C82CEF50B5006E4C1E /* Part1Page1ViewController.swift in Sources */,
