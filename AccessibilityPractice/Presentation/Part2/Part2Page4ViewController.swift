@@ -20,7 +20,7 @@ class Part2Page4ViewController: PresentationViewController {
     private var imageContainerView = UIView()
     private let imageRowCount = 6
     private let imageColCount = 3
-    private let imageWidth = 150
+    private let imageWidth = 160
     private let imageHeight = 100
     private var videoImages = Array<UIImageView>()
     
@@ -38,6 +38,7 @@ class Part2Page4ViewController: PresentationViewController {
             imageView.image = UIImage(named: "AppleVideo\(String(format: "%02d", idx))")
             imageView.contentMode = .scaleAspectFill
             imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 3
             videoImages.append(imageView)
             imageContainerView.addSubview(imageView)
         }
@@ -60,7 +61,7 @@ class Part2Page4ViewController: PresentationViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        imageContainerView.pin.right().vertically().width(400)
+        imageContainerView.pin.right().vertically().width(450)
         for c in 0..<imageColCount {
             for r in 0..<imageRowCount {
                 let idx = c*imageRowCount + r
