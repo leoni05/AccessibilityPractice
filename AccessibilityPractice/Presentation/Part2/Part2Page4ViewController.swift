@@ -23,6 +23,7 @@ class Part2Page4ViewController: PresentationViewController {
     private let imageWidth = 160
     private let imageHeight = 100
     private var videoImages = Array<UIImageView>()
+    private var gradientLayerH = CAGradientLayer()
     
     private var innerContentView = UIView()
     
@@ -42,6 +43,15 @@ class Part2Page4ViewController: PresentationViewController {
             videoImages.append(imageView)
             imageContainerView.addSubview(imageView)
         }
+        
+        let colors: [CGColor] = [
+           .init(red: 0, green: 0, blue: 0, alpha: 1),
+           .init(red: 0, green: 0, blue: 0, alpha: 0.1),
+        ]
+        gradientLayerH.colors = colors
+        gradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayerH.endPoint = CGPoint(x: 1.0, y: 0.5)
+        imageContainerView.layer.addSublayer(gradientLayerH)
         
         self.view.addSubview(mainContentView)
         
@@ -73,6 +83,7 @@ class Part2Page4ViewController: PresentationViewController {
                     .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
             }
         }
+        gradientLayerH.pin.all()
         
         mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
