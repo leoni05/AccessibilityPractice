@@ -56,7 +56,13 @@ class MainViewController: UIViewController {
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "voiceover"), pages: [
             Part3Page1ViewController(delegate: self),
-            Part3Page2ViewController(delegate: self)
+            Part3Page2ViewController(delegate: self),
+            Part3Page3ViewController(delegate: self),
+            Part3Page4ViewController(delegate: self),
+            Part3Page5ViewController(delegate: self),
+            Part3Page6ViewController(delegate: self),
+            Part3Page7ViewController(delegate: self),
+            Part3Page8ViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
             Part4Page1ViewController(delegate: self)
