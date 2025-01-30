@@ -38,11 +38,11 @@ class MainViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"), pages: [
             IntroPage1ViewController(delegate: self),
             IntroPage2ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"), pages: [
             Part1Page1ViewController(delegate: self),
             Part1Page2ViewController(delegate: self),
             Part1Page3ViewController(delegate: self)
@@ -54,7 +54,7 @@ class MainViewController: UIViewController {
             Part2Page4ViewController(delegate: self),
             Part2Page5ViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "voiceover"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "speaker.wave.2.fill"), pages: [
             Part3Page1ViewController(delegate: self),
             Part3Page2ViewController(delegate: self),
             Part3Page3ViewController(delegate: self),
