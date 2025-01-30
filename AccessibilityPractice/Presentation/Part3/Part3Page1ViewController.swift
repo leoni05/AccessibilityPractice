@@ -22,7 +22,6 @@ class Part3Page1ViewController: PresentationViewController {
     private var titleLabel = UILabel()
     private var subTitleLabel1 = UILabel()
     private var subTitleLabel2 = UILabel()
-    private var subTitleLabel3 = UILabel()
     
     // MARK: - Life Cycle
     
@@ -73,12 +72,6 @@ class Part3Page1ViewController: PresentationViewController {
         subTitleLabel2.textColor = .white
         subTitleLabel2.sizeToFit()
         mainContentView.addSubview(subTitleLabel2)
-        
-        subTitleLabel3.text = "접근성 구현 문제 상황에서의 해결 방법"
-        subTitleLabel3.font = .systemFont(ofSize: 17, weight: .light)
-        subTitleLabel3.textColor = .white
-        subTitleLabel3.sizeToFit()
-        mainContentView.addSubview(subTitleLabel3)
     }
     
     override func viewDidLayoutSubviews() {
@@ -92,7 +85,6 @@ class Part3Page1ViewController: PresentationViewController {
         titleLabel.pin.below(of: partLabel, aligned: .left)
         subTitleLabel1.pin.below(of: titleLabel, aligned: .left).marginTop(15)
         subTitleLabel2.pin.below(of: subTitleLabel1, aligned: .left).marginTop(5)
-        subTitleLabel3.pin.below(of: subTitleLabel2, aligned: .left).marginTop(5)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
     }
