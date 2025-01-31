@@ -14,7 +14,7 @@ class ExCustomCell: UITableViewCell {
     // MARK: - Properties
     
     static let reuseIdentifier = "ExCustomCell"
-    static let cellHeight = 50.0
+    static let cellHeight = 45.0
     
     private var separatorView = UIView()
     public var label = UILabel()
