@@ -27,6 +27,16 @@ class Part2Page4ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var scriptContainerView = UIView()
+    private var scriptTitleLabel = UILabel()
+    private var scriptLabels = Array<UILabel>()
+    private var scripts: Array<String> = [
+        "We have the same goals, the same mindset",
+        "We train the same way. We practice the same way. We sweat the same way.",
+        "There’s no difference between me and any other swimmer. When I get in the water, I want to win.",
+        "Apple products are designed for every athlete. And every body."
+    ]
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -66,6 +76,29 @@ class Part2Page4ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        innerContentView.addSubview(scriptContainerView)
+        
+        scriptTitleLabel.text = "The Relay"
+        scriptTitleLabel.numberOfLines = 0
+        scriptTitleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        scriptTitleLabel.textColor = .white
+        scriptTitleLabel.textAlignment = .center
+        scriptContainerView.addSubview(scriptTitleLabel)
+        
+        for idx in scripts.indices {
+            let label = UILabel()
+            label.text = scripts[idx]
+            label.numberOfLines = 0
+            label.font = .systemFont(ofSize: 17)
+            label.textColor = .white
+            label.textAlignment = .center
+            if idx != 0 {
+                label.isHidden = true
+            }
+            scriptLabels.append(label)
+            scriptContainerView.addSubview(label)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -91,5 +124,12 @@ class Part2Page4ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        scriptContainerView.pin.horizontally(50)
+        scriptTitleLabel.pin.top().horizontally().sizeToFit(.width)
+        for idx in scriptLabels.indices {
+            scriptLabels[idx].pin.below(of: scriptTitleLabel).horizontally().marginTop(8).sizeToFit(.width)
+        }
+        scriptContainerView.pin.wrapContent().center()
     }
 }
