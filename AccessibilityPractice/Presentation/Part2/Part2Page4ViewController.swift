@@ -31,9 +31,10 @@ class Part2Page4ViewController: PresentationViewController {
     private var scriptTitleLabel = UILabel()
     private var scriptLabels = Array<UILabel>()
     private var scripts: Array<String> = [
-        "We have the same goals, the same mindset",
-        "We train the same way. We practice the same way. We sweat the same way.",
-        "There’s no difference between me and any other swimmer. When I get in the water, I want to win.",
+        "Two teams. Eight athletes with and without disabilities. Competing together.",
+        "\"We have the same goals, the same mindset.\"",
+        "\"We train the same way. We practice the same way. We sweat the same way.\"",
+        "\"There’s no difference between me and any other swimmer. When I get in the water, I want to win.\"",
         "Apple products are designed for every athlete. And every body."
     ]
     
