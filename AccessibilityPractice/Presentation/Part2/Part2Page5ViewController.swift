@@ -130,7 +130,7 @@ private extension Part2Page5ViewController {
                                 Feature(title: "확대기", description: "주변 사물을 확대해서 보여주거나, 감지하거나, 설명까지 해줄 수 있는 디지털 돋보기."),
                                 Feature(title: "디스플레이 설정 및 텍스트 크기", description: "색상, 텍스트 크기, 투명도, 대비 등을 당신에게 꼭 맞게.")
                             ]),
-            FeatureCategory(title: "시각", button: UIButton(), stickView: UIView(), featureLabels: [],
+            FeatureCategory(title: "청각", button: UIButton(), stickView: UIView(), featureLabels: [],
                             features: [
                                 Feature(title: "음악 햅틱", description: "노래의 리듬에 맞춘 진동과 함께, iPhone으로 음악 경험하기."),
                                 Feature(title: "소리 인식", description: "특정 소리를 감지하면 당신이 알 수 있도록 알림으로.")
