@@ -26,6 +26,7 @@ class ExViewController: UIViewController {
         tableView.register(ExCustomCell.self, forCellReuseIdentifier: ExCustomCell.reuseIdentifier)
         tableView.backgroundColor = nil
         tableView.bounces = false
+        tableView.separatorStyle = .none
         self.view.addSubview(tableView)
     }
     
@@ -33,7 +34,6 @@ class ExViewController: UIViewController {
         super.viewDidLayoutSubviews()
         tableView.pin.all()
     }
-    
 }
 
 // MARK: - TableView DataSource
@@ -57,5 +57,11 @@ extension ExViewController: UITableViewDataSource {
 extension ExViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return ExCustomCell.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ExDetailViewController()
+        vc.label.text = "Cell \(indexPath.row) selected"
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

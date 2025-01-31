@@ -14,9 +14,7 @@ class ExCustomCell: UITableViewCell {
     // MARK: - Properties
     
     static let reuseIdentifier = "ExCustomCell"
-    static let cellHeight = 60.0
-    
-    private var separatorView = UIView()
+    static let cellHeight = 50.0
     public var label = UILabel()
     
     // MARK: - Life Cycle
@@ -25,9 +23,6 @@ class ExCustomCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.backgroundColor = .clear
-        
-        separatorView.backgroundColor = .white
-        self.contentView.addSubview(separatorView)
         
         label.textColor = .white
         self.contentView.addSubview(label)
@@ -40,6 +35,5 @@ class ExCustomCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         label.pin.horizontally(10).vCenter().sizeToFit(.width)
-        separatorView.pin.horizontally().bottom().height(1)
     }
 }
