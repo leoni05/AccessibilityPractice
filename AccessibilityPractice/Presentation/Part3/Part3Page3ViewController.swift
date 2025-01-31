@@ -19,6 +19,10 @@ class Part3Page3ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var voiceOverCotnainer = UIView()
+    private var exampleContainer = UIView()
+    private var exampleVC = UINavigationController(rootViewController: ExViewController())
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +41,17 @@ class Part3Page3ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        innerContentView.addSubview(voiceOverCotnainer)
+        
+        exampleContainer.layer.cornerRadius = 5.0
+        exampleContainer.layer.borderWidth = 1.0
+        exampleContainer.layer.borderColor = UIColor.white.cgColor
+        exampleContainer.layer.masksToBounds = true
+        voiceOverCotnainer.addSubview(exampleContainer)
+        
+        self.addChild(exampleVC)
+        exampleContainer.addSubview(exampleVC.view)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +63,9 @@ class Part3Page3ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        exampleContainer.pin.top().left().width(300).height(200)
+        exampleVC.view.pin.all()
+        voiceOverCotnainer.pin.wrapContent().center()
     }
 }
