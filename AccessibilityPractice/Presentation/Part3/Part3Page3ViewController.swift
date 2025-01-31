@@ -50,6 +50,7 @@ class Part3Page3ViewController: PresentationViewController {
         exampleContainer.layer.masksToBounds = true
         voiceOverCotnainer.addSubview(exampleContainer)
         
+        exampleVC.isNavigationBarHidden = true
         self.addChild(exampleVC)
         exampleContainer.addSubview(exampleVC.view)
     }

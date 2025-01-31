@@ -20,9 +20,12 @@ class ExViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.estimatedRowHeight = ExCustomCell.cellHeight
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(ExCustomCell.self, forCellReuseIdentifier: ExCustomCell.reuseIdentifier)
         tableView.backgroundColor = nil
+        tableView.bounces = false
         self.view.addSubview(tableView)
     }
     
@@ -37,11 +40,15 @@ class ExViewController: UIViewController {
 
 extension ExViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExCustomCell.reuseIdentifier, for: indexPath) as? ExCustomCell else {
+            return UITableViewCell()
+        }
+        cell.label.text = "Cell \(indexPath.row)"
+        return cell
     }
 }
 
@@ -49,6 +56,6 @@ extension ExViewController: UITableViewDataSource {
 
 extension ExViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 0
+        return ExCustomCell.cellHeight
     }
 }
