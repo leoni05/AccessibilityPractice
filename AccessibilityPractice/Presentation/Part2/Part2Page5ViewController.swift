@@ -53,6 +53,20 @@ class Part2Page5ViewController: PresentationViewController {
         mainContentView.addSubview(innerContentView)
         
         setFeatureCategories()
+        
+        innerContentView.addSubview(featuresContainer)
+        
+        for idx in featureCategories.indices {
+            let button = featureCategories[idx].button
+            button.alpha = 0.3
+            button.backgroundColor = .white
+            button.setTitle(featureCategories[idx].title, for: .normal)
+            button.setTitleColor(.black, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 14)
+            button.layer.masksToBounds = true
+            button.layer.cornerRadius = 3
+            featuresContainer.addSubview(button)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -64,6 +78,18 @@ class Part2Page5ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        for idx in featureCategories.indices {
+            let button = featureCategories[idx].button
+            if idx == 0 {
+                button.pin.top().left().width(80).height(35)
+            }
+            else {
+                button.pin.below(of: featureCategories[idx-1].button, aligned: .left)
+                    .width(80).height(35).marginTop(5)
+            }
+        }
+        featuresContainer.pin.wrapContent().center()
     }
 }
 
