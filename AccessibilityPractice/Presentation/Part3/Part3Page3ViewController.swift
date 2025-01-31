@@ -31,7 +31,7 @@ class Part3Page3ViewController: PresentationViewController {
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "Accessibility 관련 속성 값"
+        subtitleLabel.text = "Voice Over 소개"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
