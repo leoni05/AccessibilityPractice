@@ -19,6 +19,16 @@ class Part3Page4ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private let accessibilityProperties: Array<String> = [
+        "isAccessibilityElement",
+        "accessibilityTraits",
+        "accessibilityLabel",
+        "accessibilityValue",
+        "accessibilityHint"
+    ]
+    private var propertyLabels = Array<UILabel>()
+    private var labelContainer = UIView()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +47,17 @@ class Part3Page4ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        innerContentView.addSubview(labelContainer)
+        
+        for idx in accessibilityProperties.indices {
+            let label = UILabel()
+            label.text = accessibilityProperties[idx]
+            label.font = .systemFont(ofSize: 17)
+            label.textColor = .white
+            propertyLabels.append(label)
+            labelContainer.addSubview(label)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +69,17 @@ class Part3Page4ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        labelContainer.pin.horizontally()
+        for idx in propertyLabels.indices {
+            if idx == 0 {
+                propertyLabels[idx].pin.top().horizontally().sizeToFit(.width)
+            }
+            else {
+                propertyLabels[idx].pin.below(of: propertyLabels[idx-1]).horizontally().sizeToFit(.width)
+                    .marginTop(16)
+            }
+        }
+        labelContainer.pin.wrapContent().left().vCenter()
     }
 }
