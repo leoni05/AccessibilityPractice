@@ -19,9 +19,21 @@ class Part3Page3ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
-    private var voiceOverCotnainer = UIView()
     private var exampleContainer = UIView()
     private var exampleVC = UINavigationController(rootViewController: ExViewController())
+    
+    private struct VoiceOverGesture {
+        let title: String
+        let desc: String
+    }
+    private var voiceOverGestures: Array<VoiceOverGesture> = [
+        VoiceOverGesture(title: "Select an item", desc: "Touch, drag, or swipe with one finger"),
+        VoiceOverGesture(title: "Scroll", desc: "Swipe with three fingers"),
+        VoiceOverGesture(title: "Open or activate an item", desc: "Double tab"),
+        VoiceOverGesture(title: "Return to a previous screen", desc: "Do a two-finger scrub making the letter Z")
+    ]
+    private var gestureLabels = Array<UILabel>()
+    private var labelContainer = UIView()
     
     // MARK: - Life Cycle
     
@@ -42,17 +54,33 @@ class Part3Page3ViewController: PresentationViewController {
         
         mainContentView.addSubview(innerContentView)
         
-        innerContentView.addSubview(voiceOverCotnainer)
-        
         exampleContainer.layer.cornerRadius = 5.0
         exampleContainer.layer.borderWidth = 1.0
         exampleContainer.layer.borderColor = UIColor.white.cgColor
         exampleContainer.layer.masksToBounds = true
-        voiceOverCotnainer.addSubview(exampleContainer)
+        innerContentView.addSubview(exampleContainer)
         
         exampleVC.isNavigationBarHidden = true
         self.addChild(exampleVC)
         exampleContainer.addSubview(exampleVC.view)
+        
+        innerContentView.addSubview(labelContainer)
+        
+        for idx in voiceOverGestures.indices {
+            let gestureTitleLabel = UILabel()
+            gestureTitleLabel.text = "\(idx+1). \(voiceOverGestures[idx].title)"
+            gestureTitleLabel.textColor = .white
+            gestureTitleLabel.font = .systemFont(ofSize: 17)
+            gestureLabels.append(gestureTitleLabel)
+            labelContainer.addSubview(gestureTitleLabel)
+            
+            let gestureDescLabel = UILabel()
+            gestureDescLabel.text = voiceOverGestures[idx].desc
+            gestureDescLabel.textColor = .white
+            gestureDescLabel.font = .systemFont(ofSize: 14)
+            gestureLabels.append(gestureDescLabel)
+            labelContainer.addSubview(gestureDescLabel)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,8 +93,20 @@ class Part3Page3ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
         
-        exampleContainer.pin.top().left().width(300).height(200)
+        exampleContainer.pin.right().width(250).height(200).vCenter()
         exampleVC.view.pin.all()
-        voiceOverCotnainer.pin.wrapContent().center()
+        
+        labelContainer.pin.before(of: exampleContainer).left()
+        for idx in gestureLabels.indices {
+            if idx == 0 {
+                gestureLabels[idx].pin.top().horizontally().sizeToFit(.width)
+            }
+            else {
+                let marginTop: CGFloat = ((idx % 2 == 0) ? 10 : 2)
+                gestureLabels[idx].pin.below(of: gestureLabels[idx-1]).horizontally()
+                    .sizeToFit(.width).marginTop(marginTop)
+            }
+        }
+        labelContainer.pin.wrapContent().left().vCenter()
     }
 }
