@@ -39,6 +39,7 @@ class Part2Page4ViewController: PresentationViewController {
     
     private var arrowNextButton = UIButton()
     private var arrowPrevButton = UIButton()
+    private var currentScriptIdx = 0
     
     // MARK: - Life Cycle
     
@@ -84,7 +85,7 @@ class Part2Page4ViewController: PresentationViewController {
         
         scriptTitleLabel.text = "The Relay"
         scriptTitleLabel.numberOfLines = 0
-        scriptTitleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        scriptTitleLabel.font = .systemFont(ofSize: 24, weight: .semibold)
         scriptTitleLabel.textColor = .white
         scriptTitleLabel.textAlignment = .center
         scriptContainerView.addSubview(scriptTitleLabel)
@@ -93,7 +94,7 @@ class Part2Page4ViewController: PresentationViewController {
             let label = UILabel()
             label.text = scripts[idx]
             label.numberOfLines = 0
-            label.font = .systemFont(ofSize: 17)
+            label.font = .systemFont(ofSize: 20)
             label.textColor = .white
             label.textAlignment = .center
             if idx != 0 {
@@ -156,6 +157,12 @@ class Part2Page4ViewController: PresentationViewController {
 
 private extension Part2Page4ViewController {
     @objc func buttonPressed(_ sender: UIButton) {
-        
+        let nextScriptIdx = currentScriptIdx + sender.tag
+
+        if 0 <= nextScriptIdx && nextScriptIdx < scriptLabels.count {
+            scriptLabels[currentScriptIdx].isHidden = true
+            scriptLabels[nextScriptIdx].isHidden = false
+            currentScriptIdx = nextScriptIdx
+        }
     }
 }
