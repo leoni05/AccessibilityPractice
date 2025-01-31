@@ -25,7 +25,6 @@ class ExViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(ExCustomCell.self, forCellReuseIdentifier: ExCustomCell.reuseIdentifier)
         tableView.backgroundColor = nil
-        tableView.bounces = false
         tableView.separatorStyle = .none
         self.view.addSubview(tableView)
     }
