@@ -73,6 +73,7 @@ class IntroPage1ViewController: PresentationViewController {
         
         presenterIcon.image = UIImage(systemName: "person.fill")
         presenterIcon.tintColor = UIColor(named: "NetflixRed")
+        presenterIcon.contentMode = .scaleAspectFit
         mainContentView.addSubview(presenterIcon)
         
         presenterLabel.text = "OO Team yongjun18976"
