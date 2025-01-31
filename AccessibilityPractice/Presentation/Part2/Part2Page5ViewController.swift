@@ -33,6 +33,7 @@ class Part2Page5ViewController: PresentationViewController {
     }
     private var featureCategories = Array<FeatureCategory>()
     private var featureLabelsContainer = UIView()
+    private var selectedFeatureIdx = 0
     
     // MARK: - Life Cycle
     
@@ -59,19 +60,21 @@ class Part2Page5ViewController: PresentationViewController {
         
         for idx in featureCategories.indices {
             let button = featureCategories[idx].button
-            if idx > 0 { button.alpha = 0.2 }
             button.backgroundColor = .white
             button.setTitle(featureCategories[idx].title, for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = .systemFont(ofSize: 14)
             button.layer.masksToBounds = true
             button.layer.cornerRadius = 3
+            button.tag = idx
+            button.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
             featuresContainer.addSubview(button)
             
             let stickView = featureCategories[idx].stickView
             stickView.backgroundColor = .white
-            if idx > 0 { stickView.alpha = 0.0 }
             featuresContainer.addSubview(stickView)
+            
+            setFeatureStatus(idx: idx, active: (idx == selectedFeatureIdx)) 
         }
         
         featureLabelsContainer.layer.cornerRadius = 5.0
@@ -146,5 +149,29 @@ private extension Part2Page5ViewController {
                                 Feature(title: "실시간 말하기", description: "타이핑한 말, 소리 내어 읽어주기.")
                             ])
         ]
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part2Page5ViewController {
+    func setFeatureStatus(idx: Int, active: Bool) {
+        if active {
+            featureCategories[idx].button.alpha = 1.0
+            featureCategories[idx].stickView.alpha = 1.0
+        }
+        else {
+            featureCategories[idx].button.alpha = 0.2
+            featureCategories[idx].stickView.alpha = 0.0
+        }
+    }
+    
+    @objc func buttonPressed(_ sender: UIButton) {
+        if selectedFeatureIdx == sender.tag {
+            return
+        }
+        setFeatureStatus(idx: selectedFeatureIdx, active: false)
+        setFeatureStatus(idx: sender.tag, active: true)
+        selectedFeatureIdx = sender.tag
     }
 }
