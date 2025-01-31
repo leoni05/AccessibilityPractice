@@ -138,8 +138,10 @@ class Part2Page4ViewController: PresentationViewController {
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
-        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        arrowNextButton.pin.right(20).bottom(self.view.pin.safeArea+10).size(40)
+        arrowPrevButton.pin.before(of: arrowNextButton, aligned: .center).size(40).marginRight(10)
+        
+        innerContentView.pin.below(of: subtitleLabel).above(of: arrowPrevButton).left().right(20)
         
         scriptContainerView.pin.horizontally(50)
         scriptTitleLabel.pin.top().horizontally().sizeToFit(.width)
@@ -147,9 +149,6 @@ class Part2Page4ViewController: PresentationViewController {
             scriptLabels[idx].pin.below(of: scriptTitleLabel).horizontally().marginTop(8).sizeToFit(.width)
         }
         scriptContainerView.pin.wrapContent().center()
-        
-        arrowNextButton.pin.right(20).bottom(self.view.pin.safeArea+10).size(40)
-        arrowPrevButton.pin.before(of: arrowNextButton, aligned: .center).size(40).marginRight(10)
     }
 }
 
