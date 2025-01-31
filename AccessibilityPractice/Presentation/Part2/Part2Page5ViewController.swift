@@ -32,6 +32,7 @@ class Part2Page5ViewController: PresentationViewController {
         let features: Array<Feature>
     }
     private var featureCategories = Array<FeatureCategory>()
+    private var featureLabelsContainer = UIView()
     
     // MARK: - Life Cycle
     
@@ -67,6 +68,12 @@ class Part2Page5ViewController: PresentationViewController {
             button.layer.cornerRadius = 3
             featuresContainer.addSubview(button)
         }
+        
+        featureLabelsContainer.layer.cornerRadius = 5.0
+        featureLabelsContainer.layer.borderWidth = 1.0
+        featureLabelsContainer.layer.borderColor = UIColor.white.cgColor
+        featureLabelsContainer.layer.masksToBounds = true
+        featuresContainer.addSubview(featureLabelsContainer)
     }
     
     override func viewDidLayoutSubviews() {
@@ -88,6 +95,11 @@ class Part2Page5ViewController: PresentationViewController {
                 button.pin.below(of: featureCategories[idx-1].button, aligned: .left)
                     .width(80).height(35).marginTop(5)
             }
+        }
+        if let firstButton = featureCategories.first?.button,
+           let lastButton = featureCategories.last?.button {
+            featureLabelsContainer.pin.after(of: firstButton, aligned: .top).bottom(to: lastButton.edge.bottom)
+                .width(400).marginLeft(10)
         }
         featuresContainer.pin.wrapContent().center()
     }
