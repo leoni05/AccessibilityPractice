@@ -37,6 +37,9 @@ class Part2Page4ViewController: PresentationViewController {
         "Apple products are designed for every athlete. And every body."
     ]
     
+    private var arrowNextButton = UIButton()
+    private var arrowPrevButton = UIButton()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -99,6 +102,18 @@ class Part2Page4ViewController: PresentationViewController {
             scriptLabels.append(label)
             scriptContainerView.addSubview(label)
         }
+        
+        arrowNextButton.setImage(UIImage(systemName: "arrowtriangle.right.fill"), for: .normal)
+        arrowNextButton.tintColor = .white
+        arrowNextButton.tag = 1
+        arrowNextButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        mainContentView.addSubview(arrowNextButton)
+        
+        arrowPrevButton.setImage(UIImage(systemName: "arrowtriangle.left.fill"), for: .normal)
+        arrowPrevButton.tintColor = .white
+        arrowPrevButton.tag = -1
+        arrowPrevButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        mainContentView.addSubview(arrowPrevButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -131,5 +146,16 @@ class Part2Page4ViewController: PresentationViewController {
             scriptLabels[idx].pin.below(of: scriptTitleLabel).horizontally().marginTop(8).sizeToFit(.width)
         }
         scriptContainerView.pin.wrapContent().center()
+        
+        arrowNextButton.pin.right(20).bottom(self.view.pin.safeArea+10).size(40)
+        arrowPrevButton.pin.before(of: arrowNextButton, aligned: .center).size(40).marginRight(10)
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part2Page4ViewController {
+    @objc func buttonPressed(_ sender: UIButton) {
+        
     }
 }
