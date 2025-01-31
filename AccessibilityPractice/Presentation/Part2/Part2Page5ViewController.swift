@@ -126,7 +126,7 @@ class Part2Page5ViewController: PresentationViewController {
             }
             
             let stickView = featureCategories[idx].stickView
-            stickView.pin.after(of: button, aligned: .center).width(10).height(2)
+            stickView.pin.after(of: button, aligned: .center).width(15).height(2)
             
             for fIdx in featureCategories[idx].featureLabels.indices {
                 let label = featureCategories[idx].featureLabels[fIdx]
@@ -145,7 +145,7 @@ class Part2Page5ViewController: PresentationViewController {
         if let firstButton = featureCategories.first?.button,
            let lastButton = featureCategories.last?.button {
             featureLabelsContainer.pin.after(of: firstButton, aligned: .top).bottom(to: lastButton.edge.bottom)
-                .width(400).marginLeft(10)
+                .width(400).marginLeft(15)
         }
         featuresContainer.pin.wrapContent().center()
     }
