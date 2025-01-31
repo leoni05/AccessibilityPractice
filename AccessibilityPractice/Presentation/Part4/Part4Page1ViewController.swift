@@ -61,7 +61,7 @@ class Part4Page1ViewController: PresentationViewController {
         titleLabel.sizeToFit()
         mainContentView.addSubview(titleLabel)
         
-        subTitleLabel1.text = "송년회 베팅 앱 Voice Over 적용기"
+        subTitleLabel1.text = "송년회 베팅 앱 VoiceOver 적용기"
         subTitleLabel1.font = .systemFont(ofSize: 17, weight: .light)
         subTitleLabel1.textColor = .white
         subTitleLabel1.sizeToFit()

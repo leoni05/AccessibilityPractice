@@ -20,7 +20,7 @@ class IntroPage2ViewController: PresentationViewController {
     private var contentItems: Array<String> = [
         "1. 접근성이란 무엇인가",
         "2. Apple의 접근성",
-        "3. iOS 접근성 구현 방법(Voice Over)",
+        "3. iOS 접근성 구현 방법(VoiceOver)",
         "4. 발표를 마치며"
     ]
     private var contentItemButtons = Array<ContentItemButton>()

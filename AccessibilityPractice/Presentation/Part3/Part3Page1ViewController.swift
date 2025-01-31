@@ -55,13 +55,13 @@ class Part3Page1ViewController: PresentationViewController {
         partLabel.sizeToFit()
         mainContentView.addSubview(partLabel)
         
-        titleLabel.text = "iOS 접근성 구현 방법(Voice Over)"
+        titleLabel.text = "iOS 접근성 구현 방법(VoiceOver)"
         titleLabel.font = .systemFont(ofSize: 25, weight: .heavy)
         titleLabel.textColor = .white
         titleLabel.sizeToFit()
         mainContentView.addSubview(titleLabel)
         
-        subTitleLabel1.text = "Voice Over 소개"
+        subTitleLabel1.text = "VoiceOver 소개"
         subTitleLabel1.font = .systemFont(ofSize: 17, weight: .light)
         subTitleLabel1.textColor = .white
         subTitleLabel1.sizeToFit()
