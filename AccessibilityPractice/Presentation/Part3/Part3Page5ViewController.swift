@@ -118,12 +118,7 @@ class Part3Page5ViewController: PresentationViewController {
         propertyContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-#include <stdio.h>
-int main()
-{
-    printf("hello world\\n");
-    return 0;
-}
+self.isAccessibilityElement = true
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
