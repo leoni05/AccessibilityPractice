@@ -21,6 +21,11 @@
 		D099CD682D4CD3920043247C /* ExCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD672D4CD3920043247C /* ExCustomCell.swift */; };
 		D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */; };
 		D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE43A2D4DDD4A0094F10A /* ExCustomButton.swift */; };
+		D09FE43D2D4DE6260094F10A /* ExCustomButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE43C2D4DE6260094F10A /* ExCustomButton1.swift */; };
+		D09FE43F2D4DE6340094F10A /* ExCustomButton2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE43E2D4DE6340094F10A /* ExCustomButton2.swift */; };
+		D09FE4412D4DE63A0094F10A /* ExCustomButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4402D4DE63A0094F10A /* ExCustomButton3.swift */; };
+		D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4422D4DE6440094F10A /* ExCustomButton4.swift */; };
+		D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4442D4DE64C0094F10A /* ExCustomButton5.swift */; };
 		D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */; };
 		D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */; };
 		D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA3A462CEB8441006118DB /* SideButtonView.swift */; };
@@ -60,6 +65,11 @@
 		D099CD672D4CD3920043247C /* ExCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomCell.swift; sourceTree = "<group>"; };
 		D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDetailViewController.swift; sourceTree = "<group>"; };
 		D09FE43A2D4DDD4A0094F10A /* ExCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton.swift; sourceTree = "<group>"; };
+		D09FE43C2D4DE6260094F10A /* ExCustomButton1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton1.swift; sourceTree = "<group>"; };
+		D09FE43E2D4DE6340094F10A /* ExCustomButton2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton2.swift; sourceTree = "<group>"; };
+		D09FE4402D4DE63A0094F10A /* ExCustomButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton3.swift; sourceTree = "<group>"; };
+		D09FE4422D4DE6440094F10A /* ExCustomButton4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton4.swift; sourceTree = "<group>"; };
+		D09FE4442D4DE64C0094F10A /* ExCustomButton5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton5.swift; sourceTree = "<group>"; };
 		D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage2ViewController.swift; sourceTree = "<group>"; };
 		D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page4ViewController.swift; sourceTree = "<group>"; };
 		D0DA3A462CEB8441006118DB /* SideButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideButtonView.swift; sourceTree = "<group>"; };
@@ -156,6 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				D09FE43A2D4DDD4A0094F10A /* ExCustomButton.swift */,
+				D09FE43C2D4DE6260094F10A /* ExCustomButton1.swift */,
+				D09FE43E2D4DE6340094F10A /* ExCustomButton2.swift */,
+				D09FE4402D4DE63A0094F10A /* ExCustomButton3.swift */,
+				D09FE4422D4DE6440094F10A /* ExCustomButton4.swift */,
+				D09FE4442D4DE64C0094F10A /* ExCustomButton5.swift */,
 			);
 			path = CustomButtonExample;
 			sourceTree = "<group>";
@@ -349,8 +364,11 @@
 				D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */,
 				D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */,
 				D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */,
+				D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */,
+				D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */,
 				D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */,
 				D0E0C34D2D4B8BB900A7238F /* Part3Page4ViewController.swift in Sources */,
+				D09FE43F2D4DE6340094F10A /* ExCustomButton2.swift in Sources */,
 				D0E950CF2CEF51A0006E4C1E /* Part4Page1ViewController.swift in Sources */,
 				D0E0C3532D4B8C1900A7238F /* Part3Page7ViewController.swift in Sources */,
 				D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */,
@@ -365,6 +383,8 @@
 				D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */,
 				D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */,
 				D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */,
+				D09FE43D2D4DE6260094F10A /* ExCustomButton1.swift in Sources */,
+				D09FE4412D4DE63A0094F10A /* ExCustomButton3.swift in Sources */,
 				D0E0C34B2D4B8BA700A7238F /* Part3Page3ViewController.swift in Sources */,
 				D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */,
 				D0F78AFC2CEE1980009534F5 /* PresentationViewController.swift in Sources */,
