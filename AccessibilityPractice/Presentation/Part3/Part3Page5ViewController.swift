@@ -29,6 +29,7 @@ class Part3Page5ViewController: PresentationViewController {
     private var propertyLabel = UILabel()
     private var propertyDescLabel = UILabel()
     private var editorScrollView = UIScrollView()
+    private var codeLabel = UILabel()
     
     // MARK: - Life Cycle
     
@@ -99,6 +100,19 @@ class Part3Page5ViewController: PresentationViewController {
         editorScrollView.layer.borderColor = UIColor.white.cgColor
         editorScrollView.layer.masksToBounds = true
         propertyContainer.addSubview(editorScrollView)
+        
+        codeLabel.text = """
+#include <stdio.h>
+int main()
+{
+    printf("hello world\\n");
+    return 0;
+}
+"""
+        codeLabel.font = .systemFont(ofSize: 14)
+        codeLabel.textColor = .white
+        codeLabel.numberOfLines = 0
+        editorScrollView.addSubview(codeLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -127,5 +141,9 @@ class Part3Page5ViewController: PresentationViewController {
         editorScrollView.pin.below(of: propertyDescLabel).horizontally().height(120)
             .marginTop(10)
         propertyContainer.pin.wrapContent().left().vCenter()
+        
+        codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
+        editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
+                                              height: codeLabel.frame.maxY + 12)
     }
 }
