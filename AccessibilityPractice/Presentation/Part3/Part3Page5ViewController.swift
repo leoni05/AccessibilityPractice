@@ -25,6 +25,9 @@ class Part3Page5ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var propertyLabel = UILabel()
+    private var propertyDescLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -75,6 +78,17 @@ class Part3Page5ViewController: PresentationViewController {
         afterLabel.layer.cornerRadius = 3.0
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
+        
+        propertyLabel.text = "isAccessibilityElement"
+        propertyLabel.font = .systemFont(ofSize: 17)
+        propertyLabel.textColor = .white
+        innerContentView.addSubview(propertyLabel)
+        
+        propertyDescLabel.text = "요소가 보조 앱이 접근할 수 있는 접근성 요소인지를 나타내는 Bool 값."
+        propertyDescLabel.font = .systemFont(ofSize: 14)
+        propertyDescLabel.textColor = .white
+        propertyDescLabel.numberOfLines = 0
+        innerContentView.addSubview(propertyDescLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,5 +110,10 @@ class Part3Page5ViewController: PresentationViewController {
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
         exampleContainer.pin.wrapContent().right().vCenter()
+        
+        propertyLabel.pin.top(30).left().right(to: exampleContainer.edge.left)
+            .marginRight(10).sizeToFit(.width)
+        propertyDescLabel.pin.below(of: propertyLabel).left().right(to: exampleContainer.edge.left)
+            .marginRight(10).marginTop(10).sizeToFit(.width)
     }
 }
