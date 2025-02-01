@@ -19,6 +19,12 @@ class Part3Page5ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var exampleContainer = UIView()
+    private var beforeContainer = UIView()
+    private var beforeLabel = UILabel()
+    private var afterContainer = UIView()
+    private var afterLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +43,38 @@ class Part3Page5ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        innerContentView.addSubview(exampleContainer)
+        
+        beforeContainer.layer.cornerRadius = 5.0
+        beforeContainer.layer.borderWidth = 1.0
+        beforeContainer.layer.borderColor = UIColor.white.cgColor
+        beforeContainer.layer.masksToBounds = true
+        exampleContainer.addSubview(beforeContainer)
+        
+        beforeLabel.text = "Before"
+        beforeLabel.textColor = .black
+        beforeLabel.font = .systemFont(ofSize: 13)
+        beforeLabel.backgroundColor = .white
+        beforeLabel.textAlignment = .center
+        beforeLabel.layer.cornerRadius = 3.0
+        beforeLabel.layer.masksToBounds = true
+        exampleContainer.addSubview(beforeLabel)
+        
+        afterContainer.layer.cornerRadius = 5.0
+        afterContainer.layer.borderWidth = 1.0
+        afterContainer.layer.borderColor = UIColor.white.cgColor
+        afterContainer.layer.masksToBounds = true
+        exampleContainer.addSubview(afterContainer)
+        
+        afterLabel.text = "After"
+        afterLabel.textColor = .black
+        afterLabel.font = .systemFont(ofSize: 13)
+        afterLabel.backgroundColor = .white
+        afterLabel.textAlignment = .center
+        afterLabel.layer.cornerRadius = 3.0
+        afterLabel.layer.masksToBounds = true
+        exampleContainer.addSubview(afterLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +86,15 @@ class Part3Page5ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+     
+        beforeContainer.pin.top().left().width(250).height(80)
+        beforeLabel.pin.left(to: beforeContainer.edge.left).top(to: beforeContainer.edge.top)
+            .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        afterContainer.pin.below(of: beforeContainer).left().width(250).height(80).marginTop(20)
+        afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
+            .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        exampleContainer.pin.wrapContent().right().vCenter()
     }
 }
