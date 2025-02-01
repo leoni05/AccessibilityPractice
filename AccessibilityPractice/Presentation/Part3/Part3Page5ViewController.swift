@@ -25,6 +25,8 @@ class Part3Page5ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var customButton = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
+    
     private var propertyContainer = UIView()
     private var propertyLabel = UILabel()
     private var propertyDescLabel = UILabel()
@@ -66,6 +68,8 @@ class Part3Page5ViewController: PresentationViewController {
         beforeLabel.layer.cornerRadius = 3.0
         beforeLabel.layer.masksToBounds = true
         exampleContainer.addSubview(beforeLabel)
+        
+        beforeContainer.addSubview(customButton)
         
         afterContainer.layer.cornerRadius = 5.0
         afterContainer.layer.borderWidth = 1.0
@@ -132,6 +136,8 @@ int main()
         afterContainer.pin.below(of: beforeContainer).left().width(250).height(80).marginTop(20)
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        customButton.pin.center().size(48)
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
