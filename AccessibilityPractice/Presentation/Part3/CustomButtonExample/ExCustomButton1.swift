@@ -20,7 +20,6 @@ class ExCustomButton1: UIView {
         didSet {
             let imageNameSuffix = (isSelected ? ".fill" : "")
             imageView.image = UIImage(systemName: (imageName ?? "") + imageNameSuffix)
-            self.accessibilityValue = (isSelected ? "켬" : "끔")
         }
     }
     
@@ -37,12 +36,6 @@ class ExCustomButton1: UIView {
         imageView.tintColor = .white
         imageView.image = UIImage(systemName: imageName)
         self.addSubview(imageView)
-        
-        self.isAccessibilityElement = true
-        self.accessibilityTraits = .button
-        self.accessibilityLabel = titleString
-        self.accessibilityValue = "끔"
-        self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTouched(_:)))
         tapGesture.numberOfTapsRequired = 1

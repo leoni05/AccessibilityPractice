@@ -42,7 +42,6 @@ class ExCustomButton5: UIView {
         self.accessibilityTraits = .button
         self.accessibilityLabel = titleString
         self.accessibilityValue = "끔"
-        self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTouched(_:)))
         tapGesture.numberOfTapsRequired = 1
