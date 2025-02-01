@@ -25,7 +25,13 @@ class Part3Page5ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
-    private var customButton = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var beforeButton1 = ExCustomButton1(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var beforeButton2 = ExCustomButton1(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var beforeButton3 = ExCustomButton1(titleString: "알림", imageName: "bell")
+    
+    private var afterButton1 = ExCustomButton2(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var afterButton2 = ExCustomButton2(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var afterButton3 = ExCustomButton2(titleString: "알림", imageName: "bell")
     
     private var propertyContainer = UIView()
     private var propertyLabel = UILabel()
@@ -69,8 +75,6 @@ class Part3Page5ViewController: PresentationViewController {
         beforeLabel.layer.masksToBounds = true
         exampleContainer.addSubview(beforeLabel)
         
-        beforeContainer.addSubview(customButton)
-        
         afterContainer.layer.cornerRadius = 5.0
         afterContainer.layer.borderWidth = 1.0
         afterContainer.layer.borderColor = UIColor.white.cgColor
@@ -85,6 +89,14 @@ class Part3Page5ViewController: PresentationViewController {
         afterLabel.layer.cornerRadius = 3.0
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
+        
+        beforeContainer.addSubview(beforeButton1)
+        beforeContainer.addSubview(beforeButton2)
+        beforeContainer.addSubview(beforeButton3)
+        
+        afterContainer.addSubview(afterButton1)
+        afterContainer.addSubview(afterButton2)
+        afterContainer.addSubview(afterButton3)
         
         innerContentView.addSubview(propertyContainer)
         
@@ -137,7 +149,13 @@ int main()
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
-        customButton.pin.center().size(48)
+        beforeButton2.pin.center().size(48)
+        beforeButton1.pin.before(of: beforeButton2, aligned: .center).size(48).marginRight(10)
+        beforeButton3.pin.after(of: beforeButton2, aligned: .center).size(48).marginLeft(10)
+        
+        afterButton2.pin.center().size(48)
+        afterButton1.pin.before(of: afterButton2, aligned: .center).size(48).marginRight(10)
+        afterButton3.pin.after(of: afterButton2, aligned: .center).size(48).marginLeft(10)
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
