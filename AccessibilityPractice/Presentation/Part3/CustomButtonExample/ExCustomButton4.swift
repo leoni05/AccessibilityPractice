@@ -38,8 +38,8 @@ class ExCustomButton4: UIView {
         self.addSubview(imageView)
         
         self.isAccessibilityElement = true
-        self.accessibilityTraits = .button
         self.accessibilityLabel = titleString
+        self.accessibilityTraits = .button
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTouched(_:)))
         tapGesture.numberOfTapsRequired = 1

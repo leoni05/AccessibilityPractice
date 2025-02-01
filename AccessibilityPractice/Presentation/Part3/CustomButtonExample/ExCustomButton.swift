@@ -39,8 +39,8 @@ class ExCustomButton: UIView {
         self.addSubview(imageView)
         
         self.isAccessibilityElement = true
-        self.accessibilityTraits = .button
         self.accessibilityLabel = titleString
+        self.accessibilityTraits = .button
         self.accessibilityValue = "끔"
         self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
         
