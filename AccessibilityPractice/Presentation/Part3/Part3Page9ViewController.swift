@@ -119,7 +119,7 @@ class Part3Page9ViewController: PresentationViewController {
         
         codeLabel.text = """
 self.isAccessibilityElement = true
-self.accessibilityLabel = titleString
+self.accessibilityLabel = "좋아요"
 self.accessibilityTraits = .button
 self.accessibilityValue = "끔"
 self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."

@@ -119,7 +119,7 @@ class Part3Page6ViewController: PresentationViewController {
         
         codeLabel.text = """
 self.isAccessibilityElement = true
-self.accessibilityLabel = titleString
+self.accessibilityLabel = "좋아요"
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
