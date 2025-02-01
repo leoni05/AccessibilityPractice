@@ -46,7 +46,7 @@ extension ExViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ExCustomCell.reuseIdentifier, for: indexPath) as? ExCustomCell else {
             return UITableViewCell()
         }
-        cell.label.text = "Cell \(indexPath.row)"
+        cell.label.text = "Item \(indexPath.row)"
         return cell
     }
 }
@@ -60,7 +60,7 @@ extension ExViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ExDetailViewController()
-        vc.label.text = "Cell \(indexPath.row) selected"
+        vc.label.text = "Item \(indexPath.row) selected"
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
