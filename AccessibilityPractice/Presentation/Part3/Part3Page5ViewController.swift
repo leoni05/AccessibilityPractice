@@ -25,8 +25,10 @@ class Part3Page5ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var propertyContainer = UIView()
     private var propertyLabel = UILabel()
     private var propertyDescLabel = UILabel()
+    private var editorScrollView = UIScrollView()
     
     // MARK: - Life Cycle
     
@@ -79,16 +81,24 @@ class Part3Page5ViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
+        innerContentView.addSubview(propertyContainer)
+        
         propertyLabel.text = "isAccessibilityElement"
         propertyLabel.font = .systemFont(ofSize: 17)
         propertyLabel.textColor = .white
-        innerContentView.addSubview(propertyLabel)
+        propertyContainer.addSubview(propertyLabel)
         
         propertyDescLabel.text = "요소가 보조 앱이 접근할 수 있는 접근성 요소인지를 나타내는 Bool 값."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
-        propertyDescLabel.numberOfLines = 0
-        innerContentView.addSubview(propertyDescLabel)
+        propertyDescLabel.numberOfLines = 3
+        propertyContainer.addSubview(propertyDescLabel)
+        
+        editorScrollView.layer.cornerRadius = 5.0
+        editorScrollView.layer.borderWidth = 1.0
+        editorScrollView.layer.borderColor = UIColor.white.cgColor
+        editorScrollView.layer.masksToBounds = true
+        propertyContainer.addSubview(editorScrollView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -111,9 +121,11 @@ class Part3Page5ViewController: PresentationViewController {
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
-        propertyLabel.pin.top(30).left().right(to: exampleContainer.edge.left)
-            .marginRight(10).sizeToFit(.width)
-        propertyDescLabel.pin.below(of: propertyLabel).left().right(to: exampleContainer.edge.left)
-            .marginRight(10).marginTop(10).sizeToFit(.width)
+        propertyContainer.pin.left().right(to: exampleContainer.edge.left).marginRight(30)
+        propertyLabel.pin.top().horizontally().sizeToFit(.width)
+        propertyDescLabel.pin.below(of: propertyLabel).horizontally().marginTop(10).sizeToFit(.width)
+        editorScrollView.pin.below(of: propertyDescLabel).horizontally().height(120)
+            .marginTop(10)
+        propertyContainer.pin.wrapContent().left().vCenter()
     }
 }
