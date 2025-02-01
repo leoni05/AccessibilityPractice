@@ -105,7 +105,7 @@ class Part3Page7ViewController: PresentationViewController {
         propertyLabel.textColor = .white
         propertyContainer.addSubview(propertyLabel)
         
-        propertyDescLabel.text = "접근성 요소의 특징을 나타남(button, image, link 등)."
+        propertyDescLabel.text = "접근성 요소의 종류를 나타내는 값(button, image, link, searchField 등)."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
         propertyDescLabel.numberOfLines = 3

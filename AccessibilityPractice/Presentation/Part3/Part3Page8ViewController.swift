@@ -105,7 +105,7 @@ class Part3Page8ViewController: PresentationViewController {
         propertyLabel.textColor = .white
         propertyContainer.addSubview(propertyLabel)
         
-        propertyDescLabel.text = "접근성 요소의 현재 값을 나타내는 문자열."
+        propertyDescLabel.text = "접근성 요소의 현재 값을 나타내는 문자열. 요소가 값을 가지고 있으나 화면에 나타나지 않을 때 사용."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
         propertyDescLabel.numberOfLines = 3

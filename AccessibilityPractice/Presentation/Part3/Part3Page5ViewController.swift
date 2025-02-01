@@ -105,7 +105,7 @@ class Part3Page5ViewController: PresentationViewController {
         propertyLabel.textColor = .white
         propertyContainer.addSubview(propertyLabel)
         
-        propertyDescLabel.text = "요소가 보조 앱이 접근할 수 있는 접근성 요소인지를 나타내는 Bool 값."
+        propertyDescLabel.text = "요소가 보조 기능이 접근할 수 있는 접근성 요소인지를 나타내는 Bool 값."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
         propertyDescLabel.numberOfLines = 3
