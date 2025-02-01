@@ -21,8 +21,8 @@ class Part3Page4ViewController: PresentationViewController {
     
     private let accessibilityProperties: Array<String> = [
         "isAccessibilityElement",
-        "accessibilityTraits",
         "accessibilityLabel",
+        "accessibilityTraits",
         "accessibilityValue",
         "accessibilityHint"
     ]
