@@ -72,12 +72,12 @@ class Part4Page9ViewController: PresentationViewController {
         
         innerContentView.addSubview(featureContainer)
         
-        featureLabel.text = "기능 label"
+        featureLabel.text = "뒤로 가기"
         featureLabel.font = .systemFont(ofSize: 17)
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "기능 설명 label"
+        featureDescLabel.text = "뒤로 가기 제스처가 수행되었을 경우, override 한 accessibilityPerformEscape 함수 내에서 뒤로 가기 동작 수행"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
@@ -90,7 +90,10 @@ class Part4Page9ViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-Code Label
+override func accessibilityPerformEscape() -> Bool {
+    self.backButtonPressed()
+    return true
+}
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
