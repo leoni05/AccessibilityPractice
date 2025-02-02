@@ -22,6 +22,9 @@ class Part4Page6ViewController: PresentationViewController {
     private var controlContainer = UIView()
     private var controlLabel = UILabel()
     
+    private var controlWrapper = UIView()
+    private var exampleLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -55,6 +58,14 @@ class Part4Page6ViewController: PresentationViewController {
         controlLabel.layer.cornerRadius = 3.0
         controlLabel.layer.masksToBounds = true
         innerContentView.addSubview(controlLabel)
+        
+        controlContainer.addSubview(controlWrapper)
+        
+        exampleLabel.text = "손쉬운 사용"
+        exampleLabel.font = .systemFont(ofSize: 15)
+        exampleLabel.textColor = .white
+        exampleLabel.sizeToFit()
+        controlWrapper.addSubview(exampleLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -70,5 +81,9 @@ class Part4Page6ViewController: PresentationViewController {
         controlContainer.pin.center().width(500).height(120)
         controlLabel.pin.left(to: controlContainer.edge.left).top(to: controlContainer.edge.top)
             .width(100).height(24).marginLeft(8).marginTop(-12)
+        
+        controlWrapper.pin.horizontally()
+        exampleLabel.pin.top().left()
+        controlWrapper.pin.wrapContent().center()
     }
 }
