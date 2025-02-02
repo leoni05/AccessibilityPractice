@@ -84,12 +84,12 @@ class Part4Page7ViewController: PresentationViewController {
         
         innerContentView.addSubview(featureContainer)
         
-        featureLabel.text = "기능 label"
+        featureLabel.text = "커스텀 토글 버튼"
         featureLabel.font = .systemFont(ofSize: 17)
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "기능 설명 label"
+        featureDescLabel.text = "프레임워크에서 제공하는 기본 기능만으로는 요구사항 구현이 어려울 경우, 레이아웃 및 기능을 커스텀 하여 구현"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
@@ -102,7 +102,17 @@ class Part4Page7ViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-Code Label
+self.isAccessibilityElement = true
+self.accessibilityLabel = "좋아요"
+self.accessibilityTraits = .button
+self.accessibilityValue = "끔"
+self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
+...
+private var isSelected = false {
+    didSet {
+        self.accessibilityValue = (isSelected ? "켬" : "끔")
+    }
+}
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
