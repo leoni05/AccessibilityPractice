@@ -19,6 +19,9 @@ class Part4Page6ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var controlContainer = UIView()
+    private var controlLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +40,21 @@ class Part4Page6ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        controlContainer.layer.cornerRadius = 5.0
+        controlContainer.layer.borderWidth = 1.0
+        controlContainer.layer.borderColor = UIColor.white.cgColor
+        controlContainer.layer.masksToBounds = true
+        innerContentView.addSubview(controlContainer)
+        
+        controlLabel.text = "UIKit Controls"
+        controlLabel.textColor = .black
+        controlLabel.font = .systemFont(ofSize: 13)
+        controlLabel.backgroundColor = .white
+        controlLabel.textAlignment = .center
+        controlLabel.layer.cornerRadius = 3.0
+        controlLabel.layer.masksToBounds = true
+        innerContentView.addSubview(controlLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +66,9 @@ class Part4Page6ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        controlContainer.pin.center().width(500).height(120)
+        controlLabel.pin.left(to: controlContainer.edge.left).top(to: controlContainer.edge.top)
+            .width(100).height(24).marginLeft(8).marginTop(-12)
     }
 }
