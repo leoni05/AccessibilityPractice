@@ -26,6 +26,7 @@ class Part4Page6ViewController: PresentationViewController {
     private var exampleLabel = UILabel()
     private var exampleButton = UIButton()
     private var exampleSwitch = UISwitch()
+    private var exampleSlider = UISlider()
     
     // MARK: - Life Cycle
     
@@ -81,6 +82,12 @@ class Part4Page6ViewController: PresentationViewController {
         
         exampleSwitch.onTintColor = UIColor(named: "NetflixRed")
         controlWrapper.addSubview(exampleSwitch)
+        
+        exampleSlider.minimumValue = 0
+        exampleSlider.maximumValue = 100
+        exampleSlider.tintColor = UIColor(named: "NetflixRed")
+        exampleSlider.value = 50
+        controlWrapper.addSubview(exampleSlider)
     }
     
     override func viewDidLayoutSubviews() {
@@ -101,6 +108,7 @@ class Part4Page6ViewController: PresentationViewController {
         exampleLabel.pin.top().left()
         exampleButton.pin.after(of: exampleLabel, aligned: .center).width(100).height(30).marginLeft(15)
         exampleSwitch.pin.after(of: exampleButton, aligned: .center).width(51).height(31).marginLeft(15)
+        exampleSlider.pin.after(of: exampleSwitch, aligned: .center).width(120).height(30).marginLeft(15)
         controlWrapper.pin.wrapContent().center()
     }
 }
