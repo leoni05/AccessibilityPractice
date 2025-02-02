@@ -25,6 +25,14 @@ class Part4Page7ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var beforeButton1 = ExCustomButton1(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var beforeButton2 = ExCustomButton1(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var beforeButton3 = ExCustomButton1(titleString: "알림", imageName: "bell")
+    
+    private var afterButton1 = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var afterButton2 = ExCustomButton(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var afterButton3 = ExCustomButton(titleString: "알림", imageName: "bell")
+    
     private var featureContainer = UIView()
     private var featureLabel = UILabel()
     private var featureDescLabel = UILabel()
@@ -82,6 +90,14 @@ class Part4Page7ViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
+        beforeContainer.addSubview(beforeButton1)
+        beforeContainer.addSubview(beforeButton2)
+        beforeContainer.addSubview(beforeButton3)
+        
+        afterContainer.addSubview(afterButton1)
+        afterContainer.addSubview(afterButton2)
+        afterContainer.addSubview(afterButton3)
+        
         innerContentView.addSubview(featureContainer)
         
         featureLabel.text = "커스텀 토글 버튼"
@@ -137,6 +153,14 @@ private var isSelected = false {
         afterContainer.pin.below(of: beforeContainer).left().width(250).height(80).marginTop(20)
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        beforeButton2.pin.center().size(48)
+        beforeButton1.pin.before(of: beforeButton2, aligned: .center).size(48).marginRight(10)
+        beforeButton3.pin.after(of: beforeButton2, aligned: .center).size(48).marginLeft(10)
+        
+        afterButton2.pin.center().size(48)
+        afterButton1.pin.before(of: afterButton2, aligned: .center).size(48).marginRight(10)
+        afterButton3.pin.after(of: afterButton2, aligned: .center).size(48).marginLeft(10)
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
