@@ -24,6 +24,7 @@ class Part4Page6ViewController: PresentationViewController {
     
     private var controlWrapper = UIView()
     private var exampleLabel = UILabel()
+    private var exampleButton = UIButton()
     
     // MARK: - Life Cycle
     
@@ -66,6 +67,16 @@ class Part4Page6ViewController: PresentationViewController {
         exampleLabel.textColor = .white
         exampleLabel.sizeToFit()
         controlWrapper.addSubview(exampleLabel)
+        
+        exampleButton.setImage(UIImage(systemName: "accessibility"), for: .normal)
+        exampleButton.tintColor = .black
+        exampleButton.backgroundColor = .white
+        exampleButton.setTitle(" 손쉬운 사용", for: .normal)
+        exampleButton.setTitleColor(.black, for: .normal)
+        exampleButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .medium)
+        exampleButton.layer.masksToBounds = true
+        exampleButton.layer.cornerRadius = 3
+        controlWrapper.addSubview(exampleButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -84,6 +95,7 @@ class Part4Page6ViewController: PresentationViewController {
         
         controlWrapper.pin.horizontally()
         exampleLabel.pin.top().left()
+        exampleButton.pin.after(of: exampleLabel, aligned: .center).width(100).height(30).marginLeft(15)
         controlWrapper.pin.wrapContent().center()
     }
 }
