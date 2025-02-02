@@ -16,8 +16,7 @@ class Part4Page10ViewController: PresentationViewController {
     private var mainContentView = UIView()
     private var titleLabel = UILabel()
     private var subtitleLabel = UILabel()
-    
-    private var innerContentView = UIView()
+    private var contentLabel = UILabel()
     
     // MARK: - Life Cycle
     
@@ -36,7 +35,11 @@ class Part4Page10ViewController: PresentationViewController {
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
         
-        mainContentView.addSubview(innerContentView)
+        contentLabel.text = "어렵지 않아요."
+        contentLabel.font = .systemFont(ofSize: 20)
+        contentLabel.textColor = .white
+        contentLabel.sizeToFit()
+        mainContentView.addSubview(contentLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,8 +48,6 @@ class Part4Page10ViewController: PresentationViewController {
         mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
-        
-        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        contentLabel.pin.center()
     }
 }
