@@ -31,6 +31,16 @@ class Part4Page8ViewController: PresentationViewController {
     private var editorScrollView = UIScrollView()
     private var codeLabel = UILabel()
     
+    private var isBeforeLoading = false
+    private var beforeReloadButton = UIButton()
+    private var beforeResultLabel = UILabel()
+    private var beforeLoadingIndicator = UIActivityIndicatorView()
+    
+    private var isAfterLoading = false
+    private var afterReloadButton = UIButton()
+    private var afterResultLabel = UILabel()
+    private var afterLoadingIndicator = UIActivityIndicatorView()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -82,6 +92,36 @@ class Part4Page8ViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
+        beforeReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
+        beforeReloadButton.tintColor = .white
+        beforeReloadButton.addTarget(self, action: #selector(beforeReloadButtonPressed(_:)), for: .touchUpInside)
+        beforeContainer.addSubview(beforeReloadButton)
+        
+        beforeResultLabel.text = ""
+        beforeResultLabel.font = .systemFont(ofSize: 14)
+        beforeResultLabel.textColor = .white
+        beforeResultLabel.sizeToFit()
+        beforeContainer.addSubview(beforeResultLabel)
+        
+        beforeLoadingIndicator.color = .white
+        beforeLoadingIndicator.isHidden = true
+        beforeContainer.addSubview(beforeLoadingIndicator)
+        
+        afterReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
+        afterReloadButton.tintColor = .white
+        afterReloadButton.addTarget(self, action: #selector(afterReloadButtonPressed(_:)), for: .touchUpInside)
+        afterContainer.addSubview(afterReloadButton)
+        
+        afterResultLabel.text = ""
+        afterResultLabel.font = .systemFont(ofSize: 14)
+        afterResultLabel.textColor = .white
+        afterResultLabel.sizeToFit()
+        afterContainer.addSubview(afterResultLabel)
+        
+        afterLoadingIndicator.color = .white
+        afterLoadingIndicator.isHidden = true
+        afterContainer.addSubview(afterLoadingIndicator)
+        
         innerContentView.addSubview(featureContainer)
         
         featureLabel.text = "기능 label"
@@ -128,6 +168,14 @@ Code Label
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
+        beforeReloadButton.pin.right(5).vCenter().size(40)
+        beforeResultLabel.pin.center()
+        beforeLoadingIndicator.pin.center()
+        
+        afterReloadButton.pin.right(5).vCenter().size(40)
+        afterResultLabel.pin.center()
+        afterLoadingIndicator.pin.center()
+        
         exampleContainer.pin.wrapContent().right().vCenter()
         
         featureContainer.pin.left().right(to: exampleContainer.edge.left).marginRight(30)
@@ -140,5 +188,51 @@ Code Label
         codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
         editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
                                               height: codeLabel.frame.maxY + 12)
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part4Page8ViewController {
+    @objc func beforeReloadButtonPressed(_ sender: UIButton) {
+        if isBeforeLoading { return }
+        isBeforeLoading = true
+        
+        beforeResultLabel.isHidden = true
+        beforeLoadingIndicator.startAnimating()
+        beforeLoadingIndicator.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.beforeLoadingIndicator.isHidden = true
+            self.beforeLoadingIndicator.stopAnimating()
+            
+            self.beforeResultLabel.text = "LOAD COMPLETE"
+            self.beforeResultLabel.sizeToFit()
+            self.beforeResultLabel.pin.center()
+            self.beforeResultLabel.isHidden = false
+            
+            self.isBeforeLoading = false
+        }
+    }
+    
+    @objc func afterReloadButtonPressed(_ sender: UIButton) {
+        if isAfterLoading { return }
+        isAfterLoading = true
+        
+        afterResultLabel.isHidden = true
+        afterLoadingIndicator.startAnimating()
+        afterLoadingIndicator.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.afterLoadingIndicator.isHidden = true
+            self.afterLoadingIndicator.stopAnimating()
+            
+            self.afterResultLabel.text = "LOAD COMPLETE"
+            self.afterResultLabel.sizeToFit()
+            self.afterResultLabel.pin.center()
+            self.afterResultLabel.isHidden = false
+            
+            self.isAfterLoading = false
+        }
     }
 }
