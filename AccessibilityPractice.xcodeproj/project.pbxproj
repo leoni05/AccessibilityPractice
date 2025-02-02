@@ -13,6 +13,14 @@
 		D00DA7C82CE4C2F000582B94 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C72CE4C2F000582B94 /* MainViewController.swift */; };
 		D00DA7CD2CE4C2F100582B94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */; };
 		D00DA7D02CE4C2F100582B94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CF2CE4C2F100582B94 /* Base */; };
+		D02CEBE42D4F2B1600D26C15 /* Part4Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */; };
+		D02CEBE62D4F2B2200D26C15 /* Part4Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */; };
+		D02CEBE82D4F2B3200D26C15 /* Part4Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */; };
+		D02CEBEA2D4F2B3E00D26C15 /* Part4Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */; };
+		D02CEBEC2D4F2B4800D26C15 /* Part4Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */; };
+		D02CEBEE2D4F2B5400D26C15 /* Part4Page7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */; };
+		D02CEBF02D4F2B5D00D26C15 /* Part4Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */; };
+		D02CEBF22D4F2B6500D26C15 /* Part4Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */; };
 		D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */; };
 		D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */; };
 		D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */; };
@@ -58,6 +66,14 @@
 		D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D00DA7CF2CE4C2F100582B94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D00DA7D12CE4C2F100582B94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page2ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page3ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page4ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page5ViewController.swift; sourceTree = "<group>"; };
+		D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page6ViewController.swift; sourceTree = "<group>"; };
+		D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page7ViewController.swift; sourceTree = "<group>"; };
+		D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page8ViewController.swift; sourceTree = "<group>"; };
+		D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page9ViewController.swift; sourceTree = "<group>"; };
 		D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page3ViewController.swift; sourceTree = "<group>"; };
 		D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page9ViewController.swift; sourceTree = "<group>"; };
 		D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page2ViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +247,14 @@
 			isa = PBXGroup;
 			children = (
 				D0E950CE2CEF51A0006E4C1E /* Part4Page1ViewController.swift */,
+				D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */,
+				D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */,
+				D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */,
+				D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */,
+				D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */,
+				D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */,
+				D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */,
+				D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */,
 			);
 			path = Part4;
 			sourceTree = "<group>";
@@ -368,11 +392,15 @@
 				D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */,
 				D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */,
 				D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */,
+				D02CEBE42D4F2B1600D26C15 /* Part4Page2ViewController.swift in Sources */,
 				D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */,
 				D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */,
 				D0E0C34D2D4B8BB900A7238F /* Part3Page4ViewController.swift in Sources */,
 				D09FE43F2D4DE6340094F10A /* ExCustomButton2.swift in Sources */,
 				D0E950CF2CEF51A0006E4C1E /* Part4Page1ViewController.swift in Sources */,
+				D02CEBF02D4F2B5D00D26C15 /* Part4Page8ViewController.swift in Sources */,
+				D02CEBEE2D4F2B5400D26C15 /* Part4Page7ViewController.swift in Sources */,
+				D02CEBE62D4F2B2200D26C15 /* Part4Page3ViewController.swift in Sources */,
 				D0E0C3532D4B8C1900A7238F /* Part3Page7ViewController.swift in Sources */,
 				D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */,
 				D0E950CC2CEF50C8006E4C1E /* Part3Page1ViewController.swift in Sources */,
@@ -387,15 +415,19 @@
 				D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */,
 				D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */,
 				D09FE43D2D4DE6260094F10A /* ExCustomButton1.swift in Sources */,
+				D02CEBF22D4F2B6500D26C15 /* Part4Page9ViewController.swift in Sources */,
 				D09FE4412D4DE63A0094F10A /* ExCustomButton3.swift in Sources */,
 				D0E0C34B2D4B8BA700A7238F /* Part3Page3ViewController.swift in Sources */,
 				D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */,
+				D02CEBE82D4F2B3200D26C15 /* Part4Page4ViewController.swift in Sources */,
 				D0F78AFC2CEE1980009534F5 /* PresentationViewController.swift in Sources */,
 				D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */,
 				D0E0C3472D4B831B00A7238F /* Part2Page5ViewController.swift in Sources */,
 				D0E0C3512D4B8BDC00A7238F /* Part3Page6ViewController.swift in Sources */,
 				D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */,
+				D02CEBEA2D4F2B3E00D26C15 /* Part4Page5ViewController.swift in Sources */,
 				D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */,
+				D02CEBEC2D4F2B4800D26C15 /* Part4Page6ViewController.swift in Sources */,
 				D075DA0E2D4783EF000F8F0D /* Part1Page2ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

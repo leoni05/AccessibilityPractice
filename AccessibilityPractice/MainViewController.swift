@@ -66,7 +66,15 @@ class MainViewController: UIViewController {
             Part3Page9ViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
-            Part4Page1ViewController(delegate: self)
+            Part4Page1ViewController(delegate: self),
+            Part4Page2ViewController(delegate: self),
+            Part4Page3ViewController(delegate: self),
+            Part4Page4ViewController(delegate: self),
+            Part4Page5ViewController(delegate: self),
+            Part4Page6ViewController(delegate: self),
+            Part4Page7ViewController(delegate: self),
+            Part4Page8ViewController(delegate: self),
+            Part4Page9ViewController(delegate: self)
         ]))
     }
 
