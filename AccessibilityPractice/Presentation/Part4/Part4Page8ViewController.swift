@@ -126,12 +126,12 @@ class Part4Page8ViewController: PresentationViewController {
         
         innerContentView.addSubview(featureContainer)
         
-        featureLabel.text = "기능 label"
+        featureLabel.text = "화면 레이아웃 변경"
         featureLabel.font = .systemFont(ofSize: 17)
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "기능 설명 label"
+        featureDescLabel.text = "화면 구성 요소의 배치가 바뀌었을 경우, VoiceOver 사용자는 이를 알아차리지 못할 수 있으므로 접근성 알림 전송 필요"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
@@ -144,7 +144,7 @@ class Part4Page8ViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-Code Label
+UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
