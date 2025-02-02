@@ -92,6 +92,7 @@ class Part4Page8ViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
+        beforeReloadButton.accessibilityLabel = "새로고침"
         beforeReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
         beforeReloadButton.tintColor = .white
         beforeReloadButton.addTarget(self, action: #selector(beforeReloadButtonPressed(_:)), for: .touchUpInside)
@@ -107,6 +108,7 @@ class Part4Page8ViewController: PresentationViewController {
         beforeLoadingIndicator.isHidden = true
         beforeContainer.addSubview(beforeLoadingIndicator)
         
+        afterReloadButton.accessibilityLabel = "새로고침"
         afterReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
         afterReloadButton.tintColor = .white
         afterReloadButton.addTarget(self, action: #selector(afterReloadButtonPressed(_:)), for: .touchUpInside)
@@ -233,6 +235,7 @@ private extension Part4Page8ViewController {
             self.afterResultLabel.isHidden = false
             
             self.isAfterLoading = false
+            UIAccessibility.post(notification: .screenChanged, argument: self.afterResultLabel)
         }
     }
 }
