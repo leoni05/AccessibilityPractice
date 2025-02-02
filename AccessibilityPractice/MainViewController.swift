@@ -75,7 +75,9 @@ class MainViewController: UIViewController {
             Part4Page7ViewController(delegate: self),
             Part4Page8ViewController(delegate: self),
             Part4Page9ViewController(delegate: self),
-            Part4Page10ViewController(delegate: self)
+            Part4Page10ViewController(delegate: self),
+            Part4Page11ViewController(delegate: self),
+            Part4Page12ViewController(delegate: self)
         ]))
     }
 

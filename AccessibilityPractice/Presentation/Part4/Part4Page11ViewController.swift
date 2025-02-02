@@ -1,5 +1,5 @@
 //
-//  Part4Page10ViewController.swift
+//  Part4Page11ViewController.swift
 //  AccessibilityPractice
 //
 //  Created by yongjun18 on 2/2/25.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page10ViewController: PresentationViewController {
+class Part4Page11ViewController: PresentationViewController {
     
     // MARK: - Properties
     

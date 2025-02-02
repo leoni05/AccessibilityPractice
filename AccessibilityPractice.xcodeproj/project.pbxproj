@@ -21,7 +21,9 @@
 		D02CEBEE2D4F2B5400D26C15 /* Part4Page7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */; };
 		D02CEBF02D4F2B5D00D26C15 /* Part4Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */; };
 		D02CEBF22D4F2B6500D26C15 /* Part4Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */; };
-		D02CEBF42D4F4D7100D26C15 /* Part4Page10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF32D4F4D7100D26C15 /* Part4Page10ViewController.swift */; };
+		D02CEBF82D4F7D8C00D26C15 /* Part4Page10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */; };
+		D02CEBFA2D4F7D9800D26C15 /* Part4Page11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */; };
+		D02CEBFC2D4F7DA100D26C15 /* Part4Page12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */; };
 		D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */; };
 		D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */; };
 		D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */; };
@@ -75,7 +77,9 @@
 		D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page7ViewController.swift; sourceTree = "<group>"; };
 		D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page8ViewController.swift; sourceTree = "<group>"; };
 		D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page9ViewController.swift; sourceTree = "<group>"; };
-		D02CEBF32D4F4D7100D26C15 /* Part4Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page10ViewController.swift; sourceTree = "<group>"; };
+		D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page10ViewController.swift; sourceTree = "<group>"; };
+		D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page11ViewController.swift; sourceTree = "<group>"; };
+		D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page12ViewController.swift; sourceTree = "<group>"; };
 		D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page3ViewController.swift; sourceTree = "<group>"; };
 		D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page9ViewController.swift; sourceTree = "<group>"; };
 		D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page2ViewController.swift; sourceTree = "<group>"; };
@@ -257,7 +261,9 @@
 				D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */,
 				D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */,
 				D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */,
-				D02CEBF32D4F4D7100D26C15 /* Part4Page10ViewController.swift */,
+				D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */,
+				D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */,
+				D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */,
 			);
 			path = Part4;
 			sourceTree = "<group>";
@@ -395,7 +401,7 @@
 				D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */,
 				D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */,
 				D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */,
-				D02CEBF42D4F4D7100D26C15 /* Part4Page10ViewController.swift in Sources */,
+				D02CEBF82D4F7D8C00D26C15 /* Part4Page10ViewController.swift in Sources */,
 				D02CEBE42D4F2B1600D26C15 /* Part4Page2ViewController.swift in Sources */,
 				D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */,
 				D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */,
@@ -413,6 +419,7 @@
 				D099CD682D4CD3920043247C /* ExCustomCell.swift in Sources */,
 				D0E950C82CEF50B5006E4C1E /* Part1Page1ViewController.swift in Sources */,
 				D0E950C62CEF50AB006E4C1E /* IntroPage1ViewController.swift in Sources */,
+				D02CEBFC2D4F7DA100D26C15 /* Part4Page12ViewController.swift in Sources */,
 				D075DA102D47D8A2000F8F0D /* Part1Page3ViewController.swift in Sources */,
 				D00DA7C82CE4C2F000582B94 /* MainViewController.swift in Sources */,
 				D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */,
@@ -431,6 +438,7 @@
 				D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */,
 				D02CEBEA2D4F2B3E00D26C15 /* Part4Page5ViewController.swift in Sources */,
 				D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */,
+				D02CEBFA2D4F7D9800D26C15 /* Part4Page11ViewController.swift in Sources */,
 				D02CEBEC2D4F2B4800D26C15 /* Part4Page6ViewController.swift in Sources */,
 				D075DA0E2D4783EF000F8F0D /* Part1Page2ViewController.swift in Sources */,
 			);
