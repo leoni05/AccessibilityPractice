@@ -19,6 +19,18 @@ class Part4Page9ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var exampleContainer = UIView()
+    private var beforeContainer = UIView()
+    private var beforeLabel = UILabel()
+    private var afterContainer = UIView()
+    private var afterLabel = UILabel()
+    
+    private var featureContainer = UIView()
+    private var featureLabel = UILabel()
+    private var featureDescLabel = UILabel()
+    private var editorScrollView = UIScrollView()
+    private var codeLabel = UILabel()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +49,65 @@ class Part4Page9ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        innerContentView.addSubview(exampleContainer)
+        
+        beforeContainer.layer.cornerRadius = 5.0
+        beforeContainer.layer.borderWidth = 1.0
+        beforeContainer.layer.borderColor = UIColor.white.cgColor
+        beforeContainer.layer.masksToBounds = true
+        exampleContainer.addSubview(beforeContainer)
+        
+        beforeLabel.text = "Before"
+        beforeLabel.textColor = .black
+        beforeLabel.font = .systemFont(ofSize: 13)
+        beforeLabel.backgroundColor = .white
+        beforeLabel.textAlignment = .center
+        beforeLabel.layer.cornerRadius = 3.0
+        beforeLabel.layer.masksToBounds = true
+        exampleContainer.addSubview(beforeLabel)
+        
+        afterContainer.layer.cornerRadius = 5.0
+        afterContainer.layer.borderWidth = 1.0
+        afterContainer.layer.borderColor = UIColor.white.cgColor
+        afterContainer.layer.masksToBounds = true
+        exampleContainer.addSubview(afterContainer)
+        
+        afterLabel.text = "After"
+        afterLabel.textColor = .black
+        afterLabel.font = .systemFont(ofSize: 13)
+        afterLabel.backgroundColor = .white
+        afterLabel.textAlignment = .center
+        afterLabel.layer.cornerRadius = 3.0
+        afterLabel.layer.masksToBounds = true
+        exampleContainer.addSubview(afterLabel)
+        
+        innerContentView.addSubview(featureContainer)
+        
+        featureLabel.text = "기능 label"
+        featureLabel.font = .systemFont(ofSize: 17)
+        featureLabel.textColor = .white
+        featureContainer.addSubview(featureLabel)
+        
+        featureDescLabel.text = "기능 설명 label"
+        featureDescLabel.font = .systemFont(ofSize: 14)
+        featureDescLabel.textColor = .white
+        featureDescLabel.numberOfLines = 3
+        featureContainer.addSubview(featureDescLabel)
+        
+        editorScrollView.layer.cornerRadius = 5.0
+        editorScrollView.layer.borderWidth = 1.0
+        editorScrollView.layer.borderColor = UIColor.white.cgColor
+        editorScrollView.layer.masksToBounds = true
+        featureContainer.addSubview(editorScrollView)
+        
+        codeLabel.text = """
+Code Label
+"""
+        codeLabel.font = .systemFont(ofSize: 14)
+        codeLabel.textColor = .white
+        codeLabel.numberOfLines = 0
+        editorScrollView.addSubview(codeLabel)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +119,26 @@ class Part4Page9ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        beforeContainer.pin.top().left().width(250).height(80)
+        beforeLabel.pin.left(to: beforeContainer.edge.left).top(to: beforeContainer.edge.top)
+            .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        afterContainer.pin.below(of: beforeContainer).left().width(250).height(80).marginTop(20)
+        afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
+            .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        exampleContainer.pin.wrapContent().right().vCenter()
+        
+        featureContainer.pin.left().right(to: exampleContainer.edge.left).marginRight(30)
+        featureLabel.pin.top().horizontally().sizeToFit(.width)
+        featureDescLabel.pin.below(of: featureLabel).horizontally().marginTop(10).sizeToFit(.width)
+        editorScrollView.pin.below(of: featureDescLabel).horizontally().height(120)
+            .marginTop(10)
+        featureContainer.pin.wrapContent().left().vCenter()
+        
+        codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
+        editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
+                                              height: codeLabel.frame.maxY + 12)
     }
 }
