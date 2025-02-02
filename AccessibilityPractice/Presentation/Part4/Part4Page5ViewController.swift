@@ -19,6 +19,8 @@ class Part4Page5ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var timeRecordImageView = UIImageView()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +39,14 @@ class Part4Page5ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        timeRecordImageView.image = UIImage(named: "SampleTimeRecord")
+        timeRecordImageView.contentMode = .scaleAspectFit
+        timeRecordImageView.layer.cornerRadius = 5.0
+        timeRecordImageView.layer.borderWidth = 1.0
+        timeRecordImageView.layer.borderColor = UIColor.white.cgColor
+        timeRecordImageView.layer.masksToBounds = true
+        innerContentView.addSubview(timeRecordImageView)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +58,7 @@ class Part4Page5ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        timeRecordImageView.pin.right().vCenter().width(180).aspectRatio()
     }
 }
