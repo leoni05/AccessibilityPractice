@@ -19,6 +19,9 @@ class Part4Page2ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
+    private var sampleImageView1 = UIImageView()
+    private var sampleImageView2 = UIImageView()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,6 +40,14 @@ class Part4Page2ViewController: PresentationViewController {
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
+        
+        sampleImageView1.image = UIImage(named: "SampleScreenshot1")
+        sampleImageView1.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView1)
+        
+        sampleImageView2.image = UIImage(named: "SampleScreenshot2")
+        sampleImageView2.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView2)
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,5 +59,8 @@ class Part4Page2ViewController: PresentationViewController {
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+        
+        sampleImageView2.pin.right().top(10).bottom().aspectRatio()
+        sampleImageView1.pin.before(of: sampleImageView2).top(10).bottom().aspectRatio().marginRight(5)
     }
 }
