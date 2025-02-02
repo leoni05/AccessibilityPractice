@@ -106,9 +106,9 @@ class Part4Page6ViewController: PresentationViewController {
         
         controlWrapper.pin.horizontally()
         exampleLabel.pin.top().left()
-        exampleButton.pin.after(of: exampleLabel, aligned: .center).width(100).height(30).marginLeft(15)
-        exampleSwitch.pin.after(of: exampleButton, aligned: .center).width(51).height(31).marginLeft(15)
-        exampleSlider.pin.after(of: exampleSwitch, aligned: .center).width(120).height(30).marginLeft(15)
+        exampleButton.pin.after(of: exampleLabel, aligned: .center).width(100).height(30).marginLeft(20)
+        exampleSwitch.pin.after(of: exampleButton, aligned: .center).width(51).height(31).marginLeft(20)
+        exampleSlider.pin.after(of: exampleSwitch, aligned: .center).width(120).height(30).marginLeft(20)
         controlWrapper.pin.wrapContent().center()
     }
 }
