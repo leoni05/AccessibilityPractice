@@ -22,6 +22,18 @@ class Part4Page4ViewController: PresentationViewController {
     private var sampleImageView1 = UIImageView()
     private var sampleImageView2 = UIImageView()
     
+    private var labelContainer = UIView()
+    private let featureStrings: Array<String> = [
+        "로그인 화면",
+        "커스텀 토글 버튼",
+        "메인 화면",
+        "진행 중인 게임 리스트",
+        "베팅 화면",
+        "로그아웃 팝업",
+        "..."
+    ]
+    private var featureLabels = Array<UILabel>()
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -48,6 +60,17 @@ class Part4Page4ViewController: PresentationViewController {
         sampleImageView2.image = UIImage(named: "SampleScreenshot6")
         sampleImageView2.contentMode = .scaleAspectFit
         innerContentView.addSubview(sampleImageView2)
+        
+        innerContentView.addSubview(labelContainer)
+        
+        for idx in featureStrings.indices {
+            let label = UILabel()
+            label.text = featureStrings[idx]
+            label.font = .systemFont(ofSize: 15)
+            label.textColor = .white
+            featureLabels.append(label)
+            labelContainer.addSubview(label)
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,5 +85,16 @@ class Part4Page4ViewController: PresentationViewController {
         
         sampleImageView2.pin.right().top(10).bottom().aspectRatio()
         sampleImageView1.pin.before(of: sampleImageView2).top(10).bottom().aspectRatio().marginRight(5)
+        
+        labelContainer.pin.before(of: sampleImageView1).left().marginRight(30)
+        for idx in featureLabels.indices {
+            if idx == 0 {
+                featureLabels[idx].pin.top().horizontally().sizeToFit(.width)
+            }
+            else {
+                featureLabels[idx].pin.below(of: featureLabels[idx-1]).horizontally().marginTop(5).sizeToFit(.width)
+            }
+        }
+        labelContainer.pin.wrapContent().left().vCenter()
     }
 }
