@@ -82,7 +82,7 @@ class Part4Page5ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
         
-        timeRecordImageView.pin.right().vCenter().width(180).aspectRatio()
+        timeRecordImageView.pin.right(30).vCenter().width(180).aspectRatio()
         
         labelContainer.pin.before(of: timeRecordImageView).left().marginRight(30)
         for idx in featureLabels.indices {
