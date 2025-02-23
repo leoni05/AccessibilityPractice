@@ -81,7 +81,7 @@ class Part1Page3ViewController: PresentationViewController {
         lawTitleLabel3.textColor = .white
         lawContainerView.addSubview(lawTitleLabel3)
         
-        lawDetailLabel3.text = "웹 접근성 인증 심사 지침 변경(기존 24개 -> 33개) <2025. 1. 1. 시행>"
+        lawDetailLabel3.text = "웹 접근성 인증 심사 지침 변경(기존 24개 -> 33개) <시행 2025. 1. 1.>"
         lawDetailLabel3.numberOfLines = 0
         lawDetailLabel3.font = .systemFont(ofSize: 13)
         lawDetailLabel3.textColor = .white
