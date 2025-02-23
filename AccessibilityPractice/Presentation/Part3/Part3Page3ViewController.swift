@@ -99,11 +99,11 @@ class Part3Page3ViewController: PresentationViewController {
         labelContainer.pin.before(of: exampleContainer).left()
         for idx in gestureLabels.indices {
             if idx == 0 {
-                gestureLabels[idx].pin.top().horizontally().sizeToFit(.width)
+                gestureLabels[idx].pin.top().left().right(30).sizeToFit(.width)
             }
             else {
                 let marginTop: CGFloat = ((idx % 2 == 0) ? 10 : 2)
-                gestureLabels[idx].pin.below(of: gestureLabels[idx-1]).horizontally()
+                gestureLabels[idx].pin.below(of: gestureLabels[idx-1]).left().right(30)
                     .sizeToFit(.width).marginTop(marginTop)
             }
         }
