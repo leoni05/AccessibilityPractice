@@ -183,7 +183,11 @@ private extension Part2Page4ViewController {
 
         if 0 <= nextScriptIdx && nextScriptIdx < scriptLabels.count {
             scriptLabels[currentScriptIdx].isHidden = true
+            scriptLabels[nextScriptIdx].alpha = 0.0
             scriptLabels[nextScriptIdx].isHidden = false
+            UIView.animate(withDuration: 0.3) {
+                self.scriptLabels[nextScriptIdx].alpha = 1.0
+            }
             currentScriptIdx = nextScriptIdx
         }
     }
