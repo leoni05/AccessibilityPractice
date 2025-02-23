@@ -42,6 +42,8 @@ class Part2Page4ViewController: PresentationViewController {
     private var arrowPrevButton = UIButton()
     private var currentScriptIdx = 0
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -150,6 +152,26 @@ class Part2Page4ViewController: PresentationViewController {
             scriptLabels[idx].pin.below(of: scriptTitleLabel).horizontally().marginTop(8).sizeToFit(.width)
         }
         scriptContainerView.pin.wrapContent().center()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+        }
     }
 }
 
@@ -164,5 +186,9 @@ private extension Part2Page4ViewController {
             scriptLabels[nextScriptIdx].isHidden = false
             currentScriptIdx = nextScriptIdx
         }
+    }
+    
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
     }
 }
