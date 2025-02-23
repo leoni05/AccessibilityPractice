@@ -26,6 +26,8 @@ class IntroPage2ViewController: PresentationViewController {
     private var contentItemButtons = Array<ContentItemButton>()
     private var contentItemContainerView = UIView()
     private var contentItemsArea = UIView()
+    
+    private var isWillAppear = false
  
     // MARK: - Life Cycle
     
@@ -73,5 +75,35 @@ class IntroPage2ViewController: PresentationViewController {
             }
         }
         contentItemContainerView.pin.wrapContent().center()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.contentItemContainerView.alpha = 1.0
+            self.contentItemContainerView.pin.wrapContent().center()
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension IntroPage2ViewController {
+    func readyForAppearAnimation() {
+        contentItemContainerView.alpha = 0.0
+        contentItemContainerView.pin.wrapContent().center().marginLeft(-10)
     }
 }
