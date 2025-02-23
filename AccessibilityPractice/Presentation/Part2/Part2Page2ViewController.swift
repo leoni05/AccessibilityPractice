@@ -25,6 +25,8 @@ class Part2Page2ViewController: PresentationViewController {
     private var quoteLeftView = UIImageView()
     private var quoteRightView = UIImageView()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -96,5 +98,37 @@ class Part2Page2ViewController: PresentationViewController {
         
         quoteLeftView.pin.above(of: accessibilityView, aligned: .center).size(20).marginBottom(10)
         quoteRightView.pin.below(of: accessibilityView, aligned: .center).size(20).marginTop(10)
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.accessibilityView.alpha = 1.0
+            self.quoteLeftView.pin.above(of: self.accessibilityView, aligned: .center).size(20).marginBottom(10)
+            self.quoteRightView.pin.below(of: self.accessibilityView, aligned: .center).size(20).marginTop(10)
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part2Page2ViewController {
+    func readyForAppearAnimation() {
+        accessibilityView.alpha = 0.0
+        quoteLeftView.pin.above(of: accessibilityView, aligned: .center).size(20).marginBottom(-10)
+        quoteRightView.pin.below(of: accessibilityView, aligned: .center).size(20).marginTop(-10)
     }
 }
