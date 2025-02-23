@@ -35,6 +35,8 @@ class Part2Page5ViewController: PresentationViewController {
     private var featureLabelsContainer = UIView()
     private var selectedFeatureIdx = 0
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -148,6 +150,28 @@ class Part2Page5ViewController: PresentationViewController {
                 .width(400).marginLeft(15)
         }
         featuresContainer.pin.wrapContent().center()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
     }
 }
 
@@ -214,5 +238,11 @@ private extension Part2Page5ViewController {
         setFeatureStatus(idx: selectedFeatureIdx, active: false)
         setFeatureStatus(idx: sender.tag, active: true)
         selectedFeatureIdx = sender.tag
+    }
+    
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
     }
 }
