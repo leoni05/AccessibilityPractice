@@ -74,7 +74,9 @@ private extension ContentItemButton {
         if checked == false {
             checked = true
             redSquareView.isHidden = false
-            self.alpha = 1.0
+            UIView.animate(withDuration: 0.2, delay: 0.0, options: [.allowUserInteraction]){
+                self.alpha = 1.0
+            }
         }
         else {
             checked = false
