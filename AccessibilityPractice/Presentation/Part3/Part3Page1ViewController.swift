@@ -88,4 +88,16 @@ class Part3Page1ViewController: PresentationViewController {
         
         mainContentView.pin.wrapContent().left(20).vCenter()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        backgroundImageView.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 0.6) {
+            self.backgroundImageView.alpha = 1.0
+        }
+    }
 }
