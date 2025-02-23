@@ -81,7 +81,7 @@ class Part4Page3ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         sampleImageView2.pin.right().top(10).bottom().aspectRatio()
         sampleImageView1.pin.before(of: sampleImageView2).top(10).bottom().aspectRatio().marginRight(5)

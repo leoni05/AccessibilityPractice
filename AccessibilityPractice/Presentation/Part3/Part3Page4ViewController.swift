@@ -68,7 +68,7 @@ class Part3Page4ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         labelContainer.pin.horizontally()
         for idx in propertyLabels.indices {

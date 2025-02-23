@@ -142,7 +142,7 @@ class Part2Page4ViewController: PresentationViewController {
         arrowNextButton.pin.right(20).bottom(self.view.pin.safeArea+10).size(40)
         arrowPrevButton.pin.before(of: arrowNextButton, aligned: .center).size(40).marginRight(10)
         
-        innerContentView.pin.below(of: subtitleLabel).above(of: arrowPrevButton).left().right(20)
+        innerContentView.pin.below(of: subtitleLabel).above(of: arrowPrevButton).left().right()
         
         scriptContainerView.pin.horizontally(50)
         scriptTitleLabel.pin.top().horizontally().sizeToFit(.width)

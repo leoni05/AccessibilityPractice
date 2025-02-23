@@ -109,7 +109,7 @@ override func accessibilityPerformEscape() -> Bool {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         afterContainer.pin.top().left().width(250).height(180)
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)

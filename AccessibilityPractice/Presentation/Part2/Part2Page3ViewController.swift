@@ -71,7 +71,7 @@ class Part2Page3ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         scrollView.pin.horizontally().top(30).bottom(20).maxWidth(500).justify(.center)
         scrollViewLabel.pin.left(to: scrollView.edge.left).top(to: scrollView.edge.top)

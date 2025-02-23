@@ -134,7 +134,7 @@ self.isAccessibilityElement = true
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
      
         beforeContainer.pin.top().left().width(250).height(80)
         beforeLabel.pin.left(to: beforeContainer.edge.left).top(to: beforeContainer.edge.top)

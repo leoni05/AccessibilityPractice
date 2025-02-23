@@ -98,7 +98,7 @@ class Part4Page6ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
-            .right(20).bottom(self.view.pin.safeArea).marginBottom(25)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
         controlContainer.pin.center().width(500).height(120)
         controlLabel.pin.left(to: controlContainer.edge.left).top(to: controlContainer.edge.top)
