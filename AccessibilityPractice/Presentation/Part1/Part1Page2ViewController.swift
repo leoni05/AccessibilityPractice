@@ -128,7 +128,7 @@ class Part1Page2ViewController: PresentationViewController {
 private extension Part1Page2ViewController {
     func readyForAppearAnimation() {
         definitionView.alpha = 0.0
-        quoteLeftView.pin.above(of: definitionView, aligned: .center).size(20).marginBottom(-10)
-        quoteRightView.pin.below(of: definitionView, aligned: .center).size(20).marginTop(-10)
+        quoteLeftView.pin.above(of: definitionView, aligned: .center).size(20)
+        quoteRightView.pin.below(of: definitionView, aligned: .center).size(20)
     }
 }

@@ -128,7 +128,7 @@ class Part2Page2ViewController: PresentationViewController {
 private extension Part2Page2ViewController {
     func readyForAppearAnimation() {
         accessibilityView.alpha = 0.0
-        quoteLeftView.pin.above(of: accessibilityView, aligned: .center).size(20).marginBottom(-10)
-        quoteRightView.pin.below(of: accessibilityView, aligned: .center).size(20).marginTop(-10)
+        quoteLeftView.pin.above(of: accessibilityView, aligned: .center).size(20)
+        quoteRightView.pin.below(of: accessibilityView, aligned: .center).size(20)
     }
 }
