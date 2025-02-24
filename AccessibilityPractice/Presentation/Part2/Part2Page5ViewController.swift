@@ -117,6 +117,8 @@ class Part2Page5ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
+        featureLabelsContainer.pin.width(400)
+        
         for idx in featureCategories.indices {
             let button = featureCategories[idx].button
             if idx == 0 {
