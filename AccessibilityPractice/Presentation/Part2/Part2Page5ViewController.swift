@@ -33,6 +33,7 @@ class Part2Page5ViewController: PresentationViewController {
     }
     private var featureCategories = Array<FeatureCategory>()
     private var featureLabelsContainer = UIView()
+    private var featureLabelsWrapper = UIView()
     private var selectedFeatureIdx = 0
     
     private var isWillAppear = false
@@ -66,6 +67,8 @@ class Part2Page5ViewController: PresentationViewController {
         featureLabelsContainer.layer.masksToBounds = true
         featuresContainer.addSubview(featureLabelsContainer)
         
+        featureLabelsContainer.addSubview(featureLabelsWrapper)
+        
         for idx in featureCategories.indices {
             let button = featureCategories[idx].button
             button.backgroundColor = .white
@@ -92,7 +95,7 @@ class Part2Page5ViewController: PresentationViewController {
                 featureTitleLabel.textColor = .white
                 featureTitleLabel.numberOfLines = 0
                 featureCategories[idx].featureLabels.append(featureTitleLabel)
-                featureLabelsContainer.addSubview(featureTitleLabel)
+                featureLabelsWrapper.addSubview(featureTitleLabel)
                 
                 let featureDescLabel = UILabel()
                 featureDescLabel.text = desc
@@ -100,7 +103,7 @@ class Part2Page5ViewController: PresentationViewController {
                 featureDescLabel.textColor = .white
                 featureDescLabel.numberOfLines = 0
                 featureCategories[idx].featureLabels.append(featureDescLabel)
-                featureLabelsContainer.addSubview(featureDescLabel)
+                featureLabelsWrapper.addSubview(featureDescLabel)
             }
             
             setFeatureStatus(idx: idx, active: (idx == selectedFeatureIdx)) 
@@ -117,7 +120,7 @@ class Part2Page5ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
-        featureLabelsContainer.pin.width(400)
+        featureLabelsWrapper.pin.width(400)
         
         for idx in featureCategories.indices {
             let button = featureCategories[idx].button
@@ -150,6 +153,7 @@ class Part2Page5ViewController: PresentationViewController {
            let lastButton = featureCategories.last?.button {
             featureLabelsContainer.pin.after(of: firstButton, aligned: .top).bottom(to: lastButton.edge.bottom)
                 .width(400).marginLeft(15)
+            featureLabelsWrapper.pin.all()
         }
         featuresContainer.pin.wrapContent().center()
         
