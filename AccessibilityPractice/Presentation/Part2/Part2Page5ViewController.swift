@@ -106,7 +106,7 @@ class Part2Page5ViewController: PresentationViewController {
                 featureLabelsWrapper.addSubview(featureDescLabel)
             }
             
-            setFeatureStatus(idx: idx, active: (idx == selectedFeatureIdx)) 
+            setFeatureStatus(idx: idx, active: (idx == selectedFeatureIdx), animated: false)
         }
     }
     
@@ -220,7 +220,12 @@ private extension Part2Page5ViewController {
 // MARK: - Private Extensions
 
 private extension Part2Page5ViewController {
-    func setFeatureStatus(idx: Int, active: Bool) {
+    func setFeatureStatus(idx: Int, active: Bool, animated: Bool) {
+        if animated {
+            featureLabelsWrapper.isHidden = true
+            featureLabelsWrapper.alpha = 0.0
+        }
+        
         if active {
             featureCategories[idx].button.alpha = 1.0
             featureCategories[idx].stickView.alpha = 1.0
@@ -235,14 +240,21 @@ private extension Part2Page5ViewController {
                 featureCategories[idx].featureLabels[fIdx].isHidden = true
             }
         }
+        
+        if animated {
+            featureLabelsWrapper.isHidden = false
+            UIView.animate(withDuration: 0.3) {
+                self.featureLabelsWrapper.alpha = 1.0
+            }
+        }
     }
     
     @objc func buttonPressed(_ sender: UIButton) {
         if selectedFeatureIdx == sender.tag {
             return
         }
-        setFeatureStatus(idx: selectedFeatureIdx, active: false)
-        setFeatureStatus(idx: sender.tag, active: true)
+        setFeatureStatus(idx: selectedFeatureIdx, active: false, animated: true)
+        setFeatureStatus(idx: sender.tag, active: true, animated: true)
         selectedFeatureIdx = sender.tag
     }
     
