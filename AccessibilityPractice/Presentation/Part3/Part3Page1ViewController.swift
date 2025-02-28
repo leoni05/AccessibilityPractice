@@ -23,6 +23,8 @@ class Part3Page1ViewController: PresentationViewController {
     private var subTitleLabel1 = UILabel()
     private var subTitleLabel2 = UILabel()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -87,17 +89,39 @@ class Part3Page1ViewController: PresentationViewController {
         subTitleLabel2.pin.below(of: subTitleLabel1, aligned: .left).marginTop(5)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        backgroundImageView.alpha = 0.0
+        
+        isWillAppear = true
+        readyForAppearAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        isWillAppear = false
         UIView.animate(withDuration: 0.6) {
             self.backgroundImageView.alpha = 1.0
         }
+        UIView.animate(withDuration: 0.3) {
+            self.mainContentView.alpha = 1.0
+            self.mainContentView.pin.wrapContent().left(20).vCenter()
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part3Page1ViewController {
+    func readyForAppearAnimation() {
+        backgroundImageView.alpha = 0.0
+        mainContentView.alpha = 0.0
+        mainContentView.pin.wrapContent().left(20).vCenter().marginLeft(-10)
     }
 }
