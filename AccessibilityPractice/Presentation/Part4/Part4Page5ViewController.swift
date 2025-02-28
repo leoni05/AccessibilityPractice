@@ -33,6 +33,8 @@ class Part4Page5ViewController: PresentationViewController {
     ]
     private var featureLabels = Array<UILabel>()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -94,5 +96,37 @@ class Part4Page5ViewController: PresentationViewController {
             }
         }
         labelContainer.pin.wrapContent().left().vCenter()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part4Page5ViewController {
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
     }
 }
