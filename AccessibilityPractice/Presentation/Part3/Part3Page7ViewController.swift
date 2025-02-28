@@ -39,6 +39,8 @@ class Part3Page7ViewController: PresentationViewController {
     private var editorScrollView = UIScrollView()
     private var codeLabel = UILabel()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -166,5 +168,37 @@ self.accessibilityTraits = .button
         codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
         editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
                                               height: codeLabel.frame.maxY + 12)
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part3Page7ViewController {
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
     }
 }
