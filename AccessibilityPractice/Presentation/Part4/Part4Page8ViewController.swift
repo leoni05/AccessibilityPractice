@@ -41,6 +41,8 @@ class Part4Page8ViewController: PresentationViewController {
     private var afterResultLabel = UILabel()
     private var afterLoadingIndicator = UIActivityIndicatorView()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -190,6 +192,28 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
         codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
         editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
                                               height: codeLabel.frame.maxY + 12)
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
     }
 }
 
@@ -237,5 +261,11 @@ private extension Part4Page8ViewController {
             self.isAfterLoading = false
             UIAccessibility.post(notification: .screenChanged, argument: self.afterResultLabel)
         }
+    }
+
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
     }
 }
