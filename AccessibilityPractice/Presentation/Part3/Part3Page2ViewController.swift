@@ -24,6 +24,8 @@ class Part3Page2ViewController: PresentationViewController {
     private var voiceOverDescLabel1 = UILabel()
     private var voiceOverDescLabel2 = UILabel()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -95,5 +97,38 @@ class Part3Page2ViewController: PresentationViewController {
         voiceOverDescLabel1.pin.below(of: voiceOverTitleLabel, aligned: .left).right().sizeToFit(.width).marginTop(10)
         voiceOverDescLabel2.pin.below(of: voiceOverDescLabel1, aligned: .left).right().sizeToFit(.width).marginTop(10)
         voiceOverContainer.pin.wrapContent().center()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
     }
 }
+
+// MARK: - Private Extensions
+
+private extension Part3Page2ViewController {
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
+    }
+}
+
