@@ -21,7 +21,6 @@ class Part4Page9ViewController: PresentationViewController {
     
     private var exampleContainer = UIView()
     private var afterContainer = UIView()
-    private var afterLabel = UILabel()
     private var exampleVC = UINavigationController(rootViewController: ExViewController())
     
     private var featureContainer = UIView()
@@ -56,15 +55,6 @@ class Part4Page9ViewController: PresentationViewController {
         afterContainer.layer.borderColor = UIColor.white.cgColor
         afterContainer.layer.masksToBounds = true
         exampleContainer.addSubview(afterContainer)
-        
-        afterLabel.text = "After"
-        afterLabel.textColor = .black
-        afterLabel.font = .systemFont(ofSize: 13)
-        afterLabel.backgroundColor = .white
-        afterLabel.textAlignment = .center
-        afterLabel.layer.cornerRadius = 3.0
-        afterLabel.layer.masksToBounds = true
-        exampleContainer.addSubview(afterLabel)
         
         exampleVC.isNavigationBarHidden = true
         self.addChild(exampleVC)
@@ -111,9 +101,7 @@ override func accessibilityPerformEscape() -> Bool {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
-        afterContainer.pin.top().left().width(250).height(180)
-        afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
-            .width(60).height(24).marginLeft(8).marginTop(-12)
+        afterContainer.pin.top().left().width(250).height(192)
         exampleVC.view.pin.all()
         
         exampleContainer.pin.wrapContent().right().vCenter()
