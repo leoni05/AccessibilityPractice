@@ -28,6 +28,8 @@ class Part4Page6ViewController: PresentationViewController {
     private var exampleSwitch = UISwitch()
     private var exampleSlider = UISlider()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -110,5 +112,37 @@ class Part4Page6ViewController: PresentationViewController {
         exampleSwitch.pin.after(of: exampleButton, aligned: .center).width(51).height(31).marginLeft(20)
         exampleSlider.pin.after(of: exampleSwitch, aligned: .center).width(120).height(30).marginLeft(20)
         controlWrapper.pin.wrapContent().center()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.3) {
+            self.innerContentView.alpha = 1.0
+            self.innerContentView.pin.below(of: self.subtitleLabel, aligned: .left)
+                .right().bottom(self.view.pin.safeArea).marginBottom(25)
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part4Page6ViewController {
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        innerContentView.pin.below(of: subtitleLabel, aligned: .left)
+            .right().bottom(self.view.pin.safeArea).marginBottom(25).marginLeft(-10)
     }
 }
