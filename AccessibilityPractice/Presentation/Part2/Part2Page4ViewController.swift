@@ -22,6 +22,7 @@ class Part2Page4ViewController: PresentationViewController {
     private let imageColCount = 3
     private let imageWidth = 160
     private let imageHeight = 100
+    private let imageGap = 10
     private var videoImages = Array<UIImageView>()
     private var gradientLayerH = CAGradientLayer()
     
@@ -123,13 +124,13 @@ class Part2Page4ViewController: PresentationViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        imageContainerView.pin.right().vertically().width(450)
+        imageContainerView.pin.right().top(-CGFloat(imageHeight + imageGap)).bottom().width(450)
         for c in 0..<imageColCount {
             for r in 0..<imageRowCount {
                 let idx = c*imageRowCount + r
-                let x = CGFloat(c * (imageWidth + 10))
-                var y = CGFloat(r * (imageHeight + 10))
-                if c % 2 == 1 { y -= CGFloat((imageHeight + 10)/2) }
+                let x = CGFloat(c * (imageWidth + imageGap))
+                var y = CGFloat(r * (imageHeight + imageGap))
+                if c % 2 == 1 { y -= CGFloat((imageHeight + imageGap)/2) }
                 
                 videoImages[idx].pin.left(x).top(y)
                     .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
