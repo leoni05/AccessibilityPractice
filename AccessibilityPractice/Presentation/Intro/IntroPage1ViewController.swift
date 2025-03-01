@@ -35,6 +35,8 @@ class IntroPage1ViewController: PresentationViewController {
     private var backgroundGradientLayerH = CAGradientLayer()
     private var backgroundGradientLayerV = CAGradientLayer()
     
+    private var isWillAppear = false
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -167,6 +169,34 @@ class IntroPage1ViewController: PresentationViewController {
         backgroundImageView.pin.above(of: lowerScrollView, aligned: .left).right().top()
         backgroundGradientLayerH.pin.all()
         backgroundGradientLayerV.pin.all()
+        
+        if isWillAppear {
+            readyForAppearAnimation()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isWillAppear = true
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        isWillAppear = false
+        UIView.animate(withDuration: 0.6) {
+            self.backgroundImageView.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.3) {
+            self.mainContentView.alpha = 1.0
+            self.mainContentView.pin.wrapContent().left(20).vCenter()
+            
+            self.lowerContainerView.alpha = 1.0
+            self.lowerContainerView.pin.below(of: self.mainContentView, aligned: .left).right().bottom().marginTop(25)
+            self.lowerScrollView.pin.below(of: self.lowerLabel).horizontally().bottom().marginTop(10)
+        }
     }
 }
 
@@ -177,5 +207,15 @@ private extension IntroPage1ViewController {
         let alert = UIAlertController(title: "목표", message: "Apple 접근성을 훑어보면서\n접근성을 머리보단 마음으로\n이해해 보는 시간 가지기", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func readyForAppearAnimation() {
+        backgroundImageView.alpha = 0.0
+        mainContentView.alpha = 0.0
+        mainContentView.pin.wrapContent().left(10).vCenter()
+        
+        lowerContainerView.alpha = 0.0
+        lowerContainerView.pin.below(of: mainContentView, aligned: .left).right().bottom().marginTop(25)
+        lowerScrollView.pin.below(of: lowerLabel).horizontally().bottom().marginTop(10)
     }
 }
