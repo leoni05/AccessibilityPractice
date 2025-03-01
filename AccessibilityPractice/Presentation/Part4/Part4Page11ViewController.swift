@@ -50,4 +50,26 @@ class Part4Page11ViewController: PresentationViewController {
         subtitleLabel.pin.below(of: titleLabel).horizontally().marginTop(2).sizeToFit(.width)
         contentLabel.pin.center()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        readyForAppearAnimation()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.contentLabel.alpha = 1.0
+        }
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part4Page11ViewController {
+    func readyForAppearAnimation() {
+        contentLabel.alpha = 0.0
+    }
 }
