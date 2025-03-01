@@ -180,6 +180,23 @@ class Part2Page4ViewController: PresentationViewController {
         UIView.animate(withDuration: 0.3) {
             self.innerContentView.alpha = 1.0
         }
+        
+        for idx in videoImages.indices {
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
+                self.videoImages[idx].pin.left(x).top(0)
+                    .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+            } completion: { _ in
+                let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
+                self.videoImages[idx].pin.left(x).top(newY)
+                    .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+                    self.videoImages[idx].pin.left(x).top(0)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                }
+            }
+        }
     }
 }
 
@@ -202,5 +219,10 @@ private extension Part2Page4ViewController {
     
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
+        
+        for idx in videoImages.indices {
+            videoImages[idx].pin.left(videoImagesInitPos[idx].x).top(videoImagesInitPos[idx].y)
+                .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+        }
     }
 }
