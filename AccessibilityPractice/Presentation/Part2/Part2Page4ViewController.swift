@@ -71,7 +71,7 @@ class Part2Page4ViewController: PresentationViewController {
             for r in 0..<imageRowCount {
                 let x = CGFloat(c * (imageWidth + imageGap))
                 var y = CGFloat(r * (imageHeight + imageGap))
-                if c % 2 == 1 { y -= CGFloat((imageHeight + imageGap)/2) }
+                if c % 2 == 1 { y += CGFloat((imageHeight + imageGap)/2) }
                 videoImagesInitPos.append(Position(x: x, y: y))
             }
         }
