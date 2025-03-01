@@ -14,6 +14,8 @@ class IntroPage1ViewController: PresentationViewController {
     // MARK: - Properties
     
     private let appleNewsCount = 9
+    private let lowerViewWidth = 100.0
+    private let lowerViewHeight = 130.0
     
     private var mainContentView = UIView()
     private var subtitleLabel = UILabel()
@@ -152,8 +154,6 @@ class IntroPage1ViewController: PresentationViewController {
         lowerLabel.pin.top().horizontally().sizeToFit()
         lowerScrollView.pin.below(of: lowerLabel).horizontally().bottom().marginTop(10)
         
-        let lowerViewWidth = 100.0
-        let lowerViewHeight = 130.0
         for i in lowerViews.indices {
             if i == 0 {
                 lowerViews[i].pin.left().top().width(lowerViewWidth).height(lowerViewHeight)
@@ -197,6 +197,18 @@ class IntroPage1ViewController: PresentationViewController {
             self.lowerContainerView.pin.below(of: self.mainContentView, aligned: .left).right().bottom().marginTop(25)
             self.lowerScrollView.pin.below(of: self.lowerLabel).horizontally().bottom().marginTop(10)
         }
+        for i in lowerViews.indices {
+            UIView.animate(withDuration: 0.3, delay: 0.2 + Double(i) * 0.02) {
+                self.lowerViews[i].alpha = 1.0
+                if i == 0 {
+                    self.lowerViews[i].pin.left().top().width(self.lowerViewWidth).height(self.lowerViewHeight)
+                }
+                else {
+                    self.lowerViews[i].pin.after(of: self.lowerViews[i-1], aligned: .top)
+                        .width(self.lowerViewWidth).height(self.lowerViewHeight).marginLeft(5)
+                }
+            }
+        }
     }
 }
 
@@ -217,5 +229,17 @@ private extension IntroPage1ViewController {
         lowerContainerView.alpha = 0.0
         lowerContainerView.pin.below(of: mainContentView, aligned: .left).right().bottom().marginTop(25)
         lowerScrollView.pin.below(of: lowerLabel).horizontally().bottom().marginTop(10)
+        
+        for i in lowerViews.indices {
+            lowerViews[i].alpha = 0.0
+            if i == 0 {
+                lowerViews[i].pin.left().top().width(lowerViewWidth).height(lowerViewHeight).marginTop(10)
+            }
+            else {
+                lowerViews[i].pin.after(of: lowerViews[i-1], aligned: .top)
+                    .width(lowerViewWidth).height(lowerViewHeight).marginLeft(5).marginTop(10)
+            }
+        }
+        lowerScrollView.setContentOffset(CGPointZero, animated: false)
     }
 }
