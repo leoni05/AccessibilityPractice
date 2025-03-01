@@ -26,6 +26,12 @@ class Part2Page4ViewController: PresentationViewController {
     private var videoImages = Array<UIImageView>()
     private var gradientLayerH = CAGradientLayer()
     
+    private struct Position {
+        let x: CGFloat
+        let y: CGFloat
+    }
+    private var videoImagesInitPos = Array<Position>()
+    
     private var innerContentView = UIView()
     
     private var scriptContainerView = UIView()
@@ -60,6 +66,14 @@ class Part2Page4ViewController: PresentationViewController {
             imageView.layer.cornerRadius = 3
             videoImages.append(imageView)
             imageContainerView.addSubview(imageView)
+        }
+        for c in 0..<imageColCount {
+            for r in 0..<imageRowCount {
+                let x = CGFloat(c * (imageWidth + imageGap))
+                var y = CGFloat(r * (imageHeight + imageGap))
+                if c % 2 == 1 { y -= CGFloat((imageHeight + imageGap)/2) }
+                videoImagesInitPos.append(Position(x: x, y: y))
+            }
         }
         
         let colors: [CGColor] = [
@@ -125,16 +139,9 @@ class Part2Page4ViewController: PresentationViewController {
         super.viewDidLayoutSubviews()
         
         imageContainerView.pin.right().top(-CGFloat(imageHeight + imageGap)).bottom().width(450)
-        for c in 0..<imageColCount {
-            for r in 0..<imageRowCount {
-                let idx = c*imageRowCount + r
-                let x = CGFloat(c * (imageWidth + imageGap))
-                var y = CGFloat(r * (imageHeight + imageGap))
-                if c % 2 == 1 { y -= CGFloat((imageHeight + imageGap)/2) }
-                
-                videoImages[idx].pin.left(x).top(y)
-                    .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
-            }
+        for idx in videoImages.indices {
+            videoImages[idx].pin.left(videoImagesInitPos[idx].x).top(videoImagesInitPos[idx].y)
+                .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
         }
         gradientLayerH.pin.all()
         
