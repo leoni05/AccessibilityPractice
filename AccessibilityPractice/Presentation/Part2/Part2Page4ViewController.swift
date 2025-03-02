@@ -133,6 +133,8 @@ class Part2Page4ViewController: PresentationViewController {
         arrowPrevButton.tag = -1
         arrowPrevButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         mainContentView.addSubview(arrowPrevButton)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -187,7 +189,47 @@ class Part2Page4ViewController: PresentationViewController {
         UIView.animate(withDuration: 0.3) {
             self.innerContentView.alpha = 1.0
         }
-        
+        animateBackgroundImages()
+    }
+}
+
+// MARK: - Private Extensions
+
+private extension Part2Page4ViewController {
+    @objc func buttonPressed(_ sender: UIButton) {
+        let nextScriptIdx = currentScriptIdx + sender.tag
+
+        if 0 <= nextScriptIdx && nextScriptIdx < scriptLabels.count {
+            scriptLabels[currentScriptIdx].isHidden = true
+            scriptLabels[nextScriptIdx].alpha = 0.0
+            scriptLabels[nextScriptIdx].isHidden = false
+            UIView.animate(withDuration: 0.3) {
+                self.scriptLabels[nextScriptIdx].alpha = 1.0
+            }
+            currentScriptIdx = nextScriptIdx
+        }
+    }
+    
+    func readyForAppearAnimation() {
+        innerContentView.alpha = 0.0
+        readyForAnimatingBackgroundImages()
+    }
+    
+    func readyForAnimatingBackgroundImages() {
+        for idx in videoImages.indices {
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            if colNum % 2 == 0 {
+                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+            else {
+                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+        }
+    }
+    
+    func animateBackgroundImages() {
         for idx in videoImages.indices {
             let colNum = videoImagesInitPos[idx].colNum
             let x = videoImagesInitPos[idx].x
@@ -223,38 +265,9 @@ class Part2Page4ViewController: PresentationViewController {
             }
         }
     }
-}
-
-// MARK: - Private Extensions
-
-private extension Part2Page4ViewController {
-    @objc func buttonPressed(_ sender: UIButton) {
-        let nextScriptIdx = currentScriptIdx + sender.tag
-
-        if 0 <= nextScriptIdx && nextScriptIdx < scriptLabels.count {
-            scriptLabels[currentScriptIdx].isHidden = true
-            scriptLabels[nextScriptIdx].alpha = 0.0
-            scriptLabels[nextScriptIdx].isHidden = false
-            UIView.animate(withDuration: 0.3) {
-                self.scriptLabels[nextScriptIdx].alpha = 1.0
-            }
-            currentScriptIdx = nextScriptIdx
-        }
-    }
     
-    func readyForAppearAnimation() {
-        innerContentView.alpha = 0.0
-        
-        for idx in videoImages.indices {
-            let colNum = videoImagesInitPos[idx].colNum
-            let x = videoImagesInitPos[idx].x
-            let y = videoImagesInitPos[idx].y
-            if colNum % 2 == 0 {
-                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
-            }
-            else {
-                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
-            }
-        }
+    @objc func willEnterForeground() {
+        readyForAnimatingBackgroundImages()
+        animateBackgroundImages()
     }
 }
