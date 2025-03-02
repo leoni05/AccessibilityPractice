@@ -27,6 +27,7 @@ class Part2Page4ViewController: PresentationViewController {
     private var gradientLayerH = CAGradientLayer()
     
     private struct Position {
+        let colNum: Int
         let x: CGFloat
         let y: CGFloat
     }
@@ -70,9 +71,8 @@ class Part2Page4ViewController: PresentationViewController {
         for c in 0..<imageColCount {
             for r in 0..<imageRowCount {
                 let x = CGFloat(c * (imageWidth + imageGap))
-                var y = CGFloat(r * (imageHeight + imageGap))
-                if c % 2 == 1 { y += CGFloat((imageHeight + imageGap)/2) }
-                videoImagesInitPos.append(Position(x: x, y: y))
+                let y = CGFloat(r * (imageHeight + imageGap))
+                videoImagesInitPos.append(Position(colNum: c, x: x, y: y))
             }
         }
         
@@ -138,10 +138,17 @@ class Part2Page4ViewController: PresentationViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        imageContainerView.pin.right().top(-CGFloat(imageHeight + imageGap)).bottom().width(450)
+        imageContainerView.pin.right().vertically(-CGFloat(imageHeight + imageGap)).width(450)
         for idx in videoImages.indices {
-            videoImages[idx].pin.left(videoImagesInitPos[idx].x).top(videoImagesInitPos[idx].y)
-                .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            if colNum % 2 == 0 {
+                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+            else {
+                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
         }
         gradientLayerH.pin.all()
         
@@ -182,18 +189,36 @@ class Part2Page4ViewController: PresentationViewController {
         }
         
         for idx in videoImages.indices {
+            let colNum = videoImagesInitPos[idx].colNum
             let x = videoImagesInitPos[idx].x
             let y = videoImagesInitPos[idx].y
-            UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
-                self.videoImages[idx].pin.left(x).top(0)
-                    .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
-            } completion: { _ in
-                let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
-                self.videoImages[idx].pin.left(x).top(newY)
-                    .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
-                UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+            
+            if colNum % 2 == 0 {
+                UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
                     self.videoImages[idx].pin.left(x).top(0)
                         .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                } completion: { _ in
+                    let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
+                    self.videoImages[idx].pin.left(x).top(newY)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+                        self.videoImages[idx].pin.left(x).top(0)
+                            .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    }
+                }
+            }
+            else {
+                UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
+                    self.videoImages[idx].pin.left(x).bottom(0)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                } completion: { _ in
+                    let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
+                    self.videoImages[idx].pin.left(x).bottom(newY)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+                        self.videoImages[idx].pin.left(x).bottom(0)
+                            .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    }
                 }
             }
         }
@@ -221,8 +246,15 @@ private extension Part2Page4ViewController {
         innerContentView.alpha = 0.0
         
         for idx in videoImages.indices {
-            videoImages[idx].pin.left(videoImagesInitPos[idx].x).top(videoImagesInitPos[idx].y)
-                .width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            if colNum % 2 == 0 {
+                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+            else {
+                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
         }
     }
 }
