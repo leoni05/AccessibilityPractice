@@ -25,12 +25,56 @@ class AccessibilityDefinitionViewController: PresentationViewController {
     private var quoteLeftView = UIImageView()
     private var quoteRightView = UIImageView()
     
+    private var imageContainerView = UIView()
+    private let imageRowCount = 6
+    private let imageColCount = 3
+    private let imageWidth = 160
+    private let imageHeight = 100
+    private let imageGap = 10
+    private var videoImages = Array<UIImageView>()
+    private var gradientLayerH = CAGradientLayer()
+    
+    private struct Position {
+        let colNum: Int
+        let x: CGFloat
+        let y: CGFloat
+    }
+    private var videoImagesInitPos = Array<Position>()
+    
     private var isWillAppear = false
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addSubview(imageContainerView)
+        
+        for idx in 0..<imageRowCount*imageColCount {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "AppleVideo\(String(format: "%02d", idx))")
+            imageView.contentMode = .scaleAspectFill
+            imageView.layer.masksToBounds = true
+            imageView.layer.cornerRadius = 3
+            videoImages.append(imageView)
+            imageContainerView.addSubview(imageView)
+        }
+        for c in 0..<imageColCount {
+            for r in 0..<imageRowCount {
+                let x = CGFloat(c * (imageWidth + imageGap))
+                let y = CGFloat(r * (imageHeight + imageGap))
+                videoImagesInitPos.append(Position(colNum: c, x: x, y: y))
+            }
+        }
+        
+        let colors: [CGColor] = [
+           .init(red: 0, green: 0, blue: 0, alpha: 1),
+           .init(red: 0, green: 0, blue: 0, alpha: 0.3),
+        ]
+        gradientLayerH.colors = colors
+        gradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradientLayerH.endPoint = CGPoint(x: 1.0, y: 0.5)
+        imageContainerView.layer.addSublayer(gradientLayerH)
         
         self.view.addSubview(mainContentView)
         
@@ -79,10 +123,26 @@ class AccessibilityDefinitionViewController: PresentationViewController {
         quoteRightView.contentMode = .scaleAspectFit
         quoteRightView.alpha = 0.5
         innerContentView.addSubview(quoteRightView)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        imageContainerView.pin.right().vertically(-CGFloat(imageHeight + imageGap)).width(450)
+        for idx in videoImages.indices {
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            if colNum % 2 == 0 {
+                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+            else {
+                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+        }
+        gradientLayerH.pin.all()
         
         mainContentView.pin.left(20).right(self.view.pin.safeArea).vertically()
         titleLabel.pin.top(self.view.pin.safeArea).horizontally().marginTop(40).sizeToFit(.width)
@@ -120,6 +180,7 @@ class AccessibilityDefinitionViewController: PresentationViewController {
             self.quoteLeftView.pin.above(of: self.definitionView, aligned: .center).size(20).marginBottom(10)
             self.quoteRightView.pin.below(of: self.definitionView, aligned: .center).size(20).marginTop(10)
         }
+        animateBackgroundImages()
     }
 }
 
@@ -130,5 +191,62 @@ private extension AccessibilityDefinitionViewController {
         definitionView.alpha = 0.0
         quoteLeftView.pin.above(of: definitionView, aligned: .center).size(20)
         quoteRightView.pin.below(of: definitionView, aligned: .center).size(20)
+        readyForAnimatingBackgroundImages()
+    }
+    
+    func readyForAnimatingBackgroundImages() {
+        for idx in videoImages.indices {
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            if colNum % 2 == 0 {
+                videoImages[idx].pin.left(x).top(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+            else {
+                videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
+            }
+        }
+    }
+    
+    func animateBackgroundImages() {
+        for idx in videoImages.indices {
+            let colNum = videoImagesInitPos[idx].colNum
+            let x = videoImagesInitPos[idx].x
+            let y = videoImagesInitPos[idx].y
+            
+            if colNum % 2 == 0 {
+                UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
+                    self.videoImages[idx].pin.left(x).top(0)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                } completion: { _ in
+                    let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
+                    self.videoImages[idx].pin.left(x).top(newY)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+                        self.videoImages[idx].pin.left(x).top(0)
+                            .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    }
+                }
+            }
+            else {
+                UIView.animate(withDuration: y * 0.05, delay: 0.0, options: [.curveLinear]) {
+                    self.videoImages[idx].pin.left(x).bottom(0)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                } completion: { _ in
+                    let newY = CGFloat(self.imageRowCount * (self.imageHeight + self.imageGap))
+                    self.videoImages[idx].pin.left(x).bottom(newY)
+                        .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    UIView.animate(withDuration: newY * 0.05, delay: 0.0, options: [.curveLinear, .repeat]) {
+                        self.videoImages[idx].pin.left(x).bottom(0)
+                            .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
+                    }
+                }
+            }
+        }
+    }
+    
+    @objc func willEnterForeground() {
+        readyForAnimatingBackgroundImages()
+        animateBackgroundImages()
     }
 }
