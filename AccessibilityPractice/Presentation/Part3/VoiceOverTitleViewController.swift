@@ -1,5 +1,5 @@
 //
-//  Part5Page1ViewController.swift
+//  Part4Page1ViewController.swift
 //  AccessibilityPractice
 //
 //  Created by yongjun18 on 11/21/24.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page1ViewController: PresentationViewController {
+class VoiceOverTitleViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -30,7 +30,7 @@ class Part4Page1ViewController: PresentationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageView.image = UIImage(named: "BackgroundImage4")
+        backgroundImageView.image = UIImage(named: "BackgroundImage3")
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.layer.masksToBounds = true
         self.view.addSubview(backgroundImageView)
@@ -51,25 +51,25 @@ class Part4Page1ViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        partLabel.text = "Part 4"
+        partLabel.text = "Part 3"
         partLabel.font = .systemFont(ofSize: 15, weight: .light)
         partLabel.textColor = .white
         partLabel.sizeToFit()
         mainContentView.addSubview(partLabel)
         
-        titleLabel.text = "발표를 마치며"
+        titleLabel.text = "iOS 접근성 구현 방법(VoiceOver)"
         titleLabel.font = .systemFont(ofSize: 25, weight: .heavy)
         titleLabel.textColor = .white
         titleLabel.sizeToFit()
         mainContentView.addSubview(titleLabel)
         
-        subTitleLabel1.text = "송년회 베팅 앱 VoiceOver 적용기"
+        subTitleLabel1.text = "VoiceOver 소개"
         subTitleLabel1.font = .systemFont(ofSize: 17, weight: .light)
         subTitleLabel1.textColor = .white
         subTitleLabel1.sizeToFit()
         mainContentView.addSubview(subTitleLabel1)
         
-        subTitleLabel2.text = "구현 시 느낀 점"
+        subTitleLabel2.text = "Accessibility 관련 속성 값"
         subTitleLabel2.font = .systemFont(ofSize: 17, weight: .light)
         subTitleLabel2.textColor = .white
         subTitleLabel2.sizeToFit()
@@ -118,7 +118,7 @@ class Part4Page1ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page1ViewController {
+private extension VoiceOverTitleViewController {
     func readyForAppearAnimation() {
         backgroundImageView.alpha = 0.0
         mainContentView.alpha = 0.0

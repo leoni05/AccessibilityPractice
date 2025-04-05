@@ -39,45 +39,45 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"), pages: [
-            IntroPage1ViewController(delegate: self),
-            IntroPage2ViewController(delegate: self)
+            TitleViewController(delegate: self),
+            IntroViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"), pages: [
-            Part1Page1ViewController(delegate: self),
-            Part1Page2ViewController(delegate: self),
-            Part1Page3ViewController(delegate: self)
+            AccessibilityTitleViewController(delegate: self),
+            AccessibilityDefinitionViewController(delegate: self),
+            RelevantLawsViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"), pages: [
-            Part2Page1ViewController(delegate: self),
-            Part2Page2ViewController(delegate: self),
-            Part2Page3ViewController(delegate: self),
-            Part2Page4ViewController(delegate: self),
-            Part2Page5ViewController(delegate: self)
+            ApplesTitleViewController(delegate: self),
+            ApplesDefinitionViewController(delegate: self),
+            IOSUpdatesViewController(delegate: self),
+            TheRelayViewController(delegate: self),
+            AccessibilityFeaturesViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "speaker.wave.2.fill"), pages: [
-            Part3Page1ViewController(delegate: self),
-            Part3Page2ViewController(delegate: self),
-            Part3Page3ViewController(delegate: self),
-            Part3Page4ViewController(delegate: self),
-            Part3Page5ViewController(delegate: self),
-            Part3Page6ViewController(delegate: self),
-            Part3Page7ViewController(delegate: self),
-            Part3Page8ViewController(delegate: self),
-            Part3Page9ViewController(delegate: self)
+            VoiceOverTitleViewController(delegate: self),
+            VoiceOverDefinitionViewController(delegate: self),
+            VoiceOverUsageViewController(delegate: self),
+            AccessibilityPropertiesViewController(delegate: self),
+            AccessibilityElementViewController(delegate: self),
+            AccessibilityLabelViewController(delegate: self),
+            AccessibilityTraitsViewController(delegate: self),
+            AccessibilityValueViewController(delegate: self),
+            AccessibilityHintViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
-            Part4Page1ViewController(delegate: self),
-            Part4Page2ViewController(delegate: self),
-            Part4Page3ViewController(delegate: self),
-            Part4Page4ViewController(delegate: self),
-            Part4Page5ViewController(delegate: self),
-            Part4Page6ViewController(delegate: self),
-            Part4Page7ViewController(delegate: self),
-            Part4Page8ViewController(delegate: self),
-            Part4Page9ViewController(delegate: self),
-            Part4Page10ViewController(delegate: self),
-            Part4Page11ViewController(delegate: self),
-            Part4Page12ViewController(delegate: self)
+            WrapUpTitleViewController(delegate: self),
+            BettingAppFeature1ViewController(delegate: self),
+            BettingAppFeature2ViewController(delegate: self),
+            BettingAppFeature3ViewController(delegate: self),
+            BettingAppTimerViewController(delegate: self),
+            UIKitControlsViewController(delegate: self),
+            CustomToggleViewController(delegate: self),
+            LayoutChangedViewController(delegate: self),
+            PerformEscapeViewController(delegate: self),
+            Impression1ViewController(delegate: self),
+            Impression2ViewController(delegate: self),
+            EndOfPresentationViewController(delegate: self)
         ]))
     }
 

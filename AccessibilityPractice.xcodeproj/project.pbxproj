@@ -13,22 +13,22 @@
 		D00DA7C82CE4C2F000582B94 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C72CE4C2F000582B94 /* MainViewController.swift */; };
 		D00DA7CD2CE4C2F100582B94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */; };
 		D00DA7D02CE4C2F100582B94 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D00DA7CF2CE4C2F100582B94 /* Base */; };
-		D02CEBE42D4F2B1600D26C15 /* Part4Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */; };
-		D02CEBE62D4F2B2200D26C15 /* Part4Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */; };
-		D02CEBE82D4F2B3200D26C15 /* Part4Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */; };
-		D02CEBEA2D4F2B3E00D26C15 /* Part4Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */; };
-		D02CEBEC2D4F2B4800D26C15 /* Part4Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */; };
-		D02CEBEE2D4F2B5400D26C15 /* Part4Page7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */; };
-		D02CEBF02D4F2B5D00D26C15 /* Part4Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */; };
-		D02CEBF22D4F2B6500D26C15 /* Part4Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */; };
-		D02CEBF82D4F7D8C00D26C15 /* Part4Page10ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */; };
-		D02CEBFA2D4F7D9800D26C15 /* Part4Page11ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */; };
-		D02CEBFC2D4F7DA100D26C15 /* Part4Page12ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */; };
-		D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */; };
-		D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */; };
-		D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */; };
-		D075DA0E2D4783EF000F8F0D /* Part1Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0D2D4783EF000F8F0D /* Part1Page2ViewController.swift */; };
-		D075DA102D47D8A2000F8F0D /* Part1Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0F2D47D8A2000F8F0D /* Part1Page3ViewController.swift */; };
+		D02CEBE42D4F2B1600D26C15 /* BettingAppFeature1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE32D4F2B1600D26C15 /* BettingAppFeature1ViewController.swift */; };
+		D02CEBE62D4F2B2200D26C15 /* BettingAppFeature2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE52D4F2B2200D26C15 /* BettingAppFeature2ViewController.swift */; };
+		D02CEBE82D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE72D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift */; };
+		D02CEBEA2D4F2B3E00D26C15 /* BettingAppTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBE92D4F2B3E00D26C15 /* BettingAppTimerViewController.swift */; };
+		D02CEBEC2D4F2B4800D26C15 /* UIKitControlsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */; };
+		D02CEBEE2D4F2B5400D26C15 /* CustomToggleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */; };
+		D02CEBF02D4F2B5D00D26C15 /* LayoutChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */; };
+		D02CEBF22D4F2B6500D26C15 /* PerformEscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */; };
+		D02CEBF82D4F7D8C00D26C15 /* Impression1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF72D4F7D8C00D26C15 /* Impression1ViewController.swift */; };
+		D02CEBFA2D4F7D9800D26C15 /* Impression2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBF92D4F7D9800D26C15 /* Impression2ViewController.swift */; };
+		D02CEBFC2D4F7DA100D26C15 /* EndOfPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02CEBFB2D4F7DA100D26C15 /* EndOfPresentationViewController.swift */; };
+		D03071292D492861001A0FE1 /* IOSUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03071282D492861001A0FE1 /* IOSUpdatesViewController.swift */; };
+		D0341F922D4E178000267DC3 /* AccessibilityHintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0341F912D4E178000267DC3 /* AccessibilityHintViewController.swift */; };
+		D06D60F62D48578800E315E2 /* ApplesDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D60F52D48578800E315E2 /* ApplesDefinitionViewController.swift */; };
+		D075DA0E2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */; };
+		D075DA102D47D8A2000F8F0D /* RelevantLawsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */; };
 		D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD652D4CCFBC0043247C /* ExViewController.swift */; };
 		D099CD682D4CD3920043247C /* ExCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD672D4CD3920043247C /* ExCustomCell.swift */; };
 		D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */; };
@@ -38,23 +38,23 @@
 		D09FE4412D4DE63A0094F10A /* ExCustomButton3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4402D4DE63A0094F10A /* ExCustomButton3.swift */; };
 		D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4422D4DE6440094F10A /* ExCustomButton4.swift */; };
 		D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09FE4442D4DE64C0094F10A /* ExCustomButton5.swift */; };
-		D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */; };
-		D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */; };
+		D0AD55F42CF06945007491E5 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AD55F32CF06945007491E5 /* IntroViewController.swift */; };
+		D0C3D2932D4B2EAC00A04BD8 /* TheRelayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C3D2922D4B2EAC00A04BD8 /* TheRelayViewController.swift */; };
 		D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DA3A462CEB8441006118DB /* SideButtonView.swift */; };
-		D0E0C3472D4B831B00A7238F /* Part2Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3462D4B831B00A7238F /* Part2Page5ViewController.swift */; };
-		D0E0C3492D4B89DB00A7238F /* Part3Page2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3482D4B89DB00A7238F /* Part3Page2ViewController.swift */; };
-		D0E0C34B2D4B8BA700A7238F /* Part3Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34A2D4B8BA700A7238F /* Part3Page3ViewController.swift */; };
-		D0E0C34D2D4B8BB900A7238F /* Part3Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34C2D4B8BB900A7238F /* Part3Page4ViewController.swift */; };
-		D0E0C34F2D4B8BC800A7238F /* Part3Page5ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34E2D4B8BC800A7238F /* Part3Page5ViewController.swift */; };
-		D0E0C3512D4B8BDC00A7238F /* Part3Page6ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3502D4B8BDC00A7238F /* Part3Page6ViewController.swift */; };
-		D0E0C3532D4B8C1900A7238F /* Part3Page7ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3522D4B8C1900A7238F /* Part3Page7ViewController.swift */; };
-		D0E0C3552D4B8C2700A7238F /* Part3Page8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3542D4B8C2700A7238F /* Part3Page8ViewController.swift */; };
+		D0E0C3472D4B831B00A7238F /* AccessibilityFeaturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3462D4B831B00A7238F /* AccessibilityFeaturesViewController.swift */; };
+		D0E0C3492D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3482D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift */; };
+		D0E0C34B2D4B8BA700A7238F /* VoiceOverUsageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34A2D4B8BA700A7238F /* VoiceOverUsageViewController.swift */; };
+		D0E0C34D2D4B8BB900A7238F /* AccessibilityPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34C2D4B8BB900A7238F /* AccessibilityPropertiesViewController.swift */; };
+		D0E0C34F2D4B8BC800A7238F /* AccessibilityElementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C34E2D4B8BC800A7238F /* AccessibilityElementViewController.swift */; };
+		D0E0C3512D4B8BDC00A7238F /* AccessibilityLabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3502D4B8BDC00A7238F /* AccessibilityLabelViewController.swift */; };
+		D0E0C3532D4B8C1900A7238F /* AccessibilityTraitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3522D4B8C1900A7238F /* AccessibilityTraitsViewController.swift */; };
+		D0E0C3552D4B8C2700A7238F /* AccessibilityValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E0C3542D4B8C2700A7238F /* AccessibilityValueViewController.swift */; };
 		D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */; };
-		D0E950C62CEF50AB006E4C1E /* IntroPage1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C52CEF50AB006E4C1E /* IntroPage1ViewController.swift */; };
-		D0E950C82CEF50B5006E4C1E /* Part1Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C72CEF50B5006E4C1E /* Part1Page1ViewController.swift */; };
-		D0E950CA2CEF50BE006E4C1E /* Part2Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C92CEF50BE006E4C1E /* Part2Page1ViewController.swift */; };
-		D0E950CC2CEF50C8006E4C1E /* Part3Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950CB2CEF50C8006E4C1E /* Part3Page1ViewController.swift */; };
-		D0E950CF2CEF51A0006E4C1E /* Part4Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950CE2CEF51A0006E4C1E /* Part4Page1ViewController.swift */; };
+		D0E950C62CEF50AB006E4C1E /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C52CEF50AB006E4C1E /* TitleViewController.swift */; };
+		D0E950C82CEF50B5006E4C1E /* AccessibilityTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C72CEF50B5006E4C1E /* AccessibilityTitleViewController.swift */; };
+		D0E950CA2CEF50BE006E4C1E /* ApplesTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950C92CEF50BE006E4C1E /* ApplesTitleViewController.swift */; };
+		D0E950CC2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950CB2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift */; };
+		D0E950CF2CEF51A0006E4C1E /* WrapUpTitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E950CE2CEF51A0006E4C1E /* WrapUpTitleViewController.swift */; };
 		D0F78AFC2CEE1980009534F5 /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F78AFB2CEE1980009534F5 /* PresentationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,22 +69,22 @@
 		D00DA7CC2CE4C2F100582B94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D00DA7CF2CE4C2F100582B94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D00DA7D12CE4C2F100582B94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page2ViewController.swift; sourceTree = "<group>"; };
-		D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page3ViewController.swift; sourceTree = "<group>"; };
-		D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page4ViewController.swift; sourceTree = "<group>"; };
-		D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page5ViewController.swift; sourceTree = "<group>"; };
-		D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page6ViewController.swift; sourceTree = "<group>"; };
-		D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page7ViewController.swift; sourceTree = "<group>"; };
-		D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page8ViewController.swift; sourceTree = "<group>"; };
-		D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page9ViewController.swift; sourceTree = "<group>"; };
-		D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page10ViewController.swift; sourceTree = "<group>"; };
-		D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page11ViewController.swift; sourceTree = "<group>"; };
-		D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page12ViewController.swift; sourceTree = "<group>"; };
-		D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page3ViewController.swift; sourceTree = "<group>"; };
-		D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page9ViewController.swift; sourceTree = "<group>"; };
-		D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page2ViewController.swift; sourceTree = "<group>"; };
-		D075DA0D2D4783EF000F8F0D /* Part1Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page2ViewController.swift; sourceTree = "<group>"; };
-		D075DA0F2D47D8A2000F8F0D /* Part1Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page3ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE32D4F2B1600D26C15 /* BettingAppFeature1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingAppFeature1ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE52D4F2B2200D26C15 /* BettingAppFeature2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingAppFeature2ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE72D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingAppFeature3ViewController.swift; sourceTree = "<group>"; };
+		D02CEBE92D4F2B3E00D26C15 /* BettingAppTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BettingAppTimerViewController.swift; sourceTree = "<group>"; };
+		D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitControlsViewController.swift; sourceTree = "<group>"; };
+		D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToggleViewController.swift; sourceTree = "<group>"; };
+		D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutChangedViewController.swift; sourceTree = "<group>"; };
+		D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformEscapeViewController.swift; sourceTree = "<group>"; };
+		D02CEBF72D4F7D8C00D26C15 /* Impression1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impression1ViewController.swift; sourceTree = "<group>"; };
+		D02CEBF92D4F7D9800D26C15 /* Impression2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impression2ViewController.swift; sourceTree = "<group>"; };
+		D02CEBFB2D4F7DA100D26C15 /* EndOfPresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfPresentationViewController.swift; sourceTree = "<group>"; };
+		D03071282D492861001A0FE1 /* IOSUpdatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSUpdatesViewController.swift; sourceTree = "<group>"; };
+		D0341F912D4E178000267DC3 /* AccessibilityHintViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityHintViewController.swift; sourceTree = "<group>"; };
+		D06D60F52D48578800E315E2 /* ApplesDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplesDefinitionViewController.swift; sourceTree = "<group>"; };
+		D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityDefinitionViewController.swift; sourceTree = "<group>"; };
+		D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevantLawsViewController.swift; sourceTree = "<group>"; };
 		D099CD652D4CCFBC0043247C /* ExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExViewController.swift; sourceTree = "<group>"; };
 		D099CD672D4CD3920043247C /* ExCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomCell.swift; sourceTree = "<group>"; };
 		D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,23 +94,23 @@
 		D09FE4402D4DE63A0094F10A /* ExCustomButton3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton3.swift; sourceTree = "<group>"; };
 		D09FE4422D4DE6440094F10A /* ExCustomButton4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton4.swift; sourceTree = "<group>"; };
 		D09FE4442D4DE64C0094F10A /* ExCustomButton5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomButton5.swift; sourceTree = "<group>"; };
-		D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage2ViewController.swift; sourceTree = "<group>"; };
-		D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page4ViewController.swift; sourceTree = "<group>"; };
+		D0AD55F32CF06945007491E5 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		D0C3D2922D4B2EAC00A04BD8 /* TheRelayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheRelayViewController.swift; sourceTree = "<group>"; };
 		D0DA3A462CEB8441006118DB /* SideButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideButtonView.swift; sourceTree = "<group>"; };
-		D0E0C3462D4B831B00A7238F /* Part2Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page5ViewController.swift; sourceTree = "<group>"; };
-		D0E0C3482D4B89DB00A7238F /* Part3Page2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page2ViewController.swift; sourceTree = "<group>"; };
-		D0E0C34A2D4B8BA700A7238F /* Part3Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page3ViewController.swift; sourceTree = "<group>"; };
-		D0E0C34C2D4B8BB900A7238F /* Part3Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page4ViewController.swift; sourceTree = "<group>"; };
-		D0E0C34E2D4B8BC800A7238F /* Part3Page5ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page5ViewController.swift; sourceTree = "<group>"; };
-		D0E0C3502D4B8BDC00A7238F /* Part3Page6ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page6ViewController.swift; sourceTree = "<group>"; };
-		D0E0C3522D4B8C1900A7238F /* Part3Page7ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page7ViewController.swift; sourceTree = "<group>"; };
-		D0E0C3542D4B8C2700A7238F /* Part3Page8ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page8ViewController.swift; sourceTree = "<group>"; };
+		D0E0C3462D4B831B00A7238F /* AccessibilityFeaturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityFeaturesViewController.swift; sourceTree = "<group>"; };
+		D0E0C3482D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverDefinitionViewController.swift; sourceTree = "<group>"; };
+		D0E0C34A2D4B8BA700A7238F /* VoiceOverUsageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverUsageViewController.swift; sourceTree = "<group>"; };
+		D0E0C34C2D4B8BB900A7238F /* AccessibilityPropertiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityPropertiesViewController.swift; sourceTree = "<group>"; };
+		D0E0C34E2D4B8BC800A7238F /* AccessibilityElementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityElementViewController.swift; sourceTree = "<group>"; };
+		D0E0C3502D4B8BDC00A7238F /* AccessibilityLabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLabelViewController.swift; sourceTree = "<group>"; };
+		D0E0C3522D4B8C1900A7238F /* AccessibilityTraitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTraitsViewController.swift; sourceTree = "<group>"; };
+		D0E0C3542D4B8C2700A7238F /* AccessibilityValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityValueViewController.swift; sourceTree = "<group>"; };
 		D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentItemButton.swift; sourceTree = "<group>"; };
-		D0E950C52CEF50AB006E4C1E /* IntroPage1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPage1ViewController.swift; sourceTree = "<group>"; };
-		D0E950C72CEF50B5006E4C1E /* Part1Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part1Page1ViewController.swift; sourceTree = "<group>"; };
-		D0E950C92CEF50BE006E4C1E /* Part2Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part2Page1ViewController.swift; sourceTree = "<group>"; };
-		D0E950CB2CEF50C8006E4C1E /* Part3Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part3Page1ViewController.swift; sourceTree = "<group>"; };
-		D0E950CE2CEF51A0006E4C1E /* Part4Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Part4Page1ViewController.swift; sourceTree = "<group>"; };
+		D0E950C52CEF50AB006E4C1E /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		D0E950C72CEF50B5006E4C1E /* AccessibilityTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityTitleViewController.swift; sourceTree = "<group>"; };
+		D0E950C92CEF50BE006E4C1E /* ApplesTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplesTitleViewController.swift; sourceTree = "<group>"; };
+		D0E950CB2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceOverTitleViewController.swift; sourceTree = "<group>"; };
+		D0E950CE2CEF51A0006E4C1E /* WrapUpTitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapUpTitleViewController.swift; sourceTree = "<group>"; };
 		D0F78AFB2CEE1980009534F5 /* PresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,8 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				D0E758702CF2E5960079B5E5 /* ContentItemButton.swift */,
-				D0E950C52CEF50AB006E4C1E /* IntroPage1ViewController.swift */,
-				D0AD55F32CF06945007491E5 /* IntroPage2ViewController.swift */,
+				D0E950C52CEF50AB006E4C1E /* TitleViewController.swift */,
+				D0AD55F32CF06945007491E5 /* IntroViewController.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 		D0E950B82CEF4CCB006E4C1E /* Part1 */ = {
 			isa = PBXGroup;
 			children = (
-				D0E950C72CEF50B5006E4C1E /* Part1Page1ViewController.swift */,
-				D075DA0D2D4783EF000F8F0D /* Part1Page2ViewController.swift */,
-				D075DA0F2D47D8A2000F8F0D /* Part1Page3ViewController.swift */,
+				D0E950C72CEF50B5006E4C1E /* AccessibilityTitleViewController.swift */,
+				D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */,
+				D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */,
 			);
 			path = Part1;
 			sourceTree = "<group>";
@@ -222,11 +222,11 @@
 		D0E950B92CEF4CD0006E4C1E /* Part2 */ = {
 			isa = PBXGroup;
 			children = (
-				D0E950C92CEF50BE006E4C1E /* Part2Page1ViewController.swift */,
-				D06D60F52D48578800E315E2 /* Part2Page2ViewController.swift */,
-				D03071282D492861001A0FE1 /* Part2Page3ViewController.swift */,
-				D0C3D2922D4B2EAC00A04BD8 /* Part2Page4ViewController.swift */,
-				D0E0C3462D4B831B00A7238F /* Part2Page5ViewController.swift */,
+				D0E950C92CEF50BE006E4C1E /* ApplesTitleViewController.swift */,
+				D06D60F52D48578800E315E2 /* ApplesDefinitionViewController.swift */,
+				D03071282D492861001A0FE1 /* IOSUpdatesViewController.swift */,
+				D0C3D2922D4B2EAC00A04BD8 /* TheRelayViewController.swift */,
+				D0E0C3462D4B831B00A7238F /* AccessibilityFeaturesViewController.swift */,
 			);
 			path = Part2;
 			sourceTree = "<group>";
@@ -236,15 +236,15 @@
 			children = (
 				D099CD622D4CCED70043247C /* VoiceOverExample */,
 				D09FE4392D4DDD310094F10A /* CustomButtonExample */,
-				D0E950CB2CEF50C8006E4C1E /* Part3Page1ViewController.swift */,
-				D0E0C3482D4B89DB00A7238F /* Part3Page2ViewController.swift */,
-				D0E0C34A2D4B8BA700A7238F /* Part3Page3ViewController.swift */,
-				D0E0C34C2D4B8BB900A7238F /* Part3Page4ViewController.swift */,
-				D0E0C34E2D4B8BC800A7238F /* Part3Page5ViewController.swift */,
-				D0E0C3502D4B8BDC00A7238F /* Part3Page6ViewController.swift */,
-				D0E0C3522D4B8C1900A7238F /* Part3Page7ViewController.swift */,
-				D0E0C3542D4B8C2700A7238F /* Part3Page8ViewController.swift */,
-				D0341F912D4E178000267DC3 /* Part3Page9ViewController.swift */,
+				D0E950CB2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift */,
+				D0E0C3482D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift */,
+				D0E0C34A2D4B8BA700A7238F /* VoiceOverUsageViewController.swift */,
+				D0E0C34C2D4B8BB900A7238F /* AccessibilityPropertiesViewController.swift */,
+				D0E0C34E2D4B8BC800A7238F /* AccessibilityElementViewController.swift */,
+				D0E0C3502D4B8BDC00A7238F /* AccessibilityLabelViewController.swift */,
+				D0E0C3522D4B8C1900A7238F /* AccessibilityTraitsViewController.swift */,
+				D0E0C3542D4B8C2700A7238F /* AccessibilityValueViewController.swift */,
+				D0341F912D4E178000267DC3 /* AccessibilityHintViewController.swift */,
 			);
 			path = Part3;
 			sourceTree = "<group>";
@@ -252,18 +252,18 @@
 		D0E950CD2CEF515A006E4C1E /* Part4 */ = {
 			isa = PBXGroup;
 			children = (
-				D0E950CE2CEF51A0006E4C1E /* Part4Page1ViewController.swift */,
-				D02CEBE32D4F2B1600D26C15 /* Part4Page2ViewController.swift */,
-				D02CEBE52D4F2B2200D26C15 /* Part4Page3ViewController.swift */,
-				D02CEBE72D4F2B3200D26C15 /* Part4Page4ViewController.swift */,
-				D02CEBE92D4F2B3E00D26C15 /* Part4Page5ViewController.swift */,
-				D02CEBEB2D4F2B4800D26C15 /* Part4Page6ViewController.swift */,
-				D02CEBED2D4F2B5400D26C15 /* Part4Page7ViewController.swift */,
-				D02CEBEF2D4F2B5D00D26C15 /* Part4Page8ViewController.swift */,
-				D02CEBF12D4F2B6500D26C15 /* Part4Page9ViewController.swift */,
-				D02CEBF72D4F7D8C00D26C15 /* Part4Page10ViewController.swift */,
-				D02CEBF92D4F7D9800D26C15 /* Part4Page11ViewController.swift */,
-				D02CEBFB2D4F7DA100D26C15 /* Part4Page12ViewController.swift */,
+				D0E950CE2CEF51A0006E4C1E /* WrapUpTitleViewController.swift */,
+				D02CEBE32D4F2B1600D26C15 /* BettingAppFeature1ViewController.swift */,
+				D02CEBE52D4F2B2200D26C15 /* BettingAppFeature2ViewController.swift */,
+				D02CEBE72D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift */,
+				D02CEBE92D4F2B3E00D26C15 /* BettingAppTimerViewController.swift */,
+				D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */,
+				D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */,
+				D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */,
+				D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */,
+				D02CEBF72D4F7D8C00D26C15 /* Impression1ViewController.swift */,
+				D02CEBF92D4F7D9800D26C15 /* Impression2ViewController.swift */,
+				D02CEBFB2D4F7DA100D26C15 /* EndOfPresentationViewController.swift */,
 			);
 			path = Part4;
 			sourceTree = "<group>";
@@ -395,52 +395,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E0C34F2D4B8BC800A7238F /* Part3Page5ViewController.swift in Sources */,
-				D0E0C3492D4B89DB00A7238F /* Part3Page2ViewController.swift in Sources */,
+				D0E0C34F2D4B8BC800A7238F /* AccessibilityElementViewController.swift in Sources */,
+				D0E0C3492D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift in Sources */,
 				D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */,
 				D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */,
-				D06D60F62D48578800E315E2 /* Part2Page2ViewController.swift in Sources */,
+				D06D60F62D48578800E315E2 /* ApplesDefinitionViewController.swift in Sources */,
 				D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */,
-				D02CEBF82D4F7D8C00D26C15 /* Part4Page10ViewController.swift in Sources */,
-				D02CEBE42D4F2B1600D26C15 /* Part4Page2ViewController.swift in Sources */,
+				D02CEBF82D4F7D8C00D26C15 /* Impression1ViewController.swift in Sources */,
+				D02CEBE42D4F2B1600D26C15 /* BettingAppFeature1ViewController.swift in Sources */,
 				D09FE4432D4DE6440094F10A /* ExCustomButton4.swift in Sources */,
-				D03071292D492861001A0FE1 /* Part2Page3ViewController.swift in Sources */,
-				D0E0C34D2D4B8BB900A7238F /* Part3Page4ViewController.swift in Sources */,
+				D03071292D492861001A0FE1 /* IOSUpdatesViewController.swift in Sources */,
+				D0E0C34D2D4B8BB900A7238F /* AccessibilityPropertiesViewController.swift in Sources */,
 				D09FE43F2D4DE6340094F10A /* ExCustomButton2.swift in Sources */,
-				D0E950CF2CEF51A0006E4C1E /* Part4Page1ViewController.swift in Sources */,
-				D02CEBF02D4F2B5D00D26C15 /* Part4Page8ViewController.swift in Sources */,
-				D02CEBEE2D4F2B5400D26C15 /* Part4Page7ViewController.swift in Sources */,
-				D02CEBE62D4F2B2200D26C15 /* Part4Page3ViewController.swift in Sources */,
-				D0E0C3532D4B8C1900A7238F /* Part3Page7ViewController.swift in Sources */,
-				D0C3D2932D4B2EAC00A04BD8 /* Part2Page4ViewController.swift in Sources */,
-				D0E950CC2CEF50C8006E4C1E /* Part3Page1ViewController.swift in Sources */,
-				D0E0C3552D4B8C2700A7238F /* Part3Page8ViewController.swift in Sources */,
-				D0E950CA2CEF50BE006E4C1E /* Part2Page1ViewController.swift in Sources */,
+				D0E950CF2CEF51A0006E4C1E /* WrapUpTitleViewController.swift in Sources */,
+				D02CEBF02D4F2B5D00D26C15 /* LayoutChangedViewController.swift in Sources */,
+				D02CEBEE2D4F2B5400D26C15 /* CustomToggleViewController.swift in Sources */,
+				D02CEBE62D4F2B2200D26C15 /* BettingAppFeature2ViewController.swift in Sources */,
+				D0E0C3532D4B8C1900A7238F /* AccessibilityTraitsViewController.swift in Sources */,
+				D0C3D2932D4B2EAC00A04BD8 /* TheRelayViewController.swift in Sources */,
+				D0E950CC2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift in Sources */,
+				D0E0C3552D4B8C2700A7238F /* AccessibilityValueViewController.swift in Sources */,
+				D0E950CA2CEF50BE006E4C1E /* ApplesTitleViewController.swift in Sources */,
 				D099CD682D4CD3920043247C /* ExCustomCell.swift in Sources */,
-				D0E950C82CEF50B5006E4C1E /* Part1Page1ViewController.swift in Sources */,
-				D0E950C62CEF50AB006E4C1E /* IntroPage1ViewController.swift in Sources */,
-				D02CEBFC2D4F7DA100D26C15 /* Part4Page12ViewController.swift in Sources */,
-				D075DA102D47D8A2000F8F0D /* Part1Page3ViewController.swift in Sources */,
+				D0E950C82CEF50B5006E4C1E /* AccessibilityTitleViewController.swift in Sources */,
+				D0E950C62CEF50AB006E4C1E /* TitleViewController.swift in Sources */,
+				D02CEBFC2D4F7DA100D26C15 /* EndOfPresentationViewController.swift in Sources */,
+				D075DA102D47D8A2000F8F0D /* RelevantLawsViewController.swift in Sources */,
 				D00DA7C82CE4C2F000582B94 /* MainViewController.swift in Sources */,
 				D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */,
 				D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */,
-				D0AD55F42CF06945007491E5 /* IntroPage2ViewController.swift in Sources */,
+				D0AD55F42CF06945007491E5 /* IntroViewController.swift in Sources */,
 				D09FE43D2D4DE6260094F10A /* ExCustomButton1.swift in Sources */,
-				D02CEBF22D4F2B6500D26C15 /* Part4Page9ViewController.swift in Sources */,
+				D02CEBF22D4F2B6500D26C15 /* PerformEscapeViewController.swift in Sources */,
 				D09FE4412D4DE63A0094F10A /* ExCustomButton3.swift in Sources */,
-				D0E0C34B2D4B8BA700A7238F /* Part3Page3ViewController.swift in Sources */,
+				D0E0C34B2D4B8BA700A7238F /* VoiceOverUsageViewController.swift in Sources */,
 				D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */,
-				D02CEBE82D4F2B3200D26C15 /* Part4Page4ViewController.swift in Sources */,
+				D02CEBE82D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift in Sources */,
 				D0F78AFC2CEE1980009534F5 /* PresentationViewController.swift in Sources */,
 				D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */,
-				D0E0C3472D4B831B00A7238F /* Part2Page5ViewController.swift in Sources */,
-				D0E0C3512D4B8BDC00A7238F /* Part3Page6ViewController.swift in Sources */,
+				D0E0C3472D4B831B00A7238F /* AccessibilityFeaturesViewController.swift in Sources */,
+				D0E0C3512D4B8BDC00A7238F /* AccessibilityLabelViewController.swift in Sources */,
 				D0DA3A472CEB8441006118DB /* SideButtonView.swift in Sources */,
-				D02CEBEA2D4F2B3E00D26C15 /* Part4Page5ViewController.swift in Sources */,
-				D0341F922D4E178000267DC3 /* Part3Page9ViewController.swift in Sources */,
-				D02CEBFA2D4F7D9800D26C15 /* Part4Page11ViewController.swift in Sources */,
-				D02CEBEC2D4F2B4800D26C15 /* Part4Page6ViewController.swift in Sources */,
-				D075DA0E2D4783EF000F8F0D /* Part1Page2ViewController.swift in Sources */,
+				D02CEBEA2D4F2B3E00D26C15 /* BettingAppTimerViewController.swift in Sources */,
+				D0341F922D4E178000267DC3 /* AccessibilityHintViewController.swift in Sources */,
+				D02CEBFA2D4F7D9800D26C15 /* Impression2ViewController.swift in Sources */,
+				D02CEBEC2D4F2B4800D26C15 /* UIKitControlsViewController.swift in Sources */,
+				D075DA0E2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,15 @@
 //
-//  Part3Page4ViewController.swift
+//  Part4Page2ViewController.swift
 //  AccessibilityPractice
 //
-//  Created by yongjun18 on 1/30/25.
+//  Created by yongjun18 on 2/2/25.
 //
 
 import Foundation
 import UIKit
 import PinLayout
 
-class Part3Page4ViewController: PresentationViewController {
+class BettingAppFeature1ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -19,15 +19,20 @@ class Part3Page4ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
-    private let accessibilityProperties: Array<String> = [
-        "isAccessibilityElement",
-        "accessibilityLabel",
-        "accessibilityTraits",
-        "accessibilityValue",
-        "accessibilityHint"
-    ]
-    private var propertyLabels = Array<UILabel>()
+    private var sampleImageView1 = UIImageView()
+    private var sampleImageView2 = UIImageView()
+    
     private var labelContainer = UIView()
+    private let featureStrings: Array<String> = [
+        "로그인 화면",
+        "커스텀 토글 버튼",
+        "메인 화면",
+        "진행 중인 게임 리스트",
+        "베팅 화면",
+        "로그아웃 팝업",
+        "..."
+    ]
+    private var featureLabels = Array<UILabel>()
     
     private var isWillAppear = false
     
@@ -38,26 +43,34 @@ class Part3Page4ViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "3. iOS 접근성 구현 방법(VoiceOver)"
+        titleLabel.text = "4. 발표를 마치며"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "Accessibility 관련 속성 값"
+        subtitleLabel.text = "송년회 베팅 앱 VoiceOver 적용기"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
         
         mainContentView.addSubview(innerContentView)
         
+        sampleImageView1.image = UIImage(named: "SampleScreenshot1")
+        sampleImageView1.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView1)
+        
+        sampleImageView2.image = UIImage(named: "SampleScreenshot2")
+        sampleImageView2.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView2)
+        
         innerContentView.addSubview(labelContainer)
         
-        for idx in accessibilityProperties.indices {
+        for idx in featureStrings.indices {
             let label = UILabel()
-            label.text = accessibilityProperties[idx]
-            label.font = .systemFont(ofSize: 17)
+            label.text = featureStrings[idx]
+            label.font = .systemFont(ofSize: 15)
             label.textColor = .white
-            propertyLabels.append(label)
+            featureLabels.append(label)
             labelContainer.addSubview(label)
         }
     }
@@ -72,14 +85,16 @@ class Part3Page4ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
-        labelContainer.pin.horizontally()
-        for idx in propertyLabels.indices {
+        sampleImageView2.pin.right().top(10).bottom().aspectRatio()
+        sampleImageView1.pin.before(of: sampleImageView2).top(10).bottom().aspectRatio().marginRight(5)
+        
+        labelContainer.pin.before(of: sampleImageView1).left().marginRight(30)
+        for idx in featureLabels.indices {
             if idx == 0 {
-                propertyLabels[idx].pin.top().horizontally().sizeToFit(.width)
+                featureLabels[idx].pin.top().horizontally().sizeToFit(.width)
             }
             else {
-                propertyLabels[idx].pin.below(of: propertyLabels[idx-1]).horizontally().sizeToFit(.width)
-                    .marginTop(16)
+                featureLabels[idx].pin.below(of: featureLabels[idx-1]).horizontally().marginTop(5).sizeToFit(.width)
             }
         }
         labelContainer.pin.wrapContent().left().vCenter()
@@ -110,7 +125,7 @@ class Part3Page4ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part3Page4ViewController {
+private extension BettingAppFeature1ViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

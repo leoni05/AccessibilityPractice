@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part1Page2ViewController: PresentationViewController {
+class AccessibilityDefinitionViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -125,7 +125,7 @@ class Part1Page2ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part1Page2ViewController {
+private extension AccessibilityDefinitionViewController {
     func readyForAppearAnimation() {
         definitionView.alpha = 0.0
         quoteLeftView.pin.above(of: definitionView, aligned: .center).size(20)

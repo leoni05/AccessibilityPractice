@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part2Page4ViewController: PresentationViewController {
+class TheRelayViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -195,7 +195,7 @@ class Part2Page4ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part2Page4ViewController {
+private extension TheRelayViewController {
     @objc func buttonPressed(_ sender: UIButton) {
         let nextScriptIdx = currentScriptIdx + sender.tag
 

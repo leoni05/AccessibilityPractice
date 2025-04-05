@@ -1,5 +1,5 @@
 //
-//  Part4Page5ViewController.swift
+//  Part4Page3ViewController.swift
 //  AccessibilityPractice
 //
 //  Created by yongjun18 on 2/2/25.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page5ViewController: PresentationViewController {
+class BettingAppFeature2ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -19,7 +19,8 @@ class Part4Page5ViewController: PresentationViewController {
     
     private var innerContentView = UIView()
     
-    private var timeRecordImageView = UIImageView()
+    private var sampleImageView1 = UIImageView()
+    private var sampleImageView2 = UIImageView()
     
     private var labelContainer = UIView()
     private let featureStrings: Array<String> = [
@@ -54,13 +55,13 @@ class Part4Page5ViewController: PresentationViewController {
         
         mainContentView.addSubview(innerContentView)
         
-        timeRecordImageView.image = UIImage(named: "SampleTimeRecord")
-        timeRecordImageView.contentMode = .scaleAspectFit
-        timeRecordImageView.layer.cornerRadius = 5.0
-        timeRecordImageView.layer.borderWidth = 1.0
-        timeRecordImageView.layer.borderColor = UIColor.white.cgColor
-        timeRecordImageView.layer.masksToBounds = true
-        innerContentView.addSubview(timeRecordImageView)
+        sampleImageView1.image = UIImage(named: "SampleScreenshot3")
+        sampleImageView1.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView1)
+        
+        sampleImageView2.image = UIImage(named: "SampleScreenshot4")
+        sampleImageView2.contentMode = .scaleAspectFit
+        innerContentView.addSubview(sampleImageView2)
         
         innerContentView.addSubview(labelContainer)
         
@@ -84,9 +85,10 @@ class Part4Page5ViewController: PresentationViewController {
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)
             .right().bottom(self.view.pin.safeArea).marginBottom(25)
         
-        timeRecordImageView.pin.right(30).vCenter().width(180).aspectRatio()
+        sampleImageView2.pin.right().top(10).bottom().aspectRatio()
+        sampleImageView1.pin.before(of: sampleImageView2).top(10).bottom().aspectRatio().marginRight(5)
         
-        labelContainer.pin.before(of: timeRecordImageView).left().marginRight(30)
+        labelContainer.pin.before(of: sampleImageView1).left().marginRight(30)
         for idx in featureLabels.indices {
             if idx == 0 {
                 featureLabels[idx].pin.top().horizontally().sizeToFit(.width)
@@ -123,7 +125,7 @@ class Part4Page5ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page5ViewController {
+private extension BettingAppFeature2ViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

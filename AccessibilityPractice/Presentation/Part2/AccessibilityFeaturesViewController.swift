@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part2Page5ViewController: PresentationViewController {
+class AccessibilityFeaturesViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -183,7 +183,7 @@ class Part2Page5ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part2Page5ViewController {
+private extension AccessibilityFeaturesViewController {
     func setFeatureCategories() {
         featureCategories = [
             FeatureCategory(title: "말하기", button: UIButton(), stickView: UIView(), featureLabels: [],
@@ -219,7 +219,7 @@ private extension Part2Page5ViewController {
 
 // MARK: - Private Extensions
 
-private extension Part2Page5ViewController {
+private extension AccessibilityFeaturesViewController {
     func setFeatureStatus(idx: Int, active: Bool, animated: Bool) {
         if animated {
             featureLabelsWrapper.isHidden = true

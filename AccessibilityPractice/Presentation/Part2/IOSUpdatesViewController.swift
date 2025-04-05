@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part2Page3ViewController: PresentationViewController {
+class IOSUpdatesViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -117,7 +117,7 @@ class Part2Page3ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part2Page3ViewController {
+private extension IOSUpdatesViewController {
     func setUpdateLabels() {
         let strings: Array<String> = [
             "[ iOS 18 ]",

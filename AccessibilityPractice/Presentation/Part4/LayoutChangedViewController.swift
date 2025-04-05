@@ -1,5 +1,5 @@
 //
-//  Part4Page7ViewController.swift
+//  Part4Page8ViewController.swift
 //  AccessibilityPractice
 //
 //  Created by yongjun18 on 2/2/25.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page7ViewController: PresentationViewController {
+class LayoutChangedViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -25,19 +25,21 @@ class Part4Page7ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
-    private var beforeButton1 = ExCustomButton1(titleString: "좋아요", imageName: "hand.thumbsup")
-    private var beforeButton2 = ExCustomButton1(titleString: "싫어요", imageName: "hand.thumbsdown")
-    private var beforeButton3 = ExCustomButton1(titleString: "알림", imageName: "bell")
-    
-    private var afterButton1 = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
-    private var afterButton2 = ExCustomButton(titleString: "싫어요", imageName: "hand.thumbsdown")
-    private var afterButton3 = ExCustomButton(titleString: "알림", imageName: "bell")
-    
     private var featureContainer = UIView()
     private var featureLabel = UILabel()
     private var featureDescLabel = UILabel()
     private var editorScrollView = UIScrollView()
     private var codeLabel = UILabel()
+    
+    private var isBeforeLoading = false
+    private var beforeReloadButton = UIButton()
+    private var beforeResultLabel = UILabel()
+    private var beforeLoadingIndicator = UIActivityIndicatorView()
+    
+    private var isAfterLoading = false
+    private var afterReloadButton = UIButton()
+    private var afterResultLabel = UILabel()
+    private var afterLoadingIndicator = UIActivityIndicatorView()
     
     private var isWillAppear = false
     
@@ -92,22 +94,46 @@ class Part4Page7ViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
-        beforeContainer.addSubview(beforeButton1)
-        beforeContainer.addSubview(beforeButton2)
-        beforeContainer.addSubview(beforeButton3)
+        beforeReloadButton.accessibilityLabel = "새로고침"
+        beforeReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
+        beforeReloadButton.tintColor = .white
+        beforeReloadButton.addTarget(self, action: #selector(beforeReloadButtonPressed(_:)), for: .touchUpInside)
+        beforeContainer.addSubview(beforeReloadButton)
         
-        afterContainer.addSubview(afterButton1)
-        afterContainer.addSubview(afterButton2)
-        afterContainer.addSubview(afterButton3)
+        beforeResultLabel.text = ""
+        beforeResultLabel.font = .systemFont(ofSize: 14)
+        beforeResultLabel.textColor = .white
+        beforeResultLabel.sizeToFit()
+        beforeContainer.addSubview(beforeResultLabel)
+        
+        beforeLoadingIndicator.color = .white
+        beforeLoadingIndicator.isHidden = true
+        beforeContainer.addSubview(beforeLoadingIndicator)
+        
+        afterReloadButton.accessibilityLabel = "새로고침"
+        afterReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
+        afterReloadButton.tintColor = .white
+        afterReloadButton.addTarget(self, action: #selector(afterReloadButtonPressed(_:)), for: .touchUpInside)
+        afterContainer.addSubview(afterReloadButton)
+        
+        afterResultLabel.text = ""
+        afterResultLabel.font = .systemFont(ofSize: 14)
+        afterResultLabel.textColor = .white
+        afterResultLabel.sizeToFit()
+        afterContainer.addSubview(afterResultLabel)
+        
+        afterLoadingIndicator.color = .white
+        afterLoadingIndicator.isHidden = true
+        afterContainer.addSubview(afterLoadingIndicator)
         
         innerContentView.addSubview(featureContainer)
         
-        featureLabel.text = "커스텀 토글 버튼"
+        featureLabel.text = "화면 레이아웃 변경"
         featureLabel.font = .systemFont(ofSize: 17)
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "프레임워크에서 제공하는 기본 기능만으로는 요구사항 구현이 어려울 경우, 레이아웃 및 기능을 커스텀 하여 구현"
+        featureDescLabel.text = "화면 구성 요소의 배치가 바뀌었을 경우, VoiceOver 사용자는 이를 알아차리지 못할 수 있으므로 접근성 알림 전송 필요"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
@@ -120,17 +146,7 @@ class Part4Page7ViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-self.isAccessibilityElement = true
-self.accessibilityLabel = "좋아요"
-self.accessibilityTraits = .button
-self.accessibilityValue = "끔"
-self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
-...
-private var isSelected = false {
-    didSet {
-        self.accessibilityValue = (isSelected ? "켬" : "끔")
-    }
-}
+UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
@@ -156,13 +172,13 @@ private var isSelected = false {
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
-        beforeButton2.pin.center().size(48)
-        beforeButton1.pin.before(of: beforeButton2, aligned: .center).size(48).marginRight(10)
-        beforeButton3.pin.after(of: beforeButton2, aligned: .center).size(48).marginLeft(10)
+        beforeReloadButton.pin.right(5).vCenter().size(40)
+        beforeResultLabel.pin.center()
+        beforeLoadingIndicator.pin.center()
         
-        afterButton2.pin.center().size(48)
-        afterButton1.pin.before(of: afterButton2, aligned: .center).size(48).marginRight(10)
-        afterButton3.pin.after(of: afterButton2, aligned: .center).size(48).marginLeft(10)
+        afterReloadButton.pin.right(5).vCenter().size(40)
+        afterResultLabel.pin.center()
+        afterLoadingIndicator.pin.center()
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
@@ -203,7 +219,50 @@ private var isSelected = false {
 
 // MARK: - Private Extensions
 
-private extension Part4Page7ViewController {
+private extension LayoutChangedViewController {
+    @objc func beforeReloadButtonPressed(_ sender: UIButton) {
+        if isBeforeLoading { return }
+        isBeforeLoading = true
+        
+        beforeResultLabel.isHidden = true
+        beforeLoadingIndicator.startAnimating()
+        beforeLoadingIndicator.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.beforeLoadingIndicator.isHidden = true
+            self.beforeLoadingIndicator.stopAnimating()
+            
+            self.beforeResultLabel.text = "LOAD COMPLETE"
+            self.beforeResultLabel.sizeToFit()
+            self.beforeResultLabel.pin.center()
+            self.beforeResultLabel.isHidden = false
+            
+            self.isBeforeLoading = false
+        }
+    }
+    
+    @objc func afterReloadButtonPressed(_ sender: UIButton) {
+        if isAfterLoading { return }
+        isAfterLoading = true
+        
+        afterResultLabel.isHidden = true
+        afterLoadingIndicator.startAnimating()
+        afterLoadingIndicator.isHidden = false
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.afterLoadingIndicator.isHidden = true
+            self.afterLoadingIndicator.stopAnimating()
+            
+            self.afterResultLabel.text = "LOAD COMPLETE"
+            self.afterResultLabel.sizeToFit()
+            self.afterResultLabel.pin.center()
+            self.afterResultLabel.isHidden = false
+            
+            self.isAfterLoading = false
+            UIAccessibility.post(notification: .screenChanged, argument: self.afterResultLabel)
+        }
+    }
+
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

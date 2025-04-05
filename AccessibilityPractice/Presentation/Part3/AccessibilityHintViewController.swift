@@ -1,15 +1,15 @@
 //
-//  Part3Page6ViewController.swift
+//  Part3Page9ViewController.swift
 //  AccessibilityPractice
 //
-//  Created by yongjun18 on 1/30/25.
+//  Created by yongjun18 on 2/1/25.
 //
 
 import Foundation
 import UIKit
 import PinLayout
 
-class Part3Page6ViewController: PresentationViewController {
+class AccessibilityHintViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -25,13 +25,13 @@ class Part3Page6ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
-    private var beforeButton1 = ExCustomButton2(titleString: "좋아요", imageName: "hand.thumbsup")
-    private var beforeButton2 = ExCustomButton2(titleString: "싫어요", imageName: "hand.thumbsdown")
-    private var beforeButton3 = ExCustomButton2(titleString: "알림", imageName: "bell")
+    private var beforeButton1 = ExCustomButton5(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var beforeButton2 = ExCustomButton5(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var beforeButton3 = ExCustomButton5(titleString: "알림", imageName: "bell")
     
-    private var afterButton1 = ExCustomButton3(titleString: "좋아요", imageName: "hand.thumbsup")
-    private var afterButton2 = ExCustomButton3(titleString: "싫어요", imageName: "hand.thumbsdown")
-    private var afterButton3 = ExCustomButton3(titleString: "알림", imageName: "bell")
+    private var afterButton1 = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var afterButton2 = ExCustomButton(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var afterButton3 = ExCustomButton(titleString: "알림", imageName: "bell")
     
     private var propertyContainer = UIView()
     private var propertyLabel = UILabel()
@@ -102,12 +102,12 @@ class Part3Page6ViewController: PresentationViewController {
         
         innerContentView.addSubview(propertyContainer)
         
-        propertyLabel.text = "accessibilityLabel"
+        propertyLabel.text = "accessibilityHint"
         propertyLabel.font = .systemFont(ofSize: 17)
         propertyLabel.textColor = .white
         propertyContainer.addSubview(propertyLabel)
         
-        propertyDescLabel.text = "접근성 요소를 식별하기 위한 간결한 문자열. '버튼'과 같은 요소의 종류는 포함하지 않도록 주의."
+        propertyDescLabel.text = "접근성 요소를 동작 시켰을 때 나타나는 결과에 대한 간략한 설명이 포함된 문자열."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
         propertyDescLabel.numberOfLines = 3
@@ -122,6 +122,15 @@ class Part3Page6ViewController: PresentationViewController {
         codeLabel.text = """
 self.isAccessibilityElement = true
 self.accessibilityLabel = "좋아요"
+self.accessibilityTraits = .button
+self.accessibilityValue = "끔"
+self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
+...
+private var isSelected = false {
+    didSet {
+        self.accessibilityValue = (isSelected ? "켬" : "끔")
+    }
+}
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
@@ -194,7 +203,7 @@ self.accessibilityLabel = "좋아요"
 
 // MARK: - Private Extensions
 
-private extension Part3Page6ViewController {
+private extension AccessibilityHintViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

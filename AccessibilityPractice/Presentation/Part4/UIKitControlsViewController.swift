@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page6ViewController: PresentationViewController {
+class UIKitControlsViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -139,7 +139,7 @@ class Part4Page6ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page6ViewController {
+private extension UIKitControlsViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

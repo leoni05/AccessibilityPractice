@@ -1,15 +1,15 @@
 //
-//  Part3Page9ViewController.swift
+//  Part4Page7ViewController.swift
 //  AccessibilityPractice
 //
-//  Created by yongjun18 on 2/1/25.
+//  Created by yongjun18 on 2/2/25.
 //
 
 import Foundation
 import UIKit
 import PinLayout
 
-class Part3Page9ViewController: PresentationViewController {
+class CustomToggleViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -25,17 +25,17 @@ class Part3Page9ViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
-    private var beforeButton1 = ExCustomButton5(titleString: "좋아요", imageName: "hand.thumbsup")
-    private var beforeButton2 = ExCustomButton5(titleString: "싫어요", imageName: "hand.thumbsdown")
-    private var beforeButton3 = ExCustomButton5(titleString: "알림", imageName: "bell")
+    private var beforeButton1 = ExCustomButton1(titleString: "좋아요", imageName: "hand.thumbsup")
+    private var beforeButton2 = ExCustomButton1(titleString: "싫어요", imageName: "hand.thumbsdown")
+    private var beforeButton3 = ExCustomButton1(titleString: "알림", imageName: "bell")
     
     private var afterButton1 = ExCustomButton(titleString: "좋아요", imageName: "hand.thumbsup")
     private var afterButton2 = ExCustomButton(titleString: "싫어요", imageName: "hand.thumbsdown")
     private var afterButton3 = ExCustomButton(titleString: "알림", imageName: "bell")
     
-    private var propertyContainer = UIView()
-    private var propertyLabel = UILabel()
-    private var propertyDescLabel = UILabel()
+    private var featureContainer = UIView()
+    private var featureLabel = UILabel()
+    private var featureDescLabel = UILabel()
     private var editorScrollView = UIScrollView()
     private var codeLabel = UILabel()
     
@@ -48,12 +48,12 @@ class Part3Page9ViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "3. iOS 접근성 구현 방법(VoiceOver)"
+        titleLabel.text = "4. 발표를 마치며"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "Accessibility 관련 속성 값"
+        subtitleLabel.text = "송년회 베팅 앱 VoiceOver 적용기"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
@@ -100,24 +100,24 @@ class Part3Page9ViewController: PresentationViewController {
         afterContainer.addSubview(afterButton2)
         afterContainer.addSubview(afterButton3)
         
-        innerContentView.addSubview(propertyContainer)
+        innerContentView.addSubview(featureContainer)
         
-        propertyLabel.text = "accessibilityHint"
-        propertyLabel.font = .systemFont(ofSize: 17)
-        propertyLabel.textColor = .white
-        propertyContainer.addSubview(propertyLabel)
+        featureLabel.text = "커스텀 토글 버튼"
+        featureLabel.font = .systemFont(ofSize: 17)
+        featureLabel.textColor = .white
+        featureContainer.addSubview(featureLabel)
         
-        propertyDescLabel.text = "접근성 요소를 동작 시켰을 때 나타나는 결과에 대한 간략한 설명이 포함된 문자열."
-        propertyDescLabel.font = .systemFont(ofSize: 14)
-        propertyDescLabel.textColor = .white
-        propertyDescLabel.numberOfLines = 3
-        propertyContainer.addSubview(propertyDescLabel)
+        featureDescLabel.text = "프레임워크에서 제공하는 기본 기능만으로는 요구사항 구현이 어려울 경우, 레이아웃 및 기능을 커스텀 하여 구현"
+        featureDescLabel.font = .systemFont(ofSize: 14)
+        featureDescLabel.textColor = .white
+        featureDescLabel.numberOfLines = 3
+        featureContainer.addSubview(featureDescLabel)
         
         editorScrollView.layer.cornerRadius = 5.0
         editorScrollView.layer.borderWidth = 1.0
         editorScrollView.layer.borderColor = UIColor.white.cgColor
         editorScrollView.layer.masksToBounds = true
-        propertyContainer.addSubview(editorScrollView)
+        featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
 self.isAccessibilityElement = true
@@ -166,12 +166,12 @@ private var isSelected = false {
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
-        propertyContainer.pin.left().right(to: exampleContainer.edge.left).marginRight(30)
-        propertyLabel.pin.top().horizontally().sizeToFit(.width)
-        propertyDescLabel.pin.below(of: propertyLabel).horizontally().marginTop(10).sizeToFit(.width)
-        editorScrollView.pin.below(of: propertyDescLabel).horizontally().height(120)
+        featureContainer.pin.left().right(to: exampleContainer.edge.left).marginRight(30)
+        featureLabel.pin.top().horizontally().sizeToFit(.width)
+        featureDescLabel.pin.below(of: featureLabel).horizontally().marginTop(10).sizeToFit(.width)
+        editorScrollView.pin.below(of: featureDescLabel).horizontally().height(120)
             .marginTop(10)
-        propertyContainer.pin.wrapContent().left().vCenter()
+        featureContainer.pin.wrapContent().left().vCenter()
         
         codeLabel.pin.top(12).horizontally(12).sizeToFit(.width)
         editorScrollView.contentSize = CGSize(width: editorScrollView.bounds.width,
@@ -203,7 +203,7 @@ private var isSelected = false {
 
 // MARK: - Private Extensions
 
-private extension Part3Page9ViewController {
+private extension CustomToggleViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

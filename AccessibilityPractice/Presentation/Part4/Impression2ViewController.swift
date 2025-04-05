@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page11ViewController: PresentationViewController {
+class Impression2ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -68,7 +68,7 @@ class Part4Page11ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page11ViewController {
+private extension Impression2ViewController {
     func readyForAppearAnimation() {
         contentLabel.alpha = 0.0
     }

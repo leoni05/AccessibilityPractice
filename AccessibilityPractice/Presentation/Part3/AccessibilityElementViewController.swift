@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part3Page5ViewController: PresentationViewController {
+class AccessibilityElementViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -193,7 +193,7 @@ self.isAccessibilityElement = true
 
 // MARK: - Private Extensions
 
-private extension Part3Page5ViewController {
+private extension AccessibilityElementViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

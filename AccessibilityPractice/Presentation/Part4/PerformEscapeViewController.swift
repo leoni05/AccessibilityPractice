@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page9ViewController: PresentationViewController {
+class PerformEscapeViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -145,7 +145,7 @@ override func accessibilityPerformEscape() -> Bool {
 
 // MARK: - Private Extensions
 
-private extension Part4Page9ViewController {
+private extension PerformEscapeViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

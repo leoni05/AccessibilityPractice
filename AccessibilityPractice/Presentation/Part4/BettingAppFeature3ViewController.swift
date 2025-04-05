@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page4ViewController: PresentationViewController {
+class BettingAppFeature3ViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -125,7 +125,7 @@ class Part4Page4ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page4ViewController {
+private extension BettingAppFeature3ViewController {
     func readyForAppearAnimation() {
         innerContentView.alpha = 0.0
         innerContentView.pin.below(of: subtitleLabel, aligned: .left)

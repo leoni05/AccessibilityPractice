@@ -1,5 +1,5 @@
 //
-//  Part4Page10ViewController.swift
+//  Part4Page12ViewController.swift
 //  AccessibilityPractice
 //
 //  Created by yongjun18 on 2/2/25.
@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part4Page10ViewController: PresentationViewController {
+class EndOfPresentationViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -30,12 +30,12 @@ class Part4Page10ViewController: PresentationViewController {
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "구현 시 느낀 점"
+        subtitleLabel.text = " "
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
         
-        contentLabel.text = "어렵지 않아요."
+        contentLabel.text = "감사합니다."
         contentLabel.font = .systemFont(ofSize: 20)
         contentLabel.textColor = .white
         contentLabel.sizeToFit()
@@ -68,7 +68,7 @@ class Part4Page10ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part4Page10ViewController {
+private extension EndOfPresentationViewController {
     func readyForAppearAnimation() {
         contentLabel.alpha = 0.0
     }

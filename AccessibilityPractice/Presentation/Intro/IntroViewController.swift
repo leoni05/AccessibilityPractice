@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class IntroPage2ViewController: PresentationViewController {
+class IntroViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -101,7 +101,7 @@ class IntroPage2ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension IntroPage2ViewController {
+private extension IntroViewController {
     func readyForAppearAnimation() {
         contentItemContainerView.alpha = 0.0
         contentItemContainerView.pin.wrapContent().center().marginLeft(-10)

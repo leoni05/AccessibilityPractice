@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import PinLayout
 
-class Part2Page1ViewController: PresentationViewController {
+class ApplesTitleViewController: PresentationViewController {
     
     // MARK: - Properties
     
@@ -118,7 +118,7 @@ class Part2Page1ViewController: PresentationViewController {
 
 // MARK: - Private Extensions
 
-private extension Part2Page1ViewController {
+private extension ApplesTitleViewController {
     func readyForAppearAnimation() {
         backgroundImageView.alpha = 0.0
         mainContentView.alpha = 0.0
