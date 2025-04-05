@@ -206,6 +206,9 @@ private extension AccessibilityDefinitionViewController {
                 videoImages[idx].pin.left(x).bottom(y).width(CGFloat(imageWidth)).height(CGFloat(imageHeight))
             }
         }
+        for idx in videoImages.indices {
+            videoImages[idx].alpha = 0.0
+        }
     }
     
     func animateBackgroundImages() {
@@ -241,6 +244,12 @@ private extension AccessibilityDefinitionViewController {
                             .width(CGFloat(self.imageWidth)).height(CGFloat(self.imageHeight))
                     }
                 }
+            }
+        }
+        
+        for idx in videoImages.indices {
+            UIView.animate(withDuration: 0.5, delay: Double(idx)*0.05) {
+                self.videoImages[idx].alpha = 1.0
             }
         }
     }
