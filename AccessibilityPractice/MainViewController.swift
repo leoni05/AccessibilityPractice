@@ -39,8 +39,7 @@ class MainViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"), pages: [
-            TitleViewController(delegate: self),
-            IntroViewController(delegate: self)
+            TitleViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"), pages: [
             AccessibilityTitleViewController(delegate: self),
@@ -48,13 +47,6 @@ class MainViewController: UIViewController {
             RelevantLawsViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"), pages: [
-            ApplesTitleViewController(delegate: self),
-            ApplesDefinitionViewController(delegate: self),
-            IOSUpdatesViewController(delegate: self),
-            TheRelayViewController(delegate: self),
-            AccessibilityFeaturesViewController(delegate: self)
-        ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "speaker.wave.2.fill"), pages: [
             VoiceOverTitleViewController(delegate: self),
             VoiceOverDefinitionViewController(delegate: self),
             VoiceOverUsageViewController(delegate: self),
@@ -63,18 +55,14 @@ class MainViewController: UIViewController {
             AccessibilityLabelViewController(delegate: self),
             AccessibilityTraitsViewController(delegate: self),
             AccessibilityValueViewController(delegate: self),
-            AccessibilityHintViewController(delegate: self)
+            AccessibilityHintViewController(delegate: self),
+            CustomToggleViewController(delegate: self),
+            LayoutChangedViewController(delegate: self),
+            PerformEscapeViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
             WrapUpTitleViewController(delegate: self),
-            BettingAppFeature1ViewController(delegate: self),
-            BettingAppFeature2ViewController(delegate: self),
-            BettingAppFeature3ViewController(delegate: self),
-            BettingAppTimerViewController(delegate: self),
             UIKitControlsViewController(delegate: self),
-            CustomToggleViewController(delegate: self),
-            LayoutChangedViewController(delegate: self),
-            PerformEscapeViewController(delegate: self),
             Impression1ViewController(delegate: self),
             Impression2ViewController(delegate: self),
             EndOfPresentationViewController(delegate: self)
