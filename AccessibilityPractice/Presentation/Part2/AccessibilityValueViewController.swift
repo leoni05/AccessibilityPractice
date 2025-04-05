@@ -48,7 +48,7 @@ class AccessibilityValueViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "3. iOS 접근성 구현 방법(VoiceOver)"
+        titleLabel.text = "2. iOS 접근성 구현 방법(VoiceOver)"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)

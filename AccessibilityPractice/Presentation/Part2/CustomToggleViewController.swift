@@ -48,12 +48,12 @@ class CustomToggleViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "4. 발표를 마치며"
+        titleLabel.text = "2. iOS 접근성 구현 방법(VoiceOver)"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "송년회 베팅 앱 VoiceOver 적용기"
+        subtitleLabel.text = "기타 VoiceOver 구현 예시"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)

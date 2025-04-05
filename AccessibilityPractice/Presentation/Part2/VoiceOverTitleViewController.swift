@@ -22,6 +22,7 @@ class VoiceOverTitleViewController: PresentationViewController {
     private var titleLabel = UILabel()
     private var subTitleLabel1 = UILabel()
     private var subTitleLabel2 = UILabel()
+    private var subTitleLabel3 = UILabel()
     
     private var isWillAppear = false
     
@@ -51,7 +52,7 @@ class VoiceOverTitleViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        partLabel.text = "Part 3"
+        partLabel.text = "Part 2"
         partLabel.font = .systemFont(ofSize: 15, weight: .light)
         partLabel.textColor = .white
         partLabel.sizeToFit()
@@ -74,6 +75,12 @@ class VoiceOverTitleViewController: PresentationViewController {
         subTitleLabel2.textColor = .white
         subTitleLabel2.sizeToFit()
         mainContentView.addSubview(subTitleLabel2)
+        
+        subTitleLabel3.text = "기타 VoiceOver 구현 예시"
+        subTitleLabel3.font = .systemFont(ofSize: 17, weight: .light)
+        subTitleLabel3.textColor = .white
+        subTitleLabel3.sizeToFit()
+        mainContentView.addSubview(subTitleLabel3)
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,6 +94,7 @@ class VoiceOverTitleViewController: PresentationViewController {
         titleLabel.pin.below(of: partLabel, aligned: .left)
         subTitleLabel1.pin.below(of: titleLabel, aligned: .left).marginTop(15)
         subTitleLabel2.pin.below(of: subTitleLabel1, aligned: .left).marginTop(5)
+        subTitleLabel3.pin.below(of: subTitleLabel2, aligned: .left).marginTop(5)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
         
