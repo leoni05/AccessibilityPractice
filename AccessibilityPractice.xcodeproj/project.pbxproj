@@ -586,6 +586,7 @@
 				DEVELOPMENT_TEAM = XYDL49Q5GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccessibilityPractice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Accessibility;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
@@ -617,6 +618,7 @@
 				DEVELOPMENT_TEAM = XYDL49Q5GS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AccessibilityPractice/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Accessibility;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeLeft;
