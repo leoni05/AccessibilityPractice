@@ -257,7 +257,7 @@
 			path = Part2;
 			sourceTree = "<group>";
 		};
-		D0E950CD2CEF515A006E4C1E /* Part4 */ = {
+		D0E950CD2CEF515A006E4C1E /* Part3 */ = {
 			isa = PBXGroup;
 			children = (
 				D0E950CE2CEF51A0006E4C1E /* WrapUpTitleViewController.swift */,
@@ -266,7 +266,7 @@
 				D02CEBF92D4F7D9800D26C15 /* Impression2ViewController.swift */,
 				D02CEBFB2D4F7DA100D26C15 /* EndOfPresentationViewController.swift */,
 			);
-			path = Part4;
+			path = Part3;
 			sourceTree = "<group>";
 		};
 		D0F78AF82CEE1949009534F5 /* Presentation */ = {
@@ -276,7 +276,7 @@
 				D0E950B72CEF4CBD006E4C1E /* Intro */,
 				D0E950B82CEF4CCB006E4C1E /* Part1 */,
 				D0E950BA2CEF4CDB006E4C1E /* Part2 */,
-				D0E950CD2CEF515A006E4C1E /* Part4 */,
+				D0E950CD2CEF515A006E4C1E /* Part3 */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
