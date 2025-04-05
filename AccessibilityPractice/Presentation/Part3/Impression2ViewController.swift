@@ -25,7 +25,7 @@ class Impression2ViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "4. 발표를 마치며"
+        titleLabel.text = "3. 발표를 마치며"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
