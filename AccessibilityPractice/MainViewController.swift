@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     
     struct PresentationPart {
         var tabIconImage: UIImage?
+        var accessibilityLabelString: String?
         var pages: [PresentationViewController]
     }
     private var presentationParts = Array<PresentationPart>()
@@ -38,15 +39,18 @@ class MainViewController: UIViewController {
     init() {
         super.init(nibName: nil, bundle: nil)
         
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"),
+                                                  accessibilityLabelString: "Intro", pages: [
             TitleViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"),
+                                                  accessibilityLabelString: "Part 1", pages: [
             AccessibilityTitleViewController(delegate: self),
             AccessibilityDefinitionViewController(delegate: self),
             RelevantLawsViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"),
+                                                  accessibilityLabelString: "Part 2", pages: [
             VoiceOverTitleViewController(delegate: self),
             VoiceOverDefinitionViewController(delegate: self),
             VoiceOverUsageViewController(delegate: self),
@@ -61,7 +65,8 @@ class MainViewController: UIViewController {
             LayoutChangedViewController(delegate: self),
             PerformEscapeViewController(delegate: self)
         ]))
-        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
+        presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"),
+                                                  accessibilityLabelString: "Part 3", pages: [
             WrapUpTitleViewController(delegate: self),
             Impression1ViewController(delegate: self),
             Impression2ViewController(delegate: self),
@@ -83,6 +88,7 @@ class MainViewController: UIViewController {
             let button = SideButtonView(image: presentationParts[idx].tabIconImage, tag: idx)
             button.addTarget(self, action: #selector(sideButtonPressed(_:)), for: .touchUpInside)
             btnContainerView.addSubview(button)
+            button.accessibilityLabel = presentationParts[idx].accessibilityLabelString
             sideButtons.append(button)
         }
         sideButtons[0].setBottomBorderAlpha(value: 1.0)
