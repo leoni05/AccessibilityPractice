@@ -250,6 +250,7 @@
 				D0E0C3522D4B8C1900A7238F /* AccessibilityTraitsViewController.swift */,
 				D0E0C3542D4B8C2700A7238F /* AccessibilityValueViewController.swift */,
 				D0341F912D4E178000267DC3 /* AccessibilityHintViewController.swift */,
+				D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */,
 				D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */,
 				D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */,
 				D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */,
@@ -261,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				D0E950CE2CEF51A0006E4C1E /* WrapUpTitleViewController.swift */,
-				D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */,
 				D02CEBF72D4F7D8C00D26C15 /* Impression1ViewController.swift */,
 				D02CEBF92D4F7D9800D26C15 /* Impression2ViewController.swift */,
 				D02CEBFB2D4F7DA100D26C15 /* EndOfPresentationViewController.swift */,

@@ -56,13 +56,13 @@ class MainViewController: UIViewController {
             AccessibilityTraitsViewController(delegate: self),
             AccessibilityValueViewController(delegate: self),
             AccessibilityHintViewController(delegate: self),
+            UIKitControlsViewController(delegate: self),
             CustomToggleViewController(delegate: self),
             LayoutChangedViewController(delegate: self),
             PerformEscapeViewController(delegate: self)
         ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"), pages: [
             WrapUpTitleViewController(delegate: self),
-            UIKitControlsViewController(delegate: self),
             Impression1ViewController(delegate: self),
             Impression2ViewController(delegate: self),
             EndOfPresentationViewController(delegate: self)

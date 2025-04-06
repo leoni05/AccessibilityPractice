@@ -37,12 +37,12 @@ class UIKitControlsViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        titleLabel.text = "3. 발표를 마치며"
+        titleLabel.text = "2. iOS 접근성 구현 방법(VoiceOver)"
         titleLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "구현 시 느낀 점"
+        subtitleLabel.text = "Accessibility 관련 속성 값"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
