@@ -69,7 +69,7 @@ class AccessibilityDefinitionViewController: PresentationViewController {
         
         let colors: [CGColor] = [
            .init(red: 0, green: 0, blue: 0, alpha: 1),
-           .init(red: 0, green: 0, blue: 0, alpha: 0.3),
+           .init(red: 0, green: 0, blue: 0, alpha: 0.6),
         ]
         gradientLayerH.colors = colors
         gradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
@@ -248,7 +248,7 @@ private extension AccessibilityDefinitionViewController {
         }
         
         for idx in videoImages.indices {
-            UIView.animate(withDuration: 0.5, delay: Double(idx)*0.05) {
+            UIView.animate(withDuration: 0.5, delay: Double(17-idx)*0.05) {
                 self.videoImages[idx].alpha = 1.0
             }
         }
