@@ -120,7 +120,6 @@ class AccessibilityLabelViewController: PresentationViewController {
         propertyContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-self.isAccessibilityElement = true
 self.accessibilityLabel = "좋아요"
 """
         codeLabel.font = .systemFont(ofSize: 14)

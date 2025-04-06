@@ -120,17 +120,7 @@ class AccessibilityHintViewController: PresentationViewController {
         propertyContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-self.isAccessibilityElement = true
-self.accessibilityLabel = "좋아요"
-self.accessibilityTraits = .button
-self.accessibilityValue = "끔"
 self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
-...
-private var isSelected = false {
-    didSet {
-        self.accessibilityValue = (isSelected ? "켬" : "끔")
-    }
-}
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white

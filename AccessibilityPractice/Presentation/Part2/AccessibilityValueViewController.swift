@@ -120,9 +120,6 @@ class AccessibilityValueViewController: PresentationViewController {
         propertyContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-self.isAccessibilityElement = true
-self.accessibilityLabel = "좋아요"
-self.accessibilityTraits = .button
 self.accessibilityValue = "끔"
 ...
 private var isSelected = false {
