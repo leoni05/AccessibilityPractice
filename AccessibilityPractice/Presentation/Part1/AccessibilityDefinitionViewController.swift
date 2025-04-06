@@ -69,7 +69,7 @@ class AccessibilityDefinitionViewController: PresentationViewController {
         
         let colors: [CGColor] = [
            .init(red: 0, green: 0, blue: 0, alpha: 1),
-           .init(red: 0, green: 0, blue: 0, alpha: 0.6),
+           .init(red: 0, green: 0, blue: 0, alpha: 0.4),
         ]
         gradientLayerH.colors = colors
         gradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
