@@ -113,6 +113,7 @@ class MainViewController: UIViewController {
 private extension MainViewController {
     @objc func sideButtonPressed(_ sender: SideButtonView) {
         if selectedPart == sender.tag {
+            changePage(diff: 1)
             return
         }
         
