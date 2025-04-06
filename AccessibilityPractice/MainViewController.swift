@@ -89,6 +89,7 @@ class MainViewController: UIViewController {
         if let vc = currentViewController {
             self.addChild(vc)
             self.view.addSubview(vc.view)
+            accessibilityPageChanged()
         }
     }
     
@@ -129,6 +130,15 @@ private extension MainViewController {
         if let vc = currentViewController {
             self.addChild(vc)
             self.view.addSubview(vc.view)
+            accessibilityPageChanged()
+        }
+    }
+    
+    func accessibilityPageChanged() {
+        if let currentVC = currentViewController,
+           let currentView = currentVC.view {
+            self.view.accessibilityElements = [btnContainerView, currentView]
+            UIAccessibility.post(notification: .screenChanged, argument: currentView)
         }
     }
 }
@@ -147,6 +157,7 @@ extension MainViewController: PresentationViewControllerDelegate {
             if let vc = currentViewController {
                 self.addChild(vc)
                 self.view.addSubview(vc.view)
+                accessibilityPageChanged()
             }
         }
     }
