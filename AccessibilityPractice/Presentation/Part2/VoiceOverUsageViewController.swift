@@ -83,6 +83,8 @@ class VoiceOverUsageViewController: PresentationViewController {
             gestureLabels.append(gestureDescLabel)
             labelContainer.addSubview(gestureDescLabel)
         }
+        
+        innerContentView.accessibilityElements = [labelContainer, exampleContainer]
     }
     
     override func viewDidLayoutSubviews() {

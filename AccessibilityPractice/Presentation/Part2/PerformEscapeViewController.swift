@@ -91,6 +91,8 @@ override func accessibilityPerformEscape() -> Bool {
         codeLabel.textColor = .white
         codeLabel.numberOfLines = 0
         editorScrollView.addSubview(codeLabel)
+        
+        innerContentView.accessibilityElements = [featureContainer, exampleContainer]
     }
     
     override func viewDidLayoutSubviews() {

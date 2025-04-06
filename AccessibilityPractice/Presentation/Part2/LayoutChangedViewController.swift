@@ -152,6 +152,8 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
         codeLabel.textColor = .white
         codeLabel.numberOfLines = 0
         editorScrollView.addSubview(codeLabel)
+        
+        innerContentView.accessibilityElements = [featureContainer, exampleContainer]
     }
     
     override func viewDidLayoutSubviews() {

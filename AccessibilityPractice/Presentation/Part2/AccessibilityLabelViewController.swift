@@ -126,6 +126,8 @@ self.accessibilityLabel = "좋아요"
         codeLabel.textColor = .white
         codeLabel.numberOfLines = 0
         editorScrollView.addSubview(codeLabel)
+        
+        innerContentView.accessibilityElements = [propertyContainer, exampleContainer]
     }
     
     override func viewDidLayoutSubviews() {

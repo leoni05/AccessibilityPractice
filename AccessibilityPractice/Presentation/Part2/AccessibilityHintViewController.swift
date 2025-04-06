@@ -126,6 +126,8 @@ self.accessibilityHint = "끄거나 켜려면 이중 탭 하세요."
         codeLabel.textColor = .white
         codeLabel.numberOfLines = 0
         editorScrollView.addSubview(codeLabel)
+        
+        innerContentView.accessibilityElements = [propertyContainer, exampleContainer]
     }
     
     override func viewDidLayoutSubviews() {
