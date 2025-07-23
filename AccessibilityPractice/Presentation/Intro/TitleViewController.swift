@@ -80,7 +80,7 @@ class TitleViewController: PresentationViewController {
         presenterIcon.contentMode = .scaleAspectFit
         mainContentView.addSubview(presenterIcon)
         
-        presenterLabel.text = "OO Team yongjun18976"
+        presenterLabel.text = "OO Team leoni05"
         presenterLabel.font = .systemFont(ofSize: 16, weight: .medium)
         presenterLabel.textColor = .white
         mainContentView.addSubview(presenterLabel)
