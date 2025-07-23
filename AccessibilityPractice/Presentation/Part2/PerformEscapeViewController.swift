@@ -61,6 +61,7 @@ class PerformEscapeViewController: PresentationViewController {
         exampleVC.isNavigationBarHidden = true
         self.addChild(exampleVC)
         afterContainer.addSubview(exampleVC.view)
+        exampleVC.view.didMoveToSuperview()
         
         innerContentView.addSubview(featureContainer)
         

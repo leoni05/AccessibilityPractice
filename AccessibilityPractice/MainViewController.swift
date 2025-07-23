@@ -95,6 +95,7 @@ class MainViewController: UIViewController {
         if let vc = currentViewController {
             self.addChild(vc)
             self.view.addSubview(vc.view)
+            vc.view.didMoveToSuperview()
             accessibilityPageChanged()
         }
     }
@@ -125,8 +126,9 @@ private extension MainViewController {
         }
         
         if let vc = currentViewController {
-            vc.removeFromParent()
+            vc.willMove(toParent: nil)
             vc.view.removeFromSuperview()
+            vc.removeFromParent()
         }
         sideButtons[selectedPart].setBottomBorderAlpha(value: 0.0)
         selectedPart = sender.tag
@@ -136,6 +138,7 @@ private extension MainViewController {
         if let vc = currentViewController {
             self.addChild(vc)
             self.view.addSubview(vc.view)
+            vc.view.didMoveToSuperview()
             accessibilityPageChanged()
         }
     }
@@ -156,13 +159,15 @@ extension MainViewController: PresentationViewControllerDelegate {
         if 0 <= currentPage + diff &&
             currentPage + diff < presentationParts[selectedPart].pages.count {
             if let vc = currentViewController {
-                vc.removeFromParent()
+                vc.willMove(toParent: nil)
                 vc.view.removeFromSuperview()
+                vc.removeFromParent()
             }
             currentPage += diff
             if let vc = currentViewController {
                 self.addChild(vc)
                 self.view.addSubview(vc.view)
+                vc.view.didMoveToSuperview()
                 accessibilityPageChanged()
             }
         }

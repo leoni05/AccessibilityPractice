@@ -65,6 +65,7 @@ class VoiceOverUsageViewController: PresentationViewController {
         exampleVC.isNavigationBarHidden = true
         self.addChild(exampleVC)
         exampleContainer.addSubview(exampleVC.view)
+        exampleVC.view.didMoveToSuperview()
         
         innerContentView.addSubview(labelContainer)
         
