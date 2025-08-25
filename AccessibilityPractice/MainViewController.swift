@@ -62,6 +62,7 @@ class MainViewController: UIViewController {
             AccessibilityHintViewController(delegate: self),
             UIKitControlsViewController(delegate: self),
             CustomToggleViewController(delegate: self),
+            NavOrderViewController(delegate: self),
             LayoutChangedViewController(delegate: self),
             PerformEscapeViewController(delegate: self)
         ]))

@@ -29,6 +29,7 @@
 		D06D60F62D48578800E315E2 /* ApplesDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D60F52D48578800E315E2 /* ApplesDefinitionViewController.swift */; };
 		D075DA0E2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */; };
 		D075DA102D47D8A2000F8F0D /* RelevantLawsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */; };
+		D07AC52C2E5C09BD00CC0095 /* NavOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07AC52B2E5C09BD00CC0095 /* NavOrderViewController.swift */; };
 		D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD652D4CCFBC0043247C /* ExViewController.swift */; };
 		D099CD682D4CD3920043247C /* ExCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD672D4CD3920043247C /* ExCustomCell.swift */; };
 		D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */; };
@@ -85,6 +86,7 @@
 		D06D60F52D48578800E315E2 /* ApplesDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplesDefinitionViewController.swift; sourceTree = "<group>"; };
 		D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityDefinitionViewController.swift; sourceTree = "<group>"; };
 		D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelevantLawsViewController.swift; sourceTree = "<group>"; };
+		D07AC52B2E5C09BD00CC0095 /* NavOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavOrderViewController.swift; sourceTree = "<group>"; };
 		D099CD652D4CCFBC0043247C /* ExViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExViewController.swift; sourceTree = "<group>"; };
 		D099CD672D4CD3920043247C /* ExCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCustomCell.swift; sourceTree = "<group>"; };
 		D099CD692D4CDA2D0043247C /* ExDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExDetailViewController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				D0341F912D4E178000267DC3 /* AccessibilityHintViewController.swift */,
 				D02CEBEB2D4F2B4800D26C15 /* UIKitControlsViewController.swift */,
 				D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */,
+				D07AC52B2E5C09BD00CC0095 /* NavOrderViewController.swift */,
 				D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */,
 				D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */,
 			);
@@ -432,6 +435,7 @@
 				D099CD662D4CCFBC0043247C /* ExViewController.swift in Sources */,
 				D02CEBE82D4F2B3200D26C15 /* BettingAppFeature3ViewController.swift in Sources */,
 				D0F78AFC2CEE1980009534F5 /* PresentationViewController.swift in Sources */,
+				D07AC52C2E5C09BD00CC0095 /* NavOrderViewController.swift in Sources */,
 				D0E758712CF2E5960079B5E5 /* ContentItemButton.swift in Sources */,
 				D0E0C3472D4B831B00A7238F /* AccessibilityFeaturesViewController.swift in Sources */,
 				D0E0C3512D4B8BDC00A7238F /* AccessibilityLabelViewController.swift in Sources */,
