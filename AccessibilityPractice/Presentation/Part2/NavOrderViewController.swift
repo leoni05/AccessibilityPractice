@@ -172,7 +172,13 @@ class NavOrderViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
+afterLabelContainer1.addSubview(afterLabel11)
+afterLabelContainer1.addSubview(afterLabel12)
+afterLabelContainer2.addSubview(afterLabel21)
+afterLabelContainer2.addSubview(afterLabel22)
 ...
+afterLabelContainer.accessibilityElements 
+= [afterLabelContainer1, afterLabelContainer2]
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
@@ -180,6 +186,8 @@ class NavOrderViewController: PresentationViewController {
         editorScrollView.addSubview(codeLabel)
         
         innerContentView.accessibilityElements = [featureContainer, exampleContainer]
+        
+        afterLabelContainer.accessibilityElements = [afterLabelContainer1, afterLabelContainer2]
     }
     
     override func viewDidLayoutSubviews() {
