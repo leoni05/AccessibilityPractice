@@ -221,7 +221,7 @@ class TitleViewController: PresentationViewController {
         }
         
         showNextImageView()
-        timerForImage = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(showNextImageView),
+        timerForImage = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(showNextImageView),
                                              userInfo: nil, repeats: true)
     }
     
