@@ -33,7 +33,8 @@ class TitleViewController: PresentationViewController {
     private var lowerScrollView = UIScrollView()
     private var lowerViews = Array<UIImageView>()
     
-    private var backgroundImageView = UIImageView()
+    private var backgroundImageViews: Array<UIImageView> = []
+    private var backgroundGradientView = UIView()
     private var backgroundGradientLayerH = CAGradientLayer()
     private var backgroundGradientLayerV = CAGradientLayer()
     
@@ -44,10 +45,17 @@ class TitleViewController: PresentationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImageView.image = UIImage(named: "MainBackgroundImage")
-        backgroundImageView.contentMode = .scaleAspectFill
-        backgroundImageView.layer.masksToBounds = true
-        self.view.addSubview(backgroundImageView)
+        for idx in 0..<3 {
+            if let image = UIImage(named: "MainBackgroundImage\(idx)") {
+                let imageView = UIImageView(image: image)
+                imageView.contentMode = .scaleAspectFill
+                imageView.layer.masksToBounds = true
+                backgroundImageViews.append(imageView)
+                self.view.addSubview(imageView)
+            }
+        }
+        
+        self.view.addSubview(backgroundGradientView)
         
         let colors: [CGColor] = [
            .init(red: 0, green: 0, blue: 0, alpha: 1),
@@ -56,12 +64,12 @@ class TitleViewController: PresentationViewController {
         backgroundGradientLayerH.colors = colors
         backgroundGradientLayerH.startPoint = CGPoint(x: 0.0, y: 0.5)
         backgroundGradientLayerH.endPoint = CGPoint(x: 1.0, y: 0.5)
-        backgroundImageView.layer.addSublayer(backgroundGradientLayerH)
+        backgroundGradientView.layer.addSublayer(backgroundGradientLayerH)
         
         backgroundGradientLayerV.colors = colors
         backgroundGradientLayerV.startPoint = CGPoint(x: 0.5, y: 1.0)
         backgroundGradientLayerV.endPoint = CGPoint(x: 0.5, y: 0.0)
-        backgroundImageView.layer.addSublayer(backgroundGradientLayerV)
+        backgroundGradientView.layer.addSublayer(backgroundGradientLayerV)
         
         self.view.addSubview(mainContentView)
         
@@ -166,7 +174,10 @@ class TitleViewController: PresentationViewController {
         lowerScrollView.contentSize = CGSize(width: lowerViews[lowerViews.count-1].frame.maxX,
                                              height: lowerScrollView.bounds.height)
         
-        backgroundImageView.pin.above(of: lowerScrollView, aligned: .left).right().top()
+        for imageView in backgroundImageViews {
+            imageView.pin.above(of: lowerScrollView, aligned: .left).right().top()
+        }
+        backgroundGradientView.pin.above(of: lowerScrollView, aligned: .left).right().top()
         backgroundGradientLayerH.pin.all()
         backgroundGradientLayerV.pin.all()
         
@@ -186,9 +197,6 @@ class TitleViewController: PresentationViewController {
         super.viewDidAppear(animated)
         
         isWillAppear = false
-        UIView.animate(withDuration: 0.6) {
-            self.backgroundImageView.alpha = 1.0
-        }
         UIView.animate(withDuration: 0.3) {
             self.mainContentView.alpha = 1.0
             self.mainContentView.pin.wrapContent().left(20).vCenter()
@@ -222,7 +230,6 @@ private extension TitleViewController {
     }
     
     func readyForAppearAnimation() {
-        backgroundImageView.alpha = 0.0
         mainContentView.alpha = 0.0
         mainContentView.pin.wrapContent().left(10).vCenter()
         
