@@ -33,6 +33,8 @@ class TitleViewController: PresentationViewController {
     private var lowerScrollView = UIScrollView()
     private var lowerViews = Array<UIImageView>()
     
+    private var timerForImage: Timer? = nil
+    private var nowImageViewIdx: Int? = nil
     private var backgroundImageViews: Array<UIImageView> = []
     private var backgroundGradientView = UIView()
     private var backgroundGradientLayerH = CAGradientLayer()
@@ -217,6 +219,16 @@ class TitleViewController: PresentationViewController {
                 }
             }
         }
+        
+        showNextImageView()
+        timerForImage = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(showNextImageView),
+                                             userInfo: nil, repeats: true)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        timerForImage?.invalidate()
+        timerForImage = nil
     }
 }
 
@@ -248,5 +260,31 @@ private extension TitleViewController {
             }
         }
         lowerScrollView.setContentOffset(CGPointZero, animated: false)
+        
+        nowImageViewIdx = nil
+        for imageView in backgroundImageViews {
+            imageView.alpha = 0.0
+        }
+    }
+    
+    @objc func showNextImageView() {
+        var nextImageViewIdx = 0
+        if let nowImageViewIdx = nowImageViewIdx {
+            nextImageViewIdx = (nowImageViewIdx+1) % backgroundImageViews.count
+        }
+        
+        if let nowImageViewIdx = nowImageViewIdx {
+            self.backgroundImageViews[nowImageViewIdx].alpha = 1.0
+            UIView.animate(withDuration: 0.6) {
+                self.backgroundImageViews[nowImageViewIdx].alpha = 0.0
+            }
+        }
+        
+        self.backgroundImageViews[nextImageViewIdx].alpha = 0.0
+        UIView.animate(withDuration: 0.6) {
+            self.backgroundImageViews[nextImageViewIdx].alpha = 1.0
+        }
+        
+        nowImageViewIdx = nextImageViewIdx
     }
 }
