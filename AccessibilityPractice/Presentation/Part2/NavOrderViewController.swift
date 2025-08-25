@@ -28,18 +28,18 @@ class NavOrderViewController: PresentationViewController {
     private var beforeLabelContainer = UIView()
     private var beforeLabelContainer1 = UIView()
     private var beforeLabelContainer2 = UIView()
-    private var beforeLabel11 = UILabel()
-    private var beforeLabel12 = UILabel()
-    private var beforeLabel21 = UILabel()
-    private var beforeLabel22 = UILabel()
+    private var beforeLabel1 = UILabel()
+    private var beforeLabel2 = UILabel()
+    private var beforeLabel3 = UILabel()
+    private var beforeLabel4 = UILabel()
     
     private var afterLabelContainer = UIView()
     private var afterLabelContainer1 = UIView()
     private var afterLabelContainer2 = UIView()
-    private var afterLabel11 = UILabel()
-    private var afterLabel12 = UILabel()
-    private var afterLabel21 = UILabel()
-    private var afterLabel22 = UILabel()
+    private var afterLabel1 = UILabel()
+    private var afterLabel2 = UILabel()
+    private var afterLabel3 = UILabel()
+    private var afterLabel4 = UILabel()
     
     private var featureContainer = UIView()
     private var featureLabel = UILabel()
@@ -89,27 +89,27 @@ class NavOrderViewController: PresentationViewController {
         
         beforeLabelContainer.addSubview(beforeLabelContainer1)
         
-        beforeLabel11.text = "Label 1-1"
-        beforeLabel11.font = .systemFont(ofSize: 14)
-        beforeLabel11.textColor = .white
-        beforeLabelContainer1.addSubview(beforeLabel11)
+        beforeLabel1.text = "Label 1"
+        beforeLabel1.font = .systemFont(ofSize: 14)
+        beforeLabel1.textColor = .white
+        beforeLabelContainer1.addSubview(beforeLabel1)
         
-        beforeLabel12.text = "Label 1-2"
-        beforeLabel12.font = .systemFont(ofSize: 14)
-        beforeLabel12.textColor = .white
-        beforeLabelContainer1.addSubview(beforeLabel12)
+        beforeLabel2.text = "Label 2"
+        beforeLabel2.font = .systemFont(ofSize: 14)
+        beforeLabel2.textColor = .white
+        beforeLabelContainer1.addSubview(beforeLabel2)
         
         beforeLabelContainer.addSubview(beforeLabelContainer2)
         
-        beforeLabel21.text = "Label 2-1"
-        beforeLabel21.font = .systemFont(ofSize: 14)
-        beforeLabel21.textColor = .white
-        beforeLabelContainer2.addSubview(beforeLabel21)
+        beforeLabel3.text = "Label 3"
+        beforeLabel3.font = .systemFont(ofSize: 14)
+        beforeLabel3.textColor = .white
+        beforeLabelContainer2.addSubview(beforeLabel3)
         
-        beforeLabel22.text = "Label 2-2"
-        beforeLabel22.font = .systemFont(ofSize: 14)
-        beforeLabel22.textColor = .white
-        beforeLabelContainer2.addSubview(beforeLabel22)
+        beforeLabel4.text = "Label 4"
+        beforeLabel4.font = .systemFont(ofSize: 14)
+        beforeLabel4.textColor = .white
+        beforeLabelContainer2.addSubview(beforeLabel4)
         
         afterContainer.layer.cornerRadius = 5.0
         afterContainer.layer.borderWidth = 1.0
@@ -130,27 +130,27 @@ class NavOrderViewController: PresentationViewController {
         
         afterLabelContainer.addSubview(afterLabelContainer1)
         
-        afterLabel11.text = "Label 1-1"
-        afterLabel11.font = .systemFont(ofSize: 14)
-        afterLabel11.textColor = .white
-        afterLabelContainer1.addSubview(afterLabel11)
+        afterLabel1.text = "Label 1"
+        afterLabel1.font = .systemFont(ofSize: 14)
+        afterLabel1.textColor = .white
+        afterLabelContainer1.addSubview(afterLabel1)
         
-        afterLabel12.text = "Label 1-2"
-        afterLabel12.font = .systemFont(ofSize: 14)
-        afterLabel12.textColor = .white
-        afterLabelContainer1.addSubview(afterLabel12)
+        afterLabel2.text = "Label 2"
+        afterLabel2.font = .systemFont(ofSize: 14)
+        afterLabel2.textColor = .white
+        afterLabelContainer1.addSubview(afterLabel2)
         
         afterLabelContainer.addSubview(afterLabelContainer2)
         
-        afterLabel21.text = "Label 2-1"
-        afterLabel21.font = .systemFont(ofSize: 14)
-        afterLabel21.textColor = .white
-        afterLabelContainer2.addSubview(afterLabel21)
+        afterLabel3.text = "Label 3"
+        afterLabel3.font = .systemFont(ofSize: 14)
+        afterLabel3.textColor = .white
+        afterLabelContainer2.addSubview(afterLabel3)
         
-        afterLabel22.text = "Label 2-2"
-        afterLabel22.font = .systemFont(ofSize: 14)
-        afterLabel22.textColor = .white
-        afterLabelContainer2.addSubview(afterLabel22)
+        afterLabel4.text = "Label 4"
+        afterLabel4.font = .systemFont(ofSize: 14)
+        afterLabel4.textColor = .white
+        afterLabelContainer2.addSubview(afterLabel4)
         
         innerContentView.addSubview(featureContainer)
         
@@ -172,13 +172,8 @@ class NavOrderViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-afterLabelContainer1.addSubview(afterLabel11)
-afterLabelContainer1.addSubview(afterLabel12)
-afterLabelContainer2.addSubview(afterLabel21)
-afterLabelContainer2.addSubview(afterLabel22)
-...
 afterLabelContainer.accessibilityElements 
-= [afterLabelContainer1, afterLabelContainer2]
+= [afterLabel1, afterLabel2, afterLabel3, afterLabel4]
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
@@ -187,7 +182,7 @@ afterLabelContainer.accessibilityElements
         
         innerContentView.accessibilityElements = [featureContainer, exampleContainer]
         
-        afterLabelContainer.accessibilityElements = [afterLabelContainer1, afterLabelContainer2]
+        afterLabelContainer.accessibilityElements = [afterLabel1, afterLabel2, afterLabel3, afterLabel4]
     }
     
     override func viewDidLayoutSubviews() {
@@ -208,22 +203,22 @@ afterLabelContainer.accessibilityElements
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
-        beforeLabel11.pin.left().top().sizeToFit()
-        beforeLabel12.pin.below(of: beforeLabel11).left().marginTop(4).sizeToFit()
+        beforeLabel1.pin.left().top().sizeToFit()
+        beforeLabel2.pin.below(of: beforeLabel1).left().marginTop(4).sizeToFit()
         beforeLabelContainer1.pin.left().top().wrapContent()
         
-        beforeLabel21.pin.left().top().sizeToFit()
-        beforeLabel22.pin.below(of: beforeLabel21).left().marginTop(4).sizeToFit()
+        beforeLabel3.pin.left().top().sizeToFit()
+        beforeLabel4.pin.below(of: beforeLabel3).left().marginTop(4).sizeToFit()
         beforeLabelContainer2.pin.after(of: beforeLabelContainer1).marginLeft(16).top().wrapContent()
         
         beforeLabelContainer.pin.center().wrapContent()
         
-        afterLabel11.pin.left().top().sizeToFit()
-        afterLabel12.pin.below(of: afterLabel11).left().marginTop(4).sizeToFit()
+        afterLabel1.pin.left().top().sizeToFit()
+        afterLabel2.pin.below(of: afterLabel1).left().marginTop(4).sizeToFit()
         afterLabelContainer1.pin.left().top().wrapContent()
         
-        afterLabel21.pin.left().top().sizeToFit()
-        afterLabel22.pin.below(of: afterLabel21).left().marginTop(4).sizeToFit()
+        afterLabel3.pin.left().top().sizeToFit()
+        afterLabel4.pin.below(of: afterLabel3).left().marginTop(4).sizeToFit()
         afterLabelContainer2.pin.after(of: afterLabelContainer1).marginLeft(16).top().wrapContent()
         
         afterLabelContainer.pin.center().wrapContent()
