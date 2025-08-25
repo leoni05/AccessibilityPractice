@@ -25,6 +25,22 @@ class NavOrderViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var beforeLabelContainer = UIView()
+    private var beforeLabelContainer1 = UIView()
+    private var beforeLabelContainer2 = UIView()
+    private var beforeLabel11 = UILabel()
+    private var beforeLabel12 = UILabel()
+    private var beforeLabel21 = UILabel()
+    private var beforeLabel22 = UILabel()
+    
+    private var afterLabelContainer = UIView()
+    private var afterLabelContainer1 = UIView()
+    private var afterLabelContainer2 = UIView()
+    private var afterLabel11 = UILabel()
+    private var afterLabel12 = UILabel()
+    private var afterLabel21 = UILabel()
+    private var afterLabel22 = UILabel()
+    
     private var featureContainer = UIView()
     private var featureLabel = UILabel()
     private var featureDescLabel = UILabel()
@@ -69,6 +85,32 @@ class NavOrderViewController: PresentationViewController {
         beforeLabel.layer.masksToBounds = true
         exampleContainer.addSubview(beforeLabel)
         
+        beforeContainer.addSubview(beforeLabelContainer)
+        
+        beforeLabelContainer.addSubview(beforeLabelContainer1)
+        
+        beforeLabel11.text = "Label 1-1"
+        beforeLabel11.font = .systemFont(ofSize: 14)
+        beforeLabel11.textColor = .white
+        beforeLabelContainer1.addSubview(beforeLabel11)
+        
+        beforeLabel12.text = "Label 1-2"
+        beforeLabel12.font = .systemFont(ofSize: 14)
+        beforeLabel12.textColor = .white
+        beforeLabelContainer1.addSubview(beforeLabel12)
+        
+        beforeLabelContainer.addSubview(beforeLabelContainer2)
+        
+        beforeLabel21.text = "Label 2-1"
+        beforeLabel21.font = .systemFont(ofSize: 14)
+        beforeLabel21.textColor = .white
+        beforeLabelContainer2.addSubview(beforeLabel21)
+        
+        beforeLabel22.text = "Label 2-2"
+        beforeLabel22.font = .systemFont(ofSize: 14)
+        beforeLabel22.textColor = .white
+        beforeLabelContainer2.addSubview(beforeLabel22)
+        
         afterContainer.layer.cornerRadius = 5.0
         afterContainer.layer.borderWidth = 1.0
         afterContainer.layer.borderColor = UIColor.white.cgColor
@@ -83,6 +125,32 @@ class NavOrderViewController: PresentationViewController {
         afterLabel.layer.cornerRadius = 3.0
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
+        
+        afterContainer.addSubview(afterLabelContainer)
+        
+        afterLabelContainer.addSubview(afterLabelContainer1)
+        
+        afterLabel11.text = "Label 1-1"
+        afterLabel11.font = .systemFont(ofSize: 14)
+        afterLabel11.textColor = .white
+        afterLabelContainer1.addSubview(afterLabel11)
+        
+        afterLabel12.text = "Label 1-2"
+        afterLabel12.font = .systemFont(ofSize: 14)
+        afterLabel12.textColor = .white
+        afterLabelContainer1.addSubview(afterLabel12)
+        
+        afterLabelContainer.addSubview(afterLabelContainer2)
+        
+        afterLabel21.text = "Label 2-1"
+        afterLabel21.font = .systemFont(ofSize: 14)
+        afterLabel21.textColor = .white
+        afterLabelContainer2.addSubview(afterLabel21)
+        
+        afterLabel22.text = "Label 2-2"
+        afterLabel22.font = .systemFont(ofSize: 14)
+        afterLabel22.textColor = .white
+        afterLabelContainer2.addSubview(afterLabel22)
         
         innerContentView.addSubview(featureContainer)
         
@@ -131,6 +199,26 @@ class NavOrderViewController: PresentationViewController {
         afterContainer.pin.below(of: beforeContainer).left().width(250).height(80).marginTop(20)
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
+        
+        beforeLabel11.pin.left().top().sizeToFit()
+        beforeLabel12.pin.below(of: beforeLabel11).left().marginTop(4).sizeToFit()
+        beforeLabelContainer1.pin.left().top().wrapContent()
+        
+        beforeLabel21.pin.left().top().sizeToFit()
+        beforeLabel22.pin.below(of: beforeLabel21).left().marginTop(4).sizeToFit()
+        beforeLabelContainer2.pin.after(of: beforeLabelContainer1).marginLeft(16).top().wrapContent()
+        
+        beforeLabelContainer.pin.center().wrapContent()
+        
+        afterLabel11.pin.left().top().sizeToFit()
+        afterLabel12.pin.below(of: afterLabel11).left().marginTop(4).sizeToFit()
+        afterLabelContainer1.pin.left().top().wrapContent()
+        
+        afterLabel21.pin.left().top().sizeToFit()
+        afterLabel22.pin.below(of: afterLabel21).left().marginTop(4).sizeToFit()
+        afterLabelContainer2.pin.after(of: afterLabelContainer1).marginLeft(16).top().wrapContent()
+        
+        afterLabelContainer.pin.center().wrapContent()
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
