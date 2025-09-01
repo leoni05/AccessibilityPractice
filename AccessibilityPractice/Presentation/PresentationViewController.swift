@@ -16,18 +16,9 @@ class PresentationViewController: UIViewController {
     
     // MARK: - Properties
     
-    weak var delegate: PresentationViewControllerDelegate?
+    weak var delegate: PresentationViewControllerDelegate? = nil
     
     // MARK: - Life Cycle
-    
-    init(delegate: PresentationViewControllerDelegate?) {
-        super.init(nibName: nil, bundle: nil)
-        self.delegate = delegate
-    }
-
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

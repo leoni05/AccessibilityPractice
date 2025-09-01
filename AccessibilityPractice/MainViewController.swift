@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     struct PresentationPart {
         var tabIconImage: UIImage?
         var accessibilityLabelString: String?
-        var pages: [PresentationViewController]
+        var pages: [PresentationViewController.Type]
     }
     private var presentationParts = Array<PresentationPart>()
     private var btnContainerView = UIView()
@@ -23,16 +23,7 @@ class MainViewController: UIViewController {
     
     private var selectedPart: Int = 0
     private var currentPage: Int = 0
-    private var currentViewController: PresentationViewController? {
-        get {
-            if selectedPart < presentationParts.count {
-                if currentPage < presentationParts[selectedPart].pages.count {
-                    return presentationParts[selectedPart].pages[currentPage]
-                }
-            }
-            return nil
-        }
-    }
+    private var currentViewController: PresentationViewController? = nil
     
     // MARK: - Life Cycle
     
@@ -41,38 +32,38 @@ class MainViewController: UIViewController {
         
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "person.fill"),
                                                   accessibilityLabelString: "Intro", pages: [
-            TitleViewController(delegate: self)
-        ]))
+                                                    TitleViewController.self
+                                                  ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "accessibility.fill"),
                                                   accessibilityLabelString: "Part 1", pages: [
-            AccessibilityTitleViewController(delegate: self),
-            AccessibilityDefinitionViewController(delegate: self),
-            RelevantLawsViewController(delegate: self)
-        ]))
+                                                    AccessibilityTitleViewController.self,
+                                                    AccessibilityDefinitionViewController.self,
+                                                    RelevantLawsViewController.self
+                                                  ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"),
                                                   accessibilityLabelString: "Part 2", pages: [
-            VoiceOverTitleViewController(delegate: self),
-            VoiceOverDefinitionViewController(delegate: self),
-            VoiceOverUsageViewController(delegate: self),
-            AccessibilityPropertiesViewController(delegate: self),
-            AccessibilityElementViewController(delegate: self),
-            AccessibilityLabelViewController(delegate: self),
-            AccessibilityTraitsViewController(delegate: self),
-            AccessibilityValueViewController(delegate: self),
-            AccessibilityHintViewController(delegate: self),
-            UIKitControlsViewController(delegate: self),
-            CustomToggleViewController(delegate: self),
-            NavOrderViewController(delegate: self),
-            LayoutChangedViewController(delegate: self),
-            PerformEscapeViewController(delegate: self)
-        ]))
+                                                    VoiceOverTitleViewController.self,
+                                                    VoiceOverDefinitionViewController.self,
+                                                    VoiceOverUsageViewController.self,
+                                                    AccessibilityPropertiesViewController.self,
+                                                    AccessibilityElementViewController.self,
+                                                    AccessibilityLabelViewController.self,
+                                                    AccessibilityTraitsViewController.self,
+                                                    AccessibilityValueViewController.self,
+                                                    AccessibilityHintViewController.self,
+                                                    UIKitControlsViewController.self,
+                                                    CustomToggleViewController.self,
+                                                    NavOrderViewController.self,
+                                                    LayoutChangedViewController.self,
+                                                    PerformEscapeViewController.self
+                                                  ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"),
                                                   accessibilityLabelString: "Part 3", pages: [
-            WrapUpTitleViewController(delegate: self),
-            Impression1ViewController(delegate: self),
-            Impression2ViewController(delegate: self),
-            EndOfPresentationViewController(delegate: self)
-        ]))
+                                                    WrapUpTitleViewController.self,
+                                                    Impression1ViewController.self,
+                                                    Impression2ViewController.self,
+                                                    EndOfPresentationViewController.self
+                                                  ]))
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -93,6 +84,8 @@ class MainViewController: UIViewController {
             sideButtons.append(button)
         }
         sideButtons[0].setBottomBorderAlpha(value: 1.0)
+        
+        currentViewController = initCurrentPresentationVC()
         if let vc = currentViewController {
             self.addChild(vc)
             self.view.addSubview(vc.view)
@@ -134,6 +127,7 @@ private extension MainViewController {
         sideButtons[selectedPart].setBottomBorderAlpha(value: 0.0)
         selectedPart = sender.tag
         currentPage = 0
+        currentViewController = initCurrentPresentationVC()
         sender.setBottomBorderAlpha(value: 1.0)
         
         if let vc = currentViewController {
@@ -151,6 +145,18 @@ private extension MainViewController {
             UIAccessibility.post(notification: .screenChanged, argument: currentView)
         }
     }
+    
+    func initCurrentPresentationVC() -> PresentationViewController? {
+        if selectedPart < presentationParts.count {
+            if currentPage < presentationParts[selectedPart].pages.count {
+                let pageClass = presentationParts[selectedPart].pages[currentPage]
+                let page = pageClass.init()
+                page.delegate = self
+                return page
+            }
+        }
+        return nil
+    }
 }
 
 // MARK: - PresentationViewControllerDelegate
@@ -165,6 +171,7 @@ extension MainViewController: PresentationViewControllerDelegate {
                 vc.removeFromParent()
             }
             currentPage += diff
+            currentViewController = initCurrentPresentationVC()
             if let vc = currentViewController {
                 self.addChild(vc)
                 self.view.addSubview(vc.view)
