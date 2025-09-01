@@ -75,12 +75,12 @@ class TitleViewController: PresentationViewController {
         
         self.view.addSubview(mainContentView)
         
-        subtitleLabel.text = "접근성"
+        subtitleLabel.text = "iOS VoiceOver로 살펴보는 접근성 첫걸음"
         subtitleLabel.font = .systemFont(ofSize: 13)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)
         
-        titleLabel.text = "Accessibility"
+        titleLabel.text = "ACCESSIBILITY"
         titleLabel.font = .systemFont(ofSize: 40, weight: .heavy)
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
