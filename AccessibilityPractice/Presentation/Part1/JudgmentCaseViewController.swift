@@ -73,7 +73,7 @@ class JudgmentCaseViewController: PresentationViewController {
         lawView1.addSubview(lawDetailLabel1)
         
         lawTitleLabel2.text = "1심 \"각 쇼핑몰은 시각장애인들에게 각각 10만원씩을 지급하라.\n" +
-        "또한 6개월 이내에 화면 낭독기를 통해 쇼핑정보를 받을 수 있는 서비스를 제공하라.\""
+        "또한 6개월 이내 화면 낭독기를 통해 상품 상세 내용 등의 대체 텍스트를 제공하라.\""
         lawTitleLabel2.numberOfLines = 0
         lawTitleLabel2.font = .systemFont(ofSize: 17)
         lawTitleLabel2.textColor = .white
