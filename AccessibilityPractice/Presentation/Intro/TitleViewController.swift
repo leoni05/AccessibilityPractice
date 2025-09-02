@@ -236,7 +236,8 @@ class TitleViewController: PresentationViewController {
 
 private extension TitleViewController {
     @objc func moreInfoButtonPressed(_ sender: UIButton) {
-        let alert = UIAlertController(title: "목표", message: "Apple 접근성을 훑어보면서\n접근성을 머리보단 마음으로\n이해해 보는 시간 가지기", preferredStyle: .alert)
+        let alert = UIAlertController(title: "목표", message: "Apple 접근성을 훑어보면서\n접근성 기능과 대응 방법\n그리고 접근성 구현이 필요한 이유 알아보기",
+                                      preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         self.present(alert, animated: true, completion: nil)
     }
