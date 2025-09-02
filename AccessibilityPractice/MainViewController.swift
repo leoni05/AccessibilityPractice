@@ -62,6 +62,7 @@ class MainViewController: UIViewController {
                                                     WrapUpTitleViewController.self,
                                                     Impression1ViewController.self,
                                                     Impression2ViewController.self,
+                                                    Impression3ViewController.self,
                                                     EndOfPresentationViewController.self
                                                   ]))
     }
