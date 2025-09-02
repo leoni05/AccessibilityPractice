@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2EB03B432E67239900B0FF05 /* Impression3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB03B422E67239900B0FF05 /* Impression3ViewController.swift */; };
+		2EB03B452E672A4900B0FF05 /* JudgmentCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB03B442E672A4900B0FF05 /* JudgmentCaseViewController.swift */; };
 		88B47E96D5235360ED97AFF8 /* Pods_AccessibilityPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */; };
 		D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C32CE4C2F000582B94 /* AppDelegate.swift */; };
 		D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C52CE4C2F000582B94 /* SceneDelegate.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		2EB03B422E67239900B0FF05 /* Impression3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impression3ViewController.swift; sourceTree = "<group>"; };
+		2EB03B442E672A4900B0FF05 /* JudgmentCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCaseViewController.swift; sourceTree = "<group>"; };
 		736D05ECADBCFC2308E38A66 /* Pods-AccessibilityPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.release.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.release.xcconfig"; sourceTree = "<group>"; };
 		B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccessibilityPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D0B52F4210E9032F657AE9 /* Pods-AccessibilityPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.debug.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				D0E950C72CEF50B5006E4C1E /* AccessibilityTitleViewController.swift */,
 				D075DA0D2D4783EF000F8F0D /* AccessibilityDefinitionViewController.swift */,
 				D075DA0F2D47D8A2000F8F0D /* RelevantLawsViewController.swift */,
+				2EB03B442E672A4900B0FF05 /* JudgmentCaseViewController.swift */,
 			);
 			path = Part1;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				D0E0C3492D4B89DB00A7238F /* VoiceOverDefinitionViewController.swift in Sources */,
 				D099CD6A2D4CDA2D0043247C /* ExDetailViewController.swift in Sources */,
 				D09FE43B2D4DDD4A0094F10A /* ExCustomButton.swift in Sources */,
+				2EB03B452E672A4900B0FF05 /* JudgmentCaseViewController.swift in Sources */,
 				D06D60F62D48578800E315E2 /* ApplesDefinitionViewController.swift in Sources */,
 				D09FE4452D4DE64C0094F10A /* ExCustomButton5.swift in Sources */,
 				D02CEBF82D4F7D8C00D26C15 /* Impression1ViewController.swift in Sources */,

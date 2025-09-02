@@ -38,7 +38,8 @@ class MainViewController: UIViewController {
                                                   accessibilityLabelString: "Part 1", pages: [
                                                     AccessibilityTitleViewController.self,
                                                     AccessibilityDefinitionViewController.self,
-                                                    RelevantLawsViewController.self
+                                                    RelevantLawsViewController.self,
+                                                    JudgmentCaseViewController.self
                                                   ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "apple.logo"),
                                                   accessibilityLabelString: "Part 2", pages: [
