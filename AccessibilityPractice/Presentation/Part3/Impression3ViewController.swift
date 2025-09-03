@@ -30,7 +30,7 @@ class Impression3ViewController: PresentationViewController {
         titleLabel.textColor = .white
         mainContentView.addSubview(titleLabel)
         
-        subtitleLabel.text = "구현 시 느낀 점"
+        subtitleLabel.text = "기대 효과"
         subtitleLabel.font = .systemFont(ofSize: 15)
         subtitleLabel.textColor = .white
         mainContentView.addSubview(subtitleLabel)

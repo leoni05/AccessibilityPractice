@@ -21,6 +21,7 @@ class WrapUpTitleViewController: PresentationViewController {
     private var partLabel = UILabel()
     private var titleLabel = UILabel()
     private var subTitleLabel1 = UILabel()
+    private var subTitleLabel2 = UILabel()
     
     private var isWillAppear = false
     
@@ -67,6 +68,12 @@ class WrapUpTitleViewController: PresentationViewController {
         subTitleLabel1.textColor = .white
         subTitleLabel1.sizeToFit()
         mainContentView.addSubview(subTitleLabel1)
+        
+        subTitleLabel2.text = "기대 효과"
+        subTitleLabel2.font = .systemFont(ofSize: 17, weight: .light)
+        subTitleLabel2.textColor = .white
+        subTitleLabel2.sizeToFit()
+        mainContentView.addSubview(subTitleLabel2)
     }
     
     override func viewDidLayoutSubviews() {
@@ -79,6 +86,7 @@ class WrapUpTitleViewController: PresentationViewController {
         partLabel.pin.top().left()
         titleLabel.pin.below(of: partLabel, aligned: .left)
         subTitleLabel1.pin.below(of: titleLabel, aligned: .left).marginTop(15)
+        subTitleLabel2.pin.below(of: subTitleLabel1, aligned: .left).marginTop(5)
         
         mainContentView.pin.wrapContent().left(20).vCenter()
         
