@@ -25,6 +25,18 @@ class OrderChangedViewController: PresentationViewController {
     private var afterContainer = UIView()
     private var afterLabel = UILabel()
     
+    private var beforeLabelsContainer = UIView()
+    private var beforeLabel1 = UILabel()
+    private var beforeLabel2 = UILabel()
+    private var beforeLabel3 = UILabel()
+    private var beforeLabel4 = UILabel()
+    
+    private var afterLabelsContainer = UIView()
+    private var afterLabel1 = UILabel()
+    private var afterLabel2 = UILabel()
+    private var afterLabel3 = UILabel()
+    private var afterLabel4 = UILabel()
+    
     private var featureContainer = UIView()
     private var featureLabel = UILabel()
     private var featureDescLabel = UILabel()
@@ -94,11 +106,55 @@ class OrderChangedViewController: PresentationViewController {
         beforeShuffleButton.addTarget(self, action: #selector(beforeShuffleButtonPressed(_:)), for: .touchUpInside)
         beforeContainer.addSubview(beforeShuffleButton)
         
+        beforeContainer.addSubview(beforeLabelsContainer)
+        
+        beforeLabel1.text = "Label 1"
+        beforeLabel1.font = .systemFont(ofSize: 14)
+        beforeLabel1.textColor = .white
+        beforeLabelsContainer.addSubview(beforeLabel1)
+        
+        beforeLabel2.text = "Label 2"
+        beforeLabel2.font = .systemFont(ofSize: 14)
+        beforeLabel2.textColor = .white
+        beforeLabelsContainer.addSubview(beforeLabel2)
+        
+        beforeLabel3.text = "Label 3"
+        beforeLabel3.font = .systemFont(ofSize: 14)
+        beforeLabel3.textColor = .white
+        beforeLabelsContainer.addSubview(beforeLabel3)
+        
+        beforeLabel4.text = "Label 4"
+        beforeLabel4.font = .systemFont(ofSize: 14)
+        beforeLabel4.textColor = .white
+        beforeLabelsContainer.addSubview(beforeLabel4)
+        
         afterShuffleButton.accessibilityLabel = "순서 변경"
         afterShuffleButton.setImage(UIImage(systemName: "shuffle"), for: .normal)
         afterShuffleButton.tintColor = .white
         afterShuffleButton.addTarget(self, action: #selector(afterShuffleButtonPressed(_:)), for: .touchUpInside)
         afterContainer.addSubview(afterShuffleButton)
+        
+        afterContainer.addSubview(afterLabelsContainer)
+        
+        afterLabel1.text = "Label 1"
+        afterLabel1.font = .systemFont(ofSize: 14)
+        afterLabel1.textColor = .white
+        afterLabelsContainer.addSubview(afterLabel1)
+        
+        afterLabel2.text = "Label 2"
+        afterLabel2.font = .systemFont(ofSize: 14)
+        afterLabel2.textColor = .white
+        afterLabelsContainer.addSubview(afterLabel2)
+        
+        afterLabel3.text = "Label 3"
+        afterLabel3.font = .systemFont(ofSize: 14)
+        afterLabel3.textColor = .white
+        afterLabelsContainer.addSubview(afterLabel3)
+        
+        afterLabel4.text = "Label 4"
+        afterLabel4.font = .systemFont(ofSize: 14)
+        afterLabel4.textColor = .white
+        afterLabelsContainer.addSubview(afterLabel4)
         
         innerContentView.addSubview(featureContainer)
         
@@ -149,8 +205,18 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
         beforeShuffleButton.pin.right(5).vCenter().size(40)
-        
         afterShuffleButton.pin.right(5).vCenter().size(40)
+        
+        changeLabelsLayout(containerView: beforeLabelsContainer,
+                           firstLabel: beforeLabel1,
+                           secondLabel: beforeLabel2,
+                           thirdLabel: beforeLabel3,
+                           fourthLabel: beforeLabel4)
+        changeLabelsLayout(containerView: afterLabelsContainer,
+                           firstLabel: afterLabel1,
+                           secondLabel: afterLabel2,
+                           thirdLabel: afterLabel3,
+                           fourthLabel: afterLabel4)
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
@@ -199,6 +265,18 @@ private extension OrderChangedViewController {
     
     @objc func afterShuffleButtonPressed(_ sender: UIButton) {
         
+    }
+    
+    func changeLabelsLayout(containerView: UIView,
+                            firstLabel: UILabel,
+                            secondLabel: UILabel,
+                            thirdLabel: UILabel,
+                            fourthLabel: UILabel) {
+        firstLabel.pin.top().left().sizeToFit()
+        secondLabel.pin.after(of: firstLabel, aligned: .center).marginLeft(16).sizeToFit()
+        thirdLabel.pin.below(of: firstLabel, aligned: .left).marginTop(4).sizeToFit()
+        fourthLabel.pin.after(of: firstLabel).below(of: secondLabel).marginLeft(16).marginTop(4).sizeToFit()
+        containerView.pin.center().wrapContent()
     }
 
     func readyForAppearAnimation() {
