@@ -167,7 +167,7 @@ class OrderChangedViewController: PresentationViewController {
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "화면 레이아웃이 변경되었을 때 이를 반영하지 못 할 수 있으므로, 접근성 알림을 전송하여 즉시 반영 처리"
+        featureDescLabel.text = "레이아웃이 변경되었을 때 VoiceOver가 곧바로 반영하지 못 할 수 있으므로, 접근성 알림을 전송하여 즉시 반영 처리"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
