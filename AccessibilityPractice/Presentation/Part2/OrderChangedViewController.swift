@@ -128,6 +128,8 @@ class OrderChangedViewController: PresentationViewController {
         beforeLabel4.textColor = .white
         beforeLabelsContainer.addSubview(beforeLabel4)
         
+        beforeContainer.accessibilityElements = [beforeLabelsContainer, beforeShuffleButton]
+        
         afterShuffleButton.accessibilityLabel = "순서 변경"
         afterShuffleButton.setImage(UIImage(systemName: "shuffle"), for: .normal)
         afterShuffleButton.tintColor = .white
@@ -155,6 +157,8 @@ class OrderChangedViewController: PresentationViewController {
         afterLabel4.font = .systemFont(ofSize: 14)
         afterLabel4.textColor = .white
         afterLabelsContainer.addSubview(afterLabel4)
+        
+        afterContainer.accessibilityElements = [afterLabelsContainer, afterShuffleButton]
         
         innerContentView.addSubview(featureContainer)
         
@@ -208,15 +212,9 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
         afterShuffleButton.pin.right(5).vCenter().size(40)
         
         changeLabelsLayout(containerView: beforeLabelsContainer,
-                           firstLabel: beforeLabel1,
-                           secondLabel: beforeLabel2,
-                           thirdLabel: beforeLabel3,
-                           fourthLabel: beforeLabel4)
+                           labels: [beforeLabel1, beforeLabel2, beforeLabel3, beforeLabel4])
         changeLabelsLayout(containerView: afterLabelsContainer,
-                           firstLabel: afterLabel1,
-                           secondLabel: afterLabel2,
-                           thirdLabel: afterLabel3,
-                           fourthLabel: afterLabel4)
+                           labels: [afterLabel1, afterLabel2, afterLabel3, afterLabel4])
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
@@ -260,22 +258,44 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
 
 private extension OrderChangedViewController {
     @objc func beforeShuffleButtonPressed(_ sender: UIButton) {
-        
+        let shuffledLabels = [beforeLabel1, beforeLabel2, beforeLabel3, beforeLabel4].shuffled()
+        UIView.animate(
+            withDuration: 0.3,
+            animations: {
+                self.changeLabelsLayout(
+                    containerView: self.beforeLabelsContainer,
+                    labels: shuffledLabels
+                )
+            }, completion: { _ in
+                
+            }
+        )
     }
     
     @objc func afterShuffleButtonPressed(_ sender: UIButton) {
-        
+        let shuffledLabels = [afterLabel1, afterLabel2, afterLabel3, afterLabel4].shuffled()
+        UIView.animate(
+            withDuration: 0.3,
+            animations: {
+                self.changeLabelsLayout(
+                    containerView: self.afterLabelsContainer,
+                    labels: shuffledLabels
+                )
+            }, completion: { _ in
+                UIAccessibility.post(notification: .screenChanged, argument: shuffledLabels[0])
+            }
+        )
     }
     
-    func changeLabelsLayout(containerView: UIView,
-                            firstLabel: UILabel,
-                            secondLabel: UILabel,
-                            thirdLabel: UILabel,
-                            fourthLabel: UILabel) {
-        firstLabel.pin.top().left().sizeToFit()
-        secondLabel.pin.after(of: firstLabel, aligned: .center).marginLeft(16).sizeToFit()
-        thirdLabel.pin.below(of: firstLabel, aligned: .left).marginTop(4).sizeToFit()
-        fourthLabel.pin.after(of: firstLabel).below(of: secondLabel).marginLeft(16).marginTop(4).sizeToFit()
+    func changeLabelsLayout(containerView: UIView, labels: [UILabel]) {
+        if labels.count < 4 {
+            return
+        }
+        labels[0].pin.top().left().sizeToFit()
+        labels[1].pin.after(of: labels[0], aligned: .center).marginLeft(16).sizeToFit()
+        labels[2].pin.below(of: labels[0], aligned: .left).marginTop(4).sizeToFit()
+        labels[3].pin.after(of: labels[0]).below(of: labels[1])
+            .marginLeft(16).marginTop(4).sizeToFit()
         containerView.pin.center().wrapContent()
     }
 
