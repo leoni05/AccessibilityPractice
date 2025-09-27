@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EB03B432E67239900B0FF05 /* Impression3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB03B422E67239900B0FF05 /* Impression3ViewController.swift */; };
 		2EB03B452E672A4900B0FF05 /* JudgmentCaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB03B442E672A4900B0FF05 /* JudgmentCaseViewController.swift */; };
+		2EFACF162E8833ED00919132 /* OrderChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EFACF152E8833ED00919132 /* OrderChangedViewController.swift */; };
 		88B47E96D5235360ED97AFF8 /* Pods_AccessibilityPractice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */; };
 		D00DA7C42CE4C2F000582B94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C32CE4C2F000582B94 /* AppDelegate.swift */; };
 		D00DA7C62CE4C2F000582B94 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00DA7C52CE4C2F000582B94 /* SceneDelegate.swift */; };
@@ -64,6 +65,7 @@
 /* Begin PBXFileReference section */
 		2EB03B422E67239900B0FF05 /* Impression3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Impression3ViewController.swift; sourceTree = "<group>"; };
 		2EB03B442E672A4900B0FF05 /* JudgmentCaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JudgmentCaseViewController.swift; sourceTree = "<group>"; };
+		2EFACF152E8833ED00919132 /* OrderChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderChangedViewController.swift; sourceTree = "<group>"; };
 		736D05ECADBCFC2308E38A66 /* Pods-AccessibilityPractice.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.release.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.release.xcconfig"; sourceTree = "<group>"; };
 		B305D3531308E91572ACF322 /* Pods_AccessibilityPractice.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AccessibilityPractice.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8D0B52F4210E9032F657AE9 /* Pods-AccessibilityPractice.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AccessibilityPractice.debug.xcconfig"; path = "Target Support Files/Pods-AccessibilityPractice/Pods-AccessibilityPractice.debug.xcconfig"; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				D02CEBED2D4F2B5400D26C15 /* CustomToggleViewController.swift */,
 				D07AC52B2E5C09BD00CC0095 /* NavOrderViewController.swift */,
 				D02CEBEF2D4F2B5D00D26C15 /* LayoutChangedViewController.swift */,
+				2EFACF152E8833ED00919132 /* OrderChangedViewController.swift */,
 				D02CEBF12D4F2B6500D26C15 /* PerformEscapeViewController.swift */,
 			);
 			path = Part2;
@@ -428,6 +431,7 @@
 				D0E0C3532D4B8C1900A7238F /* AccessibilityTraitsViewController.swift in Sources */,
 				D0C3D2932D4B2EAC00A04BD8 /* TheRelayViewController.swift in Sources */,
 				D0E950CC2CEF50C8006E4C1E /* VoiceOverTitleViewController.swift in Sources */,
+				2EFACF162E8833ED00919132 /* OrderChangedViewController.swift in Sources */,
 				D0E0C3552D4B8C2700A7238F /* AccessibilityValueViewController.swift in Sources */,
 				D0E950CA2CEF50BE006E4C1E /* ApplesTitleViewController.swift in Sources */,
 				2EB03B432E67239900B0FF05 /* Impression3ViewController.swift in Sources */,

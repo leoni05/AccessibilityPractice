@@ -1,16 +1,16 @@
 //
-//  Part4Page8ViewController.swift
+//  LayoutChanged2ViewController.swift
 //  AccessibilityPractice
 //
-//  Created by yongjun18 on 2/2/25.
+//  Created by jyj on 9/28/25.
 //
 
 import Foundation
 import UIKit
 import PinLayout
 
-class LayoutChangedViewController: PresentationViewController {
-    
+class OrderChangedViewController: PresentationViewController {
+
     // MARK: - Properties
     
     private var mainContentView = UIView()
@@ -31,15 +31,9 @@ class LayoutChangedViewController: PresentationViewController {
     private var editorScrollView = UIScrollView()
     private var codeLabel = UILabel()
     
-    private var isBeforeLoading = false
-    private var beforeReloadButton = UIButton()
-    private var beforeResultLabel = UILabel()
-    private var beforeLoadingIndicator = UIActivityIndicatorView()
+    private var beforeShuffleButton = UIButton()
     
-    private var isAfterLoading = false
-    private var afterReloadButton = UIButton()
-    private var afterResultLabel = UILabel()
-    private var afterLoadingIndicator = UIActivityIndicatorView()
+    private var afterShuffleButton = UIButton()
     
     private var isWillAppear = false
     
@@ -94,46 +88,26 @@ class LayoutChangedViewController: PresentationViewController {
         afterLabel.layer.masksToBounds = true
         exampleContainer.addSubview(afterLabel)
         
-        beforeReloadButton.accessibilityLabel = "새로고침"
-        beforeReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
-        beforeReloadButton.tintColor = .white
-        beforeReloadButton.addTarget(self, action: #selector(beforeReloadButtonPressed(_:)), for: .touchUpInside)
-        beforeContainer.addSubview(beforeReloadButton)
+        beforeShuffleButton.accessibilityLabel = "순서 변경"
+        beforeShuffleButton.setImage(UIImage(systemName: "shuffle"), for: .normal)
+        beforeShuffleButton.tintColor = .white
+        beforeShuffleButton.addTarget(self, action: #selector(beforeShuffleButtonPressed(_:)), for: .touchUpInside)
+        beforeContainer.addSubview(beforeShuffleButton)
         
-        beforeResultLabel.text = ""
-        beforeResultLabel.font = .systemFont(ofSize: 14)
-        beforeResultLabel.textColor = .white
-        beforeResultLabel.sizeToFit()
-        beforeContainer.addSubview(beforeResultLabel)
-        
-        beforeLoadingIndicator.color = .white
-        beforeLoadingIndicator.isHidden = true
-        beforeContainer.addSubview(beforeLoadingIndicator)
-        
-        afterReloadButton.accessibilityLabel = "새로고침"
-        afterReloadButton.setImage(UIImage(systemName: "arrow.clockwise"), for: .normal)
-        afterReloadButton.tintColor = .white
-        afterReloadButton.addTarget(self, action: #selector(afterReloadButtonPressed(_:)), for: .touchUpInside)
-        afterContainer.addSubview(afterReloadButton)
-        
-        afterResultLabel.text = ""
-        afterResultLabel.font = .systemFont(ofSize: 14)
-        afterResultLabel.textColor = .white
-        afterResultLabel.sizeToFit()
-        afterContainer.addSubview(afterResultLabel)
-        
-        afterLoadingIndicator.color = .white
-        afterLoadingIndicator.isHidden = true
-        afterContainer.addSubview(afterLoadingIndicator)
+        afterShuffleButton.accessibilityLabel = "순서 변경"
+        afterShuffleButton.setImage(UIImage(systemName: "shuffle"), for: .normal)
+        afterShuffleButton.tintColor = .white
+        afterShuffleButton.addTarget(self, action: #selector(afterShuffleButtonPressed(_:)), for: .touchUpInside)
+        afterContainer.addSubview(afterShuffleButton)
         
         innerContentView.addSubview(featureContainer)
         
-        featureLabel.text = "화면 레이아웃 변경(1)"
+        featureLabel.text = "화면 레이아웃 변경(2)"
         featureLabel.font = .systemFont(ofSize: 17)
         featureLabel.textColor = .white
         featureContainer.addSubview(featureLabel)
         
-        featureDescLabel.text = "화면 구성 요소의 배치가 바뀌었을 경우, VoiceOver 사용자는 이를 알아차리지 못할 수 있으므로 접근성 알림 전송 필요"
+        featureDescLabel.text = "화면 레이아웃이 변경되었을 때 이를 반영하지 못 할 수 있으므로, 접근성 알림을 전송하여 즉시 반영 처리"
         featureDescLabel.font = .systemFont(ofSize: 14)
         featureDescLabel.textColor = .white
         featureDescLabel.numberOfLines = 3
@@ -174,13 +148,9 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
         afterLabel.pin.left(to: afterContainer.edge.left).top(to: afterContainer.edge.top)
             .width(60).height(24).marginLeft(8).marginTop(-12)
         
-        beforeReloadButton.pin.right(5).vCenter().size(40)
-        beforeResultLabel.pin.center()
-        beforeLoadingIndicator.pin.center()
+        beforeShuffleButton.pin.right(5).vCenter().size(40)
         
-        afterReloadButton.pin.right(5).vCenter().size(40)
-        afterResultLabel.pin.center()
-        afterLoadingIndicator.pin.center()
+        afterShuffleButton.pin.right(5).vCenter().size(40)
         
         exampleContainer.pin.wrapContent().right().vCenter()
         
@@ -217,52 +187,18 @@ UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
                 .right().bottom(self.view.pin.safeArea).marginBottom(25)
         }
     }
+    
 }
 
 // MARK: - Private Extensions
 
-private extension LayoutChangedViewController {
-    @objc func beforeReloadButtonPressed(_ sender: UIButton) {
-        if isBeforeLoading { return }
-        isBeforeLoading = true
+private extension OrderChangedViewController {
+    @objc func beforeShuffleButtonPressed(_ sender: UIButton) {
         
-        beforeResultLabel.isHidden = true
-        beforeLoadingIndicator.startAnimating()
-        beforeLoadingIndicator.isHidden = false
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.beforeLoadingIndicator.isHidden = true
-            self.beforeLoadingIndicator.stopAnimating()
-            
-            self.beforeResultLabel.text = "LOAD COMPLETE"
-            self.beforeResultLabel.sizeToFit()
-            self.beforeResultLabel.pin.center()
-            self.beforeResultLabel.isHidden = false
-            
-            self.isBeforeLoading = false
-        }
     }
     
-    @objc func afterReloadButtonPressed(_ sender: UIButton) {
-        if isAfterLoading { return }
-        isAfterLoading = true
+    @objc func afterShuffleButtonPressed(_ sender: UIButton) {
         
-        afterResultLabel.isHidden = true
-        afterLoadingIndicator.startAnimating()
-        afterLoadingIndicator.isHidden = false
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.afterLoadingIndicator.isHidden = true
-            self.afterLoadingIndicator.stopAnimating()
-            
-            self.afterResultLabel.text = "LOAD COMPLETE"
-            self.afterResultLabel.sizeToFit()
-            self.afterResultLabel.pin.center()
-            self.afterResultLabel.isHidden = false
-            
-            self.isAfterLoading = false
-            UIAccessibility.post(notification: .screenChanged, argument: self.afterResultLabel)
-        }
     }
 
     func readyForAppearAnimation() {

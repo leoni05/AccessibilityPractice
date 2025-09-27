@@ -56,6 +56,7 @@ class MainViewController: UIViewController {
                                                     CustomToggleViewController.self,
                                                     NavOrderViewController.self,
                                                     LayoutChangedViewController.self,
+                                                    OrderChangedViewController.self,
                                                     PerformEscapeViewController.self
                                                   ]))
         presentationParts.append(PresentationPart(tabIconImage: UIImage(systemName: "swift"),
