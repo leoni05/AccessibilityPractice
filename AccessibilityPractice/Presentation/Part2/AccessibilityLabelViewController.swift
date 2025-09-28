@@ -107,7 +107,7 @@ class AccessibilityLabelViewController: PresentationViewController {
         propertyLabel.textColor = .white
         propertyContainer.addSubview(propertyLabel)
         
-        propertyDescLabel.text = "접근성 요소를 식별하기 위한 간결한 문자열. '버튼'과 같은 요소의 종류는 포함하지 않도록 주의."
+        propertyDescLabel.text = "접근성 요소를 식별하기 위한 간결한 문자열. 요소의 대체 텍스트를 정의할 때 사용."
         propertyDescLabel.font = .systemFont(ofSize: 14)
         propertyDescLabel.textColor = .white
         propertyDescLabel.numberOfLines = 3
