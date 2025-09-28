@@ -180,7 +180,17 @@ class OrderChangedViewController: PresentationViewController {
         featureContainer.addSubview(editorScrollView)
         
         codeLabel.text = """
-UIAccessibility.post(notification: .screenChanged, argument: self.resultLabel)
+UIView.animate(
+    withDuration: 0.3,
+    animations: {
+        self.changeLabelsLayout(
+            containerView: self.afterLabelsContainer,
+            labels: shuffledLabels
+        )
+    }, completion: { _ in
+        UIAccessibility.post(notification: .screenChanged, argument: shuffledLabels[0])
+    }
+)
 """
         codeLabel.font = .systemFont(ofSize: 14)
         codeLabel.textColor = .white
